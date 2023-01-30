@@ -9,12 +9,15 @@ nav:
       - 01.Git起步: Toolkit/git/01.Git起步.md
       - 02.Git基础: Toolkit/git/02.Git基础.md
       - 03.远程仓库与分支: Toolkit/git/03.远程仓库与分支.md
-      - git常用命令: Toolkit/git/git常用命令.md 
+      - Git常用命令: Toolkit/git/git常用命令.md 
     - Vim:
       - Toolkit/vim/index.md
     
 
 site_name: RichToo的垃圾堆
+site_url: https://rich-too.github.io/My-Wiki/
+repo_name: My-Wiki
+repo_url: https://github.com/Rich-Too/My-Wiki
 
 theme:
   name: material
@@ -25,10 +28,30 @@ theme:
     - navigation.indexes # 将 index 页面直接附到小节名上
     - navigation.top # 回到顶部按钮
     - toc.follow # toc 跟随
+    - navigation.sections # 二级导航是粗体   
+    - content.code.copy # 允许代码拷贝
+    - content.code.annotate # 允许代码annotations
+    - content.tabs.link # 
+    - content.tooltips # 鼠标移动过去，白条内容
+  logo: assets/favicon.png
+  favicon: assets/favicon.png
   language: 'zh'
   palette:
-    primary: cyan
-    scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: cyan
+      accent: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: default
+      accent: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
   font:
     text: Hiragino Sans GB # Palatino
     code: Roboto Mono
@@ -39,24 +62,25 @@ markdown_extensions:
       slugify: !!python/name:pymdownx.slugs.uslugify # enable Unicode link
   - admonition
   - abbr
-  - attr_list
-  - def_list
-  - footnotes
-  - tables
+  - attr_list  # grid layout
+  - md_in_html # 
+  - def_list # flavors of lists 
+  - footnotes # rendered at the bottom
+  - tables # Data tables
   - meta
-  - md_in_html
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
       smart_enable: all
-  - pymdownx.caret
-  - pymdownx.critic
-  - pymdownx.details
-  - pymdownx.emoji:
+  - pymdownx.caret   #
+  - pymdownx.critic  # apply specific formatting like highlight 
+  - pymdownx.details #
+  - pymdownx.emoji:  # emoji
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.highlight
-  - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
   - pymdownx.keys
   - pymdownx.magiclink:
       repo_url_shorthand: true
@@ -67,16 +91,20 @@ markdown_extensions:
   - pymdownx.snippets:
       auto_append:
         - includes/abbreviations.md
-  - pymdownx.superfences:
+  # superfences tabbed --> Content tabs
+  - pymdownx.superfences: 
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true 
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-copyright: '本页面的全部内容在 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh">CC BY-SA 4.0</a> 和 <a href="https://github.com/zTrix/sata-license">SATA</a> 协议之条款下提供，附加条款亦可能应用。'
 
 extra_css:
   - 'from_oi_wiki/css/extra.css?v=13'
@@ -99,4 +127,4 @@ plugins:
       type: datetime
       timezone: Asia/Shanghai
       locale: zh
-  - statistics
+  - glightbox # add image zoom functionality

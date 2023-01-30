@@ -10,7 +10,7 @@ git clone [url] // 将存储库克隆到本地
 
 ### git init
 
-**git init 命令用于在目录中创建新的 Git 仓库。**
+git init 命令用于在目录中创建新的 Git 仓库。
 
 ```shell
 git init // 创建新的 Git 仓库，在当前路径下生成 .git 目录
