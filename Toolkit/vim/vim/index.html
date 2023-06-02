@@ -5,21 +5,20 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://rich-too.github.io/My-Wiki/Toolkit/vim/" rel="canonical"/>
-<link href="../git/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="prev"/>
-<link href="../shell/Shell%20Tools%20and%20Scripting/" rel="next"/>
-<link href="../../assets/favicon.png" rel="icon"/>
+<link href="https://rich-too.github.io/My-Wiki/Toolkit/vim/vim/" rel="canonical"/>
+<link href="../../git/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="prev"/>
+<link href="../../shell/Shell%20Tools%20and%20Scripting/" rel="next"/>
+<link href="../../../assets/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.8" name="generator"/>
-<title>Index - RichToo的垃圾堆</title>
-<link href="../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<title>Vim - RichToo的垃圾堆</title>
+<link href="../../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Hiragino+Sans+GB:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Hiragino Sans GB";--md-code-font:"Roboto Mono"}</style>
-<link href="../../from_oi_wiki/css/extra.css?v=13" rel="stylesheet"/>
-<link href="../../css/status.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+<link href="../../../css/custom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -30,20 +29,23 @@
                 body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
                 body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
                 body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="deep-purple" data-md-color-primary="cyan" data-md-color-scheme="default" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#vim">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="页眉" class="md-header__inner md-grid">
-<a aria-label="RichToo的垃圾堆" class="md-header__button md-logo" data-md-component="logo" href="../.." title="RichToo的垃圾堆">
-<img alt="logo" src="../../assets/favicon.png"/>
+<a aria-label="RichToo的垃圾堆" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="RichToo的垃圾堆">
+<img alt="logo" src="../../../assets/favicon.png"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
@@ -58,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Index
+              Vim
             
           </span>
 </div>
@@ -121,17 +123,17 @@
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../..">
+<a class="md-tabs__link" href="../../..">
         主页
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../">
+<a class="md-tabs__link md-tabs__link--active" href="../../">
         开发工具
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../DL/Tools/Math/">
+<a class="md-tabs__link" href="../../../DL/Tools/Math/">
         深度学习
       </a>
 </li>
@@ -145,8 +147,8 @@
 <div class="md-sidebar__inner">
 <nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="RichToo的垃圾堆" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="RichToo的垃圾堆">
-<img alt="logo" src="../../assets/favicon.png"/>
+<a aria-label="RichToo的垃圾堆" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="RichToo的垃圾堆">
+<img alt="logo" src="../../../assets/favicon.png"/>
 </a>
     RichToo的垃圾堆
   </label>
@@ -164,7 +166,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../..">主页</a>
+<a href="../../..">主页</a>
 <label for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -176,7 +178,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../me/">
+<a class="md-nav__link" href="../../../me/">
         关于我
       </a>
 </li>
@@ -186,7 +188,7 @@
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../">开发工具</a>
+<a href="../../">开发工具</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -200,7 +202,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../git/">Git</a>
+<a href="../../git/">Git</a>
 <label for="__nav_2_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -212,44 +214,73 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../git/01.Git%E8%B5%B7%E6%AD%A5/">
-        01.Git起步
+<a class="md-nav__link" href="../../git/01.Git%E8%B5%B7%E6%AD%A5/">
+        Git起步
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../git/02.Git%E5%9F%BA%E7%A1%80/">
-        02.Git基础
+<a class="md-nav__link" href="../../git/02.Git%E5%9F%BA%E7%A1%80/">
+        Git基础
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../git/03.%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%B8%8E%E5%88%86%E6%94%AF/">
-        03.远程仓库与分支
+<a class="md-nav__link" href="../../git/03.%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%B8%8E%E5%88%86%E6%94%AF/">
+        Git远程仓库与分支
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../git/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+<a class="md-nav__link" href="../../git/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
         Git常用命令
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index md-nav__link--active">
-<a href="./">Vim</a>
-</div>
-<nav aria-expanded="true" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_3">
-<span class="md-nav__icon md-icon"></span>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
           Vim
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Vim
+      </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#0-配置">
+    0. 配置
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-回退命令行">
+    1. 回退命令行
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-快速操作">
+    2. 快速操作
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-复制粘贴">
+    3. 复制粘贴
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-分屏操作">
+    4. 分屏操作
+  </a>
+</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../shell/Shell%20Tools%20and%20Scripting/">
+<a class="md-nav__link" href="../../shell/Shell%20Tools%20and%20Scripting/">
         Shell
       </a>
 </li>
@@ -281,27 +312,27 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../DL/Tools/Math/">
+<a class="md-nav__link" href="../../../DL/Tools/Math/">
         Math
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../DL/Tools/NumPy/">
+<a class="md-nav__link" href="../../../DL/Tools/NumPy/">
         NumPy
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../DL/Tools/OS/">
+<a class="md-nav__link" href="../../../DL/Tools/OS/">
         OS
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../DL/Tools/Pandas/">
+<a class="md-nav__link" href="../../../DL/Tools/Pandas/">
         Pandas
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../DL/Tools/python/">
+<a class="md-nav__link" href="../../../DL/Tools/python/">
         Python
       </a>
 </li>
@@ -320,22 +351,202 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#0-配置">
+    0. 配置
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-回退命令行">
+    1. 回退命令行
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-快速操作">
+    2. 快速操作
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-复制粘贴">
+    3. 复制粘贴
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-分屏操作">
+    4. 分屏操作
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<p>这是vim。</p>
+<h1 id="vim">Vim<a class="headerlink" href="#vim" title="Permanent link">¶</a></h1>
+<p><a href="https://linux265.com/course/vim-cursor-movement.html">https://linux265.com/course/vim-cursor-movement.html</a></p>
+<h2 id="0-配置">0. 配置<a class="headerlink" href="#0-配置" title="Permanent link">¶</a></h2>
+<p>对于VSCode：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>"vim.handleKeys": {
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    "&lt;C-a&gt;": false,
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>    "&lt;C-f&gt;": false,
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    "&lt;C-n&gt;": false,
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>    "&lt;C-w&gt;": false
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>}, # Vim中的CTRL + a 等不会被应用
+</code></pre></div>
+<h2 id="1-回退命令行">1. 回退命令行<a class="headerlink" href="#1-回退命令行" title="Permanent link">¶</a></h2>
+<p>【:w】 保存文件
+【:w!】 若文件为只读，强制保存文件
+【:q】 离开vi
+【:q!】 不保存强制离开vi
+【:wq】 保存后离开
+【:wq!】 强制保存后离开</p>
+<h2 id="2-快速操作">2. 快速操作<a class="headerlink" href="#2-快速操作" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">A</td>
+<td>迅速跳转行尾编辑</td>
+</tr>
+<tr>
+<td align="center">k enter or ^</td>
+<td>快速回到有字符的行首</td>
+</tr>
+<tr>
+<td align="center">yw</td>
+<td>复制某个单词</td>
+</tr>
+<tr>
+<td align="center">ysw" or S"</td>
+<td>添加双引号</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td>重复上一个动作</td>
+</tr>
+<tr>
+<td align="center">ve or viw</td>
+<td>选中某个单词</td>
+</tr>
+<tr>
+<td align="center">~ or U</td>
+<td>改变大小写</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-复制粘贴">3. 复制粘贴<a class="headerlink" href="#3-复制粘贴" title="Permanent link">¶</a></h2>
+<p>如果要把数据从vim拷贝到系统剪切板，需要在<strong>visual模式</strong>下执行</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>"+y
+</code></pre></div>
+<p>从浏览器Ctrl+c后，要粘贴到vim中，则需要</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>"+p
+</code></pre></div>
+<ul>
+<li>
+<p><code>"</code>号粘贴板（临时粘贴板）比较特殊，直接按 <code>y</code> 就复制到这个粘贴板中了，直接按 <code>p</code> 就粘贴这个粘贴板中的内容</p>
+</li>
+<li>
+<p><code>+</code> 号粘贴板是系统粘贴板，用 <code>"+y</code> 将内容复制到该粘贴板后可以使用 <code>ctrl＋v</code> 将其粘贴到其他文档（如 firefox、gedit）中，同理，要把在其他地方用 <code>ctrl＋c</code> 或右键复制的内容复制到 vim 中，需要在正常模式下按 <code>"+p</code></p>
+</li>
+<li>
+<p><code>*</code>：当前选择缓冲区，<code>"*yy</code>把当前行的内容放入当前选择缓冲区。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">表示符号</th>
+<th align="center">名称</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>""</code></td>
+<td align="center">无名（unnamed）寄存器</td>
+<td align="left">缓存最后一次操作内容</td>
+</tr>
+<tr>
+<td align="left"><code>"0</code> ～ <code>"9</code></td>
+<td align="center">数字（numbered）寄存器</td>
+<td align="left">缓存最近操作内容，复制与删除有别，<code>"0</code>寄存器缓存最近一次复制的内容，<code>"1</code>-<code>"9</code>缓存最近9次删除内容</td>
+</tr>
+<tr>
+<td align="left"><code>"-</code></td>
+<td align="center">行内删除（small delete）寄存器</td>
+<td align="left">缓存行内删除内容</td>
+</tr>
+<tr>
+<td align="left"><code>"a</code> ～ <code>"z</code>或<code>"A</code> - <code>"Z</code></td>
+<td align="center">具名（named）寄存器</td>
+<td align="left">可用于主动指定</td>
+</tr>
+<tr>
+<td align="left"><code>":</code>, <code>".</code>, <code>"%</code>, <code>"#</code></td>
+<td align="center">只读（read-only）寄存器</td>
+<td align="left">分别缓存最近命令、最近插入文本、当前文件名、当前交替文件名</td>
+</tr>
+<tr>
+<td align="left"><code>"=</code></td>
+<td align="center">表达式（expression）寄存器</td>
+<td align="left">用于执行表达式命令</td>
+</tr>
+<tr>
+<td align="left"><code>"*</code>, <code>"+</code>, <code>"~</code></td>
+<td align="center">选择及拖拽（selection and drop）寄存器</td>
+<td align="left">存取GUI选择文本，可用于与外部应用交互</td>
+</tr>
+<tr>
+<td align="left"><code>"_</code></td>
+<td align="center">黑洞（black hole）寄存器</td>
+<td align="left">不缓存操作内容（干净删除）</td>
+</tr>
+<tr>
+<td align="left"><code>"/</code></td>
+<td align="center">模式寄存器（last search pattern）</td>
+<td align="left">缓存最近的搜索模式</td>
+</tr>
+</tbody>
+</table>
+<p>利用<code>:reg</code>查看。</p>
+<p>自定义Vim启动时候dashboard内容</p>
+<ul>
+<li>获取图案表示<a href="https://gitee.com/link?target=https%3A%2F%2Fwww.bootschool.net%2Fascii">Spring Boot banner在线生成工具</a>,选择类型为<code>ANSI Shadow</code></li>
+<li>获取Vim形式<a href="https://chenxuan520.gitee.io/chenxuanweb/header.html">vim-dashboard-header-make</a>(花了一点自己时间做的,因为不怎么写前端,画面比较差)</li>
+<li>将得到的结果复制到.vimrc中</li>
+</ul>
+<p>ZZ：退出Vim；如果文件被修改，则先保存文件再退出。(等价于 :x 命令)</p>
+<p>ZQ：强制退出Vim，不保存任何修改。(等价于 :q! 命令)，</p>
+<h2 id="4-分屏操作">4. 分屏操作<a class="headerlink" href="#4-分屏操作" title="Permanent link">¶</a></h2>
+<ul>
+<li><code>ctrl-w s</code>快捷键可以将当前窗口进行水平分割；把当前窗口分割成水平分布的两个窗口。 (<code>Ctrl-w v</code>或<code>ctrl-w ctrl-v</code>)</li>
+<li><code>ctrl+w +</code> –当前窗口增高一行。也可以用n增高n行。<code>ctrl+w -</code> –当前窗口减小一行。也可以用n减小n行。<code>ctrl+w =</code> – 所有窗口同样高度。</li>
+<li><code>ctrl+w ctrl+w</code>: 切换到下一个窗口，或者是<code>ctrl+w w</code>。<ul>
+<li><code>ctrl+w H(L,K,J)</code>: 将当前窗口移动到最左（右、上、下）面。</li>
+<li><code>ctrl+w h(l,j,k)</code>:切换到左（右，下，上）的窗口。</li>
+</ul>
+</li>
+</ul>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年1月30日 20:04:02</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年6月2日 12:38:55</span>
 <br/>
         创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年1月30日 20:04:02</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年6月2日 12:38:55</span>
 </small>
 </div>
 </article>
@@ -365,9 +576,9 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "content.code.annotate", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.path", "toc.follow", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
-<script src="../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
-<script src="../../from_oi_wiki/js/extra.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "content.code.annotate", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.path", "toc.follow", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
+<script src="../../../from_oi_wiki/js/extra.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>

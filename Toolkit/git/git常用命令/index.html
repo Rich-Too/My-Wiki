@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://rich-too.github.io/My-Wiki/Toolkit/git/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="canonical"/>
 <link href="../03.%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%B8%8E%E5%88%86%E6%94%AF/" rel="prev"/>
-<link href="../../vim/" rel="next"/>
+<link href="../../vim/vim/" rel="next"/>
 <link href="../../../assets/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.8" name="generator"/>
 <title>Git常用命令 - RichToo的垃圾堆</title>
@@ -16,8 +16,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Hiragino+Sans+GB:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Hiragino Sans GB";--md-code-font:"Roboto Mono"}</style>
-<link href="../../../from_oi_wiki/css/extra.css?v=13" rel="stylesheet"/>
-<link href="../../../css/status.css" rel="stylesheet"/>
+<link href="../../../css/custom.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -216,17 +215,17 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../01.Git%E8%B5%B7%E6%AD%A5/">
-        01.Git起步
+        Git起步
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../02.Git%E5%9F%BA%E7%A1%80/">
-        02.Git基础
+        Git基础
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../03.%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%B8%8E%E5%88%86%E6%94%AF/">
-        03.远程仓库与分支
+        Git远程仓库与分支
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
@@ -344,25 +343,21 @@
     git log
   </a>
 </li>
-</ul>
-</nav>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#远程库强制覆盖本地">
+    远程库强制覆盖本地
+  </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../vim/">Vim</a>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_3">
-<span class="md-nav__icon md-icon"></span>
-          Vim
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../vim/vim/">
+        Vim
+      </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../shell/Shell%20Tools%20and%20Scripting/">
@@ -541,6 +536,11 @@
     git log
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#远程库强制覆盖本地">
+    远程库强制覆盖本地
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -623,16 +623,13 @@
 <p>git merge 命令用于分支合并，将其他分支的内容合并到当前分支中。</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>git<span class="w"> </span>merge<span class="w"> </span><span class="o">[</span>branchName<span class="o">]</span>
 </code></pre></div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="static/14b182abe7c54161959596eb5b140299tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.png"><img alt="img" src="static/14b182abe7c54161959596eb5b140299tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.png"/></a></p>
 <h3 id="git-rebase">git rebase<a class="headerlink" href="#git-rebase" title="Permanent link">¶</a></h3>
 <p>git rebase 用于分支变基。</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>git<span class="w"> </span>rebase<span class="w"> </span>master<span class="w"> </span>//<span class="w"> </span>将当前分支变基到<span class="w"> </span>master<span class="w"> </span>分支上
 </code></pre></div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="static/bdee372fa7654715ba5e2538b562edeftplv-k3u1fbpfcp-zoom-in-crop-mark4536000.png"><img alt="image.png" src="static/bdee372fa7654715ba5e2538b562edeftplv-k3u1fbpfcp-zoom-in-crop-mark4536000.png"/></a></p>
 <p>git rebase -i 交互模式：</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span><span class="o">[</span>commitId<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>基于<span class="w"> </span>commitId<span class="w"> </span>进行<span class="w"> </span>rebase，交互式变基，可以重新编辑<span class="w"> </span>commit，比如压缩合并
 </code></pre></div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="static/f45211ea91014b459befe44034917aactplv-k3u1fbpfcp-zoom-in-crop-mark4536000.png"><img alt="image.png" src="static/f45211ea91014b459befe44034917aactplv-k3u1fbpfcp-zoom-in-crop-mark4536000.png"/></a></p>
 <h3 id="git-reset">git reset<a class="headerlink" href="#git-reset" title="Permanent link">¶</a></h3>
 <p>git reset 命令用于回退版本，可以指定退回某一次提交的版本。</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>git<span class="w"> </span>reset<span class="w"> </span>HEAD^<span class="w"> </span>//<span class="w"> </span>回退所有内容到上一个版本
@@ -670,12 +667,17 @@
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>git<span class="w"> </span>log<span class="w"> </span>//<span class="w"> </span>查看所有<span class="w"> </span>commit<span class="w"> </span>记录
 <a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a>git<span class="w"> </span>log<span class="w">  </span>--grep<span class="w">  </span>瀑布流<span class="w"> </span>//<span class="w"> </span>搜索<span class="w"> </span>commit<span class="w"> </span>msg<span class="w"> </span>有瀑布流关键字的<span class="w"> </span>记录
 </code></pre></div>
+<h3 id="远程库强制覆盖本地">远程库强制覆盖本地<a class="headerlink" href="#远程库强制覆盖本地" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a>git<span class="w"> </span>fetch<span class="w"> </span>--all
+<a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>origin/master
+<a href="#__codelineno-21-3" id="__codelineno-21-3" name="__codelineno-21-3"></a>git<span class="w"> </span>pull
+</code></pre></div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年2月28日 13:30:02</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年6月2日 12:38:55</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年1月30日 20:04:02</span>
