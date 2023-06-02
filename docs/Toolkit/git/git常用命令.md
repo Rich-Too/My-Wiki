@@ -126,8 +126,6 @@ git merge 命令用于分支合并，将其他分支的内容合并到当前分�
 git merge [branchName]
 ```
 
-![img](static/14b182abe7c54161959596eb5b140299tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.png)
-
 ### git rebase
 
 git rebase 用于分支变基。
@@ -136,15 +134,11 @@ git rebase 用于分支变基。
 git rebase master // 将当前分支变基到 master 分支上
 ```
 
-![image.png](static/bdee372fa7654715ba5e2538b562edeftplv-k3u1fbpfcp-zoom-in-crop-mark4536000.png)
-
 git rebase -i 交互模式：
 
 ```shell
 git rebase -i [commitId] // 基于 commitId 进行 rebase，交互式变基，可以重新编辑 commit，比如压缩合并
 ```
-
-![image.png](static/f45211ea91014b459befe44034917aactplv-k3u1fbpfcp-zoom-in-crop-mark4536000.png)
 
 ### git reset
 
@@ -205,5 +199,13 @@ git log 命令用于查看 git commit 记录。
 ```shell
 git log // 查看所有 commit 记录
 git log  --grep  瀑布流 // 搜索 commit msg 有瀑布流关键字的 记录
+```
+
+### 远程库强制覆盖本地
+
+```BASH
+git fetch --all
+git reset --hard origin/master
+git pull
 ```
 

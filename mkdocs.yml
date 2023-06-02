@@ -1,26 +1,3 @@
-nav:
-  - 主页: 
-    - index.md
-    - 关于我: me.md
-  - 开发工具:
-    - Toolkit/index.md
-    - Git: 
-      - Toolkit/git/index.md
-      - 01.Git起步: Toolkit/git/01.Git起步.md
-      - 02.Git基础: Toolkit/git/02.Git基础.md
-      - 03.远程仓库与分支: Toolkit/git/03.远程仓库与分支.md
-      - Git常用命令: Toolkit/git/git常用命令.md 
-    - Vim:
-      - Toolkit/vim/index.md
-    - Shell: Toolkit/shell/Shell Tools and Scripting.md
-  - 深度学习:
-    - Tools:
-      - DL/Tools/Math.md
-      - DL/Tools/NumPy.md
-      - DL/Tools/OS.md
-      - DL/Tools/Pandas.md
-      - DL/Tools/python.md
-
 site_name: RichToo的垃圾堆
 site_url: https://rich-too.github.io/My-Wiki/
 repo_name: My-Wiki
@@ -39,7 +16,7 @@ theme:
     # - toc.integrate # 相同栏左边加竖线
     - toc.follow # toc 跟随
     - content.code.copy # 允许代码拷贝
-    - content.code.annotate # 允许代码annotations
+    - content.code.annotate # 允许代码 annotations
     - content.tabs.link # 
     - content.tooltips # 鼠标移动过去，白条内容
   logo: assets/favicon.png
@@ -116,9 +93,7 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra_css:
-  - 'from_oi_wiki/css/extra.css?v=13'
-  - css/status.css
-
+  - css/custom.css
 extra_javascript:
   - 'from_oi_wiki/js/extra.js'
   # - js/mathjax.js # 支持数学公式，ref : https://squidfunk.github.io/mkdocs-material/reference/mathjax
@@ -137,3 +112,25 @@ plugins:
       timezone: Asia/Shanghai
       locale: zh
   - glightbox # add image zoom functionality
+
+nav:
+  - 主页: 
+    - index.md
+    - 关于我: me.md
+  - 开发工具:
+    - Toolkit/index.md
+    - Git: 
+      - Toolkit/git/index.md
+      - Git起步: Toolkit/git/01.Git起步.md
+      - Git基础: Toolkit/git/02.Git基础.md
+      - Git远程仓库与分支: Toolkit/git/03.远程仓库与分支.md
+      - Git常用命令: Toolkit/git/git常用命令.md 
+    - Vim: Toolkit/vim/vim.md
+    - Shell: Toolkit/shell/Shell Tools and Scripting.md
+  - 深度学习:
+    - Tools:
+      - DL/Tools/Math.md
+      - DL/Tools/NumPy.md
+      - DL/Tools/OS.md
+      - DL/Tools/Pandas.md
+      - DL/Tools/python.md
