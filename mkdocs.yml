@@ -12,6 +12,7 @@ nav:
       - Git常用命令: Toolkit/git/git常用命令.md 
     - Vim:
       - Toolkit/vim/index.md
+    - Shell: Toolkit/shell/Shell Tools and Scripting.md
   - 深度学习:
     - Tools:
       - DL/Tools/Math.md
