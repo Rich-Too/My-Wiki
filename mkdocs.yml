@@ -25,8 +25,8 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: cyan
-      accent: deep purple
+      primary: white
+      accent: black
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
@@ -39,8 +39,9 @@ theme:
         name: Switch to light mode
 
   font:
-    text: Hiragino Sans GB # Palatino
-    code: Roboto Mono
+    # text: Noto Serif SC
+    text: 'Fira Sans'
+    code: 'Fira Mono'
 
 markdown_extensions:
   - toc:
@@ -93,7 +94,8 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra_css:
-  - css/custom.css
+  - css/han.css
+  - '/css/extra.css'
 extra_javascript:
   - 'from_oi_wiki/js/extra.js'
   # - js/mathjax.js # 支持数学公式，ref : https://squidfunk.github.io/mkdocs-material/reference/mathjax

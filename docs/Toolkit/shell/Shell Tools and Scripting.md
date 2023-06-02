@@ -2,13 +2,13 @@
 
 > terminal 是什么？
 
-<aside> 💡 Terminal Emulator，模拟传统终端的行为一个应用程序，提供了一个窗口，和输入输出交互的功能内部运行的是 Shell，Shell 才是执行命令得到输出的东西 Terminal 的任务是从用户获取输入，然后传递给 Shell，等待 Shell 执行完后，将结果再传递回用户（显示出来）Shell 的任务是从 Terminal 拿到输入指令，解析后交给内核执行，然后将结果返回给 Terminal.
+ Terminal Emulator，模拟传统终端的行为一个应用程序，提供了一个窗口，和输入输出交互的功能内部运行的是 Shell，Shell 才是执行命令得到输出的东西 Terminal 的任务是从用户获取输入，然后传递给 Shell，等待 Shell 执行完后，将结果再传递回用户（显示出来）Shell 的任务是从 Terminal 拿到输入指令，解析后交给内核执行，然后将结果返回给 Terminal.
 
-</aside>
+
 
 > shell 是什么？
 
-<aside> 💡 Shell俗称壳程序，是一种由C语言编写的用于和操作系统交互的命令解析器软件。它用来接收用户输入命令，然后调用相应的应用程序。
+Shell俗称壳程序，是一种由C语言编写的用于和操作系统交互的命令解析器软件。它用来接收用户输入命令，然后调用相应的应用程序。
 
 Shell同时又是一种程序设计语言。作为命令语言，它交互式解释和执行用户输入的命令或者自动地解释和执行预先设定好的一连串的命令；作为程序设计语言，它定义了各种变量和参数，并提供了许多在高级语言中才具有的控制结构，包括循环和分支。
 
@@ -19,7 +19,9 @@ Shell 有两种执行命令的方式交互式和批处理，如下：
 
 ## 参考资料
 
-[Linux 命令大全 | 菜鸟教程](https://www.runoob.com/linux/linux-command-manual.html)[Shell 教程 | 菜鸟教程](https://www.runoob.com/linux/linux-shell.html)
+[Linux 命令大全 | 菜鸟教程](https://www.runoob.com/linux/linux-command-manual.html)
+
+[Shell 教程 | 菜鸟教程](https://www.runoob.com/linux/linux-shell.html)
 
 ## 程序间连接
 
@@ -36,7 +38,7 @@ cat hello2.txt
 #hello
 ```
 
-使用 >> 来向一个文件追加内容。使用管道（ *pipes* ），我们能够更好的利用文件重定向。 | 操作符允许我们将一个程序的输出和另外一个程序的输入连接起来。
+使用 >> 来向一个文件追加内容。使用管道（pipes），我们能够更好的利用文件重定向。 | 操作符允许我们将一个程序的输出和另外一个程序的输入连接起来。
 
 ## 参数和返回值
 
