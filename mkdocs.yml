@@ -37,11 +37,14 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to light mode
-
+  include_search_page: false
+  search_index_only: true
+  features:
+    - navigation.tabs
+    - navigation.instant
   font:
     # text: Noto Serif SC
     text: 'Fira Sans'
-    code: 'Fira Mono'
 
 markdown_extensions:
   - toc:
@@ -94,10 +97,8 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra_css:
-  - css/han.css
-  - '/css/extra.css'
+  - css/extra.css
 extra_javascript:
-  - 'from_oi_wiki/js/extra.js'
   # - js/mathjax.js # 支持数学公式，ref : https://squidfunk.github.io/mkdocs-material/reference/mathjax
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
