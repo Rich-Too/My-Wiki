@@ -14,9 +14,10 @@
 <link href="../../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Hiragino+Sans+GB:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Hiragino Sans GB";--md-code-font:"Roboto Mono"}</style>
-<link href="../../../css/custom.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+<link href="../../../css/han.css" rel="stylesheet"/>
+<link href="/css/extra.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -30,7 +31,7 @@
                 body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
                 body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
                 </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
-<body data-md-color-accent="deep-purple" data-md-color-primary="cyan" data-md-color-scheme="default" dir="ltr">
+<body data-md-color-accent="black" data-md-color-primary="white" data-md-color-scheme="default" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -67,7 +68,7 @@
 </div>
 </div>
 <form class="md-header__option" data-md-component="palette">
-<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="cyan" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="black" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="white" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
 <label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"></path></svg>
 </label>
@@ -516,22 +517,20 @@
 <blockquote>
 <p>terminal 是什么？</p>
 </blockquote>
-<aside> 💡 Terminal Emulator，模拟传统终端的行为一个应用程序，提供了一个窗口，和输入输出交互的功能内部运行的是 Shell，Shell 才是执行命令得到输出的东西 Terminal 的任务是从用户获取输入，然后传递给 Shell，等待 Shell 执行完后，将结果再传递回用户（显示出来）Shell 的任务是从 Terminal 拿到输入指令，解析后交给内核执行，然后将结果返回给 Terminal.
-
-</aside>
+<p>Terminal Emulator，模拟传统终端的行为一个应用程序，提供了一个窗口，和输入输出交互的功能内部运行的是 Shell，Shell 才是执行命令得到输出的东西 Terminal 的任务是从用户获取输入，然后传递给 Shell，等待 Shell 执行完后，将结果再传递回用户（显示出来）Shell 的任务是从 Terminal 拿到输入指令，解析后交给内核执行，然后将结果返回给 Terminal.</p>
 <blockquote>
 <p>shell 是什么？</p>
 </blockquote>
-<aside> 💡 Shell俗称壳程序，是一种由C语言编写的用于和操作系统交互的命令解析器软件。它用来接收用户输入命令，然后调用相应的应用程序。
-
-Shell同时又是一种程序设计语言。作为命令语言，它交互式解释和执行用户输入的命令或者自动地解释和执行预先设定好的一连串的命令；作为程序设计语言，它定义了各种变量和参数，并提供了许多在高级语言中才具有的控制结构，包括循环和分支。
-
-Shell 有两种执行命令的方式交互式和批处理，如下：
-
-- 交互式（Interactive）：解释执行用户的命令，用户输入一条命令，Shell就解释执行一条。
-- 批处理（Batch）：用户事先写一个Shell脚本(Script)，其中有很多条命令，让Shell一次把这些命令执行完，而不必一条一条地敲命令。 </aside>
+<p>Shell俗称壳程序，是一种由C语言编写的用于和操作系统交互的命令解析器软件。它用来接收用户输入命令，然后调用相应的应用程序。</p>
+<p>Shell同时又是一种程序设计语言。作为命令语言，它交互式解释和执行用户输入的命令或者自动地解释和执行预先设定好的一连串的命令；作为程序设计语言，它定义了各种变量和参数，并提供了许多在高级语言中才具有的控制结构，包括循环和分支。</p>
+<p>Shell 有两种执行命令的方式交互式和批处理，如下：</p>
+<ul>
+<li>交互式（Interactive）：解释执行用户的命令，用户输入一条命令，Shell就解释执行一条。</li>
+<li>批处理（Batch）：用户事先写一个Shell脚本(Script)，其中有很多条命令，让Shell一次把这些命令执行完，而不必一条一条地敲命令。 </li>
+</ul>
 <h2 id="参考资料">参考资料<a class="headerlink" href="#参考资料" title="Permanent link">¶</a></h2>
-<p><a href="https://www.runoob.com/linux/linux-command-manual.html">Linux 命令大全 | 菜鸟教程</a><a href="https://www.runoob.com/linux/linux-shell.html">Shell 教程 | 菜鸟教程</a></p>
+<p><a href="https://www.runoob.com/linux/linux-command-manual.html">Linux 命令大全 | 菜鸟教程</a></p>
+<p><a href="https://www.runoob.com/linux/linux-shell.html">Shell 教程 | 菜鸟教程</a></p>
 <h2 id="程序间连接">程序间连接<a class="headerlink" href="#程序间连接" title="Permanent link">¶</a></h2>
 <p><strong>输入重定向</strong> 输入重定向指把命令（或可执行程序）的标准输入重定向到指定的文件中。也就是说，输入可以不来自键盘，而来自一个指定的文件。所以说，输入重定向主要用于改变一个命令的输入源，特别是改变那些需要大量输入的输入源。 <strong>输出重定向</strong> 输出重定向：指把命令（或可执行程序）的标准输出或标准错误输出重新定向到指定文件中。这样，该命令的输出就<strong>不显示在屏幕</strong>上，而是写入到指定文件中。</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;<span class="w"> </span>hello.txt
@@ -543,7 +542,7 @@ Shell 有两种执行命令的方式交互式和批处理，如下：
 <a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>cat<span class="w"> </span>hello2.txt
 <a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="c1">#hello</span>
 </code></pre></div>
-<p>使用 &gt;&gt; 来向一个文件追加内容。使用管道（ <em>pipes</em> ），我们能够更好的利用文件重定向。 | 操作符允许我们将一个程序的输出和另外一个程序的输入连接起来。</p>
+<p>使用 &gt;&gt; 来向一个文件追加内容。使用管道（pipes），我们能够更好的利用文件重定向。 | 操作符允许我们将一个程序的输出和另外一个程序的输入连接起来。</p>
 <h2 id="参数和返回值">参数和返回值<a class="headerlink" href="#参数和返回值" title="Permanent link">¶</a></h2>
 <p>在bash中为变量赋值的语法是foo=bar，访问变量中存储的数值，其语法为 $foo。 需要注意的是，foo = bar （使用空格隔开）是不能正确工作的，因为解释器会调用程序foo 并将 = 和 bar作为参数。 总的来说，在shell脚本中使用空格会起到分割参数的作用，有时候可能会造成混淆，请务必多加检查。</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nv">foo</span><span class="o">=</span>bar
