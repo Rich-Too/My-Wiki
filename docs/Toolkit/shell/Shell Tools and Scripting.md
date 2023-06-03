@@ -166,7 +166,7 @@ for arg in reversed(sys.argv[1:]):
 
 ### 查找文件
 
-```
+```bash
 find
 # 查找所有名称为src的文件夹
 find . -name src -type d
@@ -182,16 +182,14 @@ find . -name '*.tmp' -exec rm {} \\\\;
 find . -name '*.png' -exec convert {} {}.jpg \\\\;
 locate
 ```
-
+**locate**
 > locate 使用一个由 updatedb负责更新的数据库，在大多数系统中 updatedb 都会通过 cron 每日更新。find 和类似的工具可以通过别的属性比如文件大小、修改时间或是权限来查找文件，locate则只能通过文件名。 这里有一个更详细的对比。
 
-```
-grep
-```
+**grep**
 
 > grep 有很多选项，这也使它成为一个非常全能的工具。其中我经常使用的有 -C ：获取查找结果的上下文（Context）；-v 将对结果进行反选（Invert），也就是输出不匹配的结果。举例来说， grep -C 5 会输出匹配结果前后五行。当需要搜索大量文件的时候，使用 -R 会递归地进入子目录并搜索所有的文本文件。
 
-[rg](https://github.com/BurntSushi/ripgrep)是一种替代品。
+[**rg**](https://github.com/BurntSushi/ripgrep)是一种替代品。
 
 ```bash
 # 查找所有使用了 requests 库的文件

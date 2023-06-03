@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "PingFangSC-Medium";
+    src: url("./苹方-简.ttf");
+}
+:root {
+  --md-text-font: "PingFangSC"; 
+}

@@ -73,7 +73,7 @@ https://linux265.com/course/vim-cursor-movement.html
 自定义Vim启动时候dashboard内容
 
 - 获取图案表示[Spring Boot banner在线生成工具](https://gitee.com/link?target=https%3A%2F%2Fwww.bootschool.net%2Fascii),选择类型为`ANSI Shadow`
-- 获取Vim形式[vim-dashboard-header-make](https://chenxuan520.gitee.io/chenxuanweb/header.html)(花了一点自己时间做的,因为不怎么写前端,画面比较差)
+- 获取Vim形式[vim-dashboard-header-make](https://chenxuan520.gitee.io/chenxuanweb/header.html)
 - 将得到的结果复制到.vimrc中
 
 ZZ：退出Vim；如果文件被修改，则先保存文件再退出。(等价于 :x 命令)
