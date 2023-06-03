@@ -75,10 +75,7 @@ Linux 下，其值为：
  ('.\\do\\python', [], ['hello_justdopython.txt'])
 ```
 
-
-
-<img src="static/v2-8be123b0dcf72bc5c03f764328531b91_b.jpg" alt="img" style="zoom:50%;" />
-
+![](static/v2-8be123b0dcf72bc5c03f764328531b91_b.jpg)
 
 
 ### **2.4 os.listdir()**
