@@ -6,16 +6,14 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://rich-too.github.io/My-Wiki/Toolkit/git/01.Git%E8%B5%B7%E6%AD%A5/" rel="canonical"/>
-<link href="../" rel="prev"/>
-<link href="../02.Git%E5%9F%BA%E7%A1%80/" rel="next"/>
 <link href="../../../assets/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.8" name="generator"/>
 <title>Git起步 - RichToo的垃圾堆</title>
 <link href="../../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Fira Sans";--md-code-font:"Roboto Mono"}</style>
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Noto Serif";--md-code-font:"Roboto Mono"}</style>
 <link href="../../../css/extra.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -128,7 +126,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../../">
+<a class="md-tabs__link" href="../../">
         开发工具
       </a>
 </li>
@@ -165,21 +163,18 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
-          主页
-          <span class="md-nav__icon md-icon"></span>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../..">主页</a>
+<label for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
           主页
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../..">
-        Welcome to MkDocs
-      </a>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../me/">
         关于我
@@ -188,99 +183,46 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          开发工具
-          <span class="md-nav__icon md-icon"></span>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../">开发工具</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
           开发工具
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../">
-        这里记载了一些实用工具
-      </a>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-          Git
-          <span class="md-nav__icon md-icon"></span>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../">Git</a>
+<label for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_2">
 <span class="md-nav__icon md-icon"></span>
           Git
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../">
-        这里是git
-      </a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Git起步
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<a class="md-nav__link" href="../Git起步.md">
         Git起步
       </a>
-<nav aria-label="目录" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#git是什么">
-    Git是什么？
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#git的特性">
-    Git的特性
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#三种状态">
-    三种状态
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#git配置">
-    Git配置
-  </a>
-<nav aria-label="Git配置" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#配置信息">
-    配置信息
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#用户信息">
-    用户信息
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../02.Git%E5%9F%BA%E7%A1%80/">
+<a class="md-nav__link" href="../Git基础.md">
         Git基础
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../03.%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%B8%8E%E5%88%86%E6%94%AF/">
+<a class="md-nav__link" href="../远程仓库与分支.md">
         Git远程仓库与分支
       </a>
 </li>
@@ -405,6 +347,16 @@
     用户信息
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#如何认证身份">
+    如何认证身份？
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#本地的项目上传到github">
+    本地的项目上传到GitHub
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -430,8 +382,8 @@
 <li>保证完整性
 Git 用以计算校验和的机制叫做 SHA-1 散列（hash，哈希）。 这是一个由 40 个十六进制字符（0-9 和 a-f）组成的字符串，基于 Git 中文件的内容或目录结构计算出来。 SHA-1哈希看起来是这样：</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>24b9da6552252987aa493b52f8696cd6d3b00373
-</code></pre></div>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>24b9da6552252987aa493b52f8696cd6d3b00373
+</span></code></pre></div>
 - 一般只添加数据</p>
 <h2 id="三种状态"><strong>三种状态</strong><a class="headerlink" href="#三种状态" title="Permanent link">¶</a></h2>
 <p>文件有三种状态，可能处于其中之一：已提交（committed）、已修改（modified）和已暂存（staged）。</p>
@@ -463,12 +415,23 @@ Git 用以计算校验和的机制叫做 SHA-1 散列（hash，哈希）。 这�
 <p>我没有mac，所以先不写了。</p>
 <h3 id="用户信息">用户信息<a class="headerlink" href="#用户信息" title="Permanent link">¶</a></h3>
 <p>安装完Git之后，设置用户名和邮件地址，每一个Git提交都会使用这些信息，它们会写入到每一次提交中，不可更改。</p>
+<h3 id="如何认证身份">如何认证身份？<a class="headerlink" href="#如何认证身份" title="Permanent link">¶</a></h3>
+<p>创建 SSH Key.</p>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-C<span class="w"> </span><span class="s2">"youremail@example.com"</span>
+</span></code></pre></div>
+<p>查看<code>.ssh</code>目录，里面有<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件。<code>id_rsa</code>是私钥，<code>id_rsa.pub</code>是公钥.</p>
+<p>GitHub→setting→SSH and GPG keys 添加<code>id_rsa.pub</code>。</p>
+<h3 id="本地的项目上传到github">本地的项目上传到GitHub<a class="headerlink" href="#本地的项目上传到github" title="Permanent link">¶</a></h3>
+<p>连接远程仓库：</p>
+<p><code>git remote add origin git@github.com:yourGitHubId/testRepo.git</code> 注意使用 ssh。</p>
+<p>首次push：</p>
+<p><code>git push -u origin master</code></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年1月31日 01:16:47</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年6月3日 18:41:09</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年1月30日 20:04:02</span>
@@ -476,7 +439,12 @@ Git 用以计算校验和的机制叫做 SHA-1 散列（hash，哈希）。 这�
 </div>
 </article>
 </div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
 </div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            回到页面顶部
+          </a>
 </main>
 <footer class="md-footer">
 <div class="md-footer-meta md-typeset">
@@ -496,7 +464,7 @@ Git 用以计算校验和的机制叫做 SHA-1 散列（hash，哈希）。 这�
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "content.code.annotate", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.path", "toc.follow", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.code.select"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
 <script src="../../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>

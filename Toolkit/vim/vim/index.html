@@ -14,8 +14,8 @@
 <link href="../../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Fira Sans";--md-code-font:"Roboto Mono"}</style>
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Noto Serif";--md-code-font:"Roboto Mono"}</style>
 <link href="../../../css/extra.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -165,21 +165,18 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
-          主页
-          <span class="md-nav__icon md-icon"></span>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../..">主页</a>
+<label for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
           主页
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../..">
-        Welcome to MkDocs
-      </a>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../me/">
         关于我
@@ -190,27 +187,26 @@
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          开发工具
-          <span class="md-nav__icon md-icon"></span>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../">开发工具</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
           开发工具
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../">
-        这里记载了一些实用工具
-      </a>
-</li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-          Git
-          <span class="md-nav__icon md-icon"></span>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../git/">Git</a>
+<label for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_2">
 <span class="md-nav__icon md-icon"></span>
@@ -218,22 +214,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../git/">
-        这里是git
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../git/01.Git%E8%B5%B7%E6%AD%A5/">
+<a class="md-nav__link" href="../../git/Git起步.md">
         Git起步
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../git/02.Git%E5%9F%BA%E7%A1%80/">
+<a class="md-nav__link" href="../../git/Git基础.md">
         Git基础
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../git/03.%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%B8%8E%E5%88%86%E6%94%AF/">
+<a class="md-nav__link" href="../../git/远程仓库与分支.md">
         Git远程仓库与分支
       </a>
 </li>
@@ -401,13 +392,13 @@
 <p><a href="https://linux265.com/course/vim-cursor-movement.html">https://linux265.com/course/vim-cursor-movement.html</a></p>
 <h2 id="0-配置">0. 配置<a class="headerlink" href="#0-配置" title="Permanent link">¶</a></h2>
 <p>对于VSCode：</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>"vim.handleKeys": {
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    "&lt;C-a&gt;": false,
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>    "&lt;C-f&gt;": false,
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    "&lt;C-n&gt;": false,
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>    "&lt;C-w&gt;": false
-<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>}, # Vim中的CTRL + a 等不会被应用
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>"vim.handleKeys": {
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    "&lt;C-a&gt;": false,
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>    "&lt;C-f&gt;": false,
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    "&lt;C-n&gt;": false,
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>    "&lt;C-w&gt;": false
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>}, # Vim中的CTRL + a 等不会被应用
+</span></code></pre></div>
 <h2 id="1-回退命令行">1. 回退命令行<a class="headerlink" href="#1-回退命令行" title="Permanent link">¶</a></h2>
 <p>【:w】 保存文件
 【:w!】 若文件为只读，强制保存文件
@@ -456,11 +447,11 @@
 </table>
 <h2 id="3-复制粘贴">3. 复制粘贴<a class="headerlink" href="#3-复制粘贴" title="Permanent link">¶</a></h2>
 <p>如果要把数据从vim拷贝到系统剪切板，需要在<strong>visual模式</strong>下执行</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>"+y
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>"+y
+</span></code></pre></div>
 <p>从浏览器Ctrl+c后，要粘贴到vim中，则需要</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>"+p
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>"+p
+</span></code></pre></div>
 <ul>
 <li>
 <p><code>"</code>号粘贴板（临时粘贴板）比较特殊，直接按 <code>y</code> 就复制到这个粘贴板中了，直接按 <code>p</code> 就粘贴这个粘贴板中的内容</p>
@@ -532,7 +523,7 @@
 <p>自定义Vim启动时候dashboard内容</p>
 <ul>
 <li>获取图案表示<a href="https://gitee.com/link?target=https%3A%2F%2Fwww.bootschool.net%2Fascii">Spring Boot banner在线生成工具</a>,选择类型为<code>ANSI Shadow</code></li>
-<li>获取Vim形式<a href="https://chenxuan520.gitee.io/chenxuanweb/header.html">vim-dashboard-header-make</a>(花了一点自己时间做的,因为不怎么写前端,画面比较差)</li>
+<li>获取Vim形式<a href="https://chenxuan520.gitee.io/chenxuanweb/header.html">vim-dashboard-header-make</a></li>
 <li>将得到的结果复制到.vimrc中</li>
 </ul>
 <p>ZZ：退出Vim；如果文件被修改，则先保存文件再退出。(等价于 :x 命令)</p>
@@ -552,7 +543,7 @@
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年6月2日 12:38:55</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年6月3日 18:41:09</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年6月2日 12:38:55</span>
@@ -560,7 +551,12 @@
 </div>
 </article>
 </div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
 </div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            回到页面顶部
+          </a>
 </main>
 <footer class="md-footer">
 <div class="md-footer-meta md-typeset">
@@ -580,7 +576,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "content.code.annotate", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.path", "toc.follow", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.code.select"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
 <script src="../../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
