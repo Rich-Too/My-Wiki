@@ -46,7 +46,6 @@ theme:
   font:
     text: Noto Serif
     code: Roboto Mono
-    # text: false
 
 markdown_extensions:
   - toc:
@@ -129,9 +128,9 @@ nav:
     - Toolkit/index.md
     - Git: 
       - Toolkit/git/index.md
-      - Git起步: Toolkit/git/Git起步.md
-      - Git基础: Toolkit/git/Git基础.md
-      - Git远程仓库与分支: Toolkit/git/远程仓库与分支.md
+      - Git起步: Toolkit/git/01.Git起步.md
+      - Git基础: Toolkit/git/02.Git基础.md
+      - Git远程仓库与分支: Toolkit/git/03.远程仓库与分支.md
       - Git常用命令: Toolkit/git/git常用命令.md 
     - Vim: Toolkit/vim/vim.md
     - Shell: Toolkit/shell/Shell Tools and Scripting.md

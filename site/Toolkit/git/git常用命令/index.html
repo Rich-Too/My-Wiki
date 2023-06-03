@@ -14,8 +14,8 @@
 <link href="../../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Fira Sans";--md-code-font:"Roboto Mono"}</style>
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Noto Serif";--md-code-font:"Roboto Mono"}</style>
 <link href="../../../css/extra.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -165,21 +165,18 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
-          主页
-          <span class="md-nav__icon md-icon"></span>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../..">主页</a>
+<label for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
           主页
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../..">
-        Welcome to MkDocs
-      </a>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../me/">
         关于我
@@ -190,38 +187,32 @@
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-          开发工具
-          <span class="md-nav__icon md-icon"></span>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../">开发工具</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
           开发工具
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../">
-        这里记载了一些实用工具
-      </a>
-</li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-          Git
-          <span class="md-nav__icon md-icon"></span>
+<div class="md-nav__link md-nav__link--index">
+<a href="../">Git</a>
+<label for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-expanded="true" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_2">
 <span class="md-nav__icon md-icon"></span>
           Git
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../">
-        这里是git
-      </a>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../01.Git%E8%B5%B7%E6%AD%A5/">
         Git起步
@@ -560,127 +551,127 @@
 <h1 id="git常用命令">git常用命令<a class="headerlink" href="#git常用命令" title="Permanent link">¶</a></h1>
 <h3 id="git-clone">git clone<a class="headerlink" href="#git-clone" title="Permanent link">¶</a></h3>
 <p>git clone 命令用于将存储库克隆到本地。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span><span class="o">[</span>url<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>将存储库克隆到本地
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span><span class="o">[</span>url<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>将存储库克隆到本地
+</span></code></pre></div>
 <h3 id="git-init">git init<a class="headerlink" href="#git-init" title="Permanent link">¶</a></h3>
 <p>git init 命令用于在目录中创建新的 Git 仓库。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>git<span class="w"> </span>init<span class="w"> </span>//<span class="w"> </span>创建新的<span class="w"> </span>Git<span class="w"> </span>仓库，在当前路径下生成<span class="w"> </span>.git<span class="w"> </span>目录
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>git<span class="w"> </span>init<span class="w"> </span>//<span class="w"> </span>创建新的<span class="w"> </span>Git<span class="w"> </span>仓库，在当前路径下生成<span class="w"> </span>.git<span class="w"> </span>目录
+</span></code></pre></div>
 <h3 id="git-remote">git remote<a class="headerlink" href="#git-remote" title="Permanent link">¶</a></h3>
 <p>git remote 用于管理跟踪远程仓库。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>git<span class="w"> </span>remote<span class="w"> </span>-v<span class="w"> </span>//<span class="w"> </span>查看连接的远程仓库地址
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span><span class="o">[</span>gitUrl<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>为本地仓库添加远程仓库地址
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>master<span class="w"> </span>//<span class="w"> </span>将本地仓库的master和远程仓库的master进行关联
-<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>git<span class="w"> </span>remote<span class="w"> </span>origin<span class="w"> </span>set-url<span class="w"> </span><span class="o">[</span>gitUrl<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>为本地仓库修改远程仓库地址
-<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>git<span class="w"> </span>remote<span class="w"> </span>rm<span class="w"> </span>origin<span class="w"> </span>//<span class="w"> </span>为本地仓库删除远程仓库连接
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>git<span class="w"> </span>remote<span class="w"> </span>-v<span class="w"> </span>//<span class="w"> </span>查看连接的远程仓库地址
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span><span class="o">[</span>gitUrl<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>为本地仓库添加远程仓库地址
+</span><span id="__span-2-3"><a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>master<span class="w"> </span>//<span class="w"> </span>将本地仓库的master和远程仓库的master进行关联
+</span><span id="__span-2-4"><a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>git<span class="w"> </span>remote<span class="w"> </span>origin<span class="w"> </span>set-url<span class="w"> </span><span class="o">[</span>gitUrl<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>为本地仓库修改远程仓库地址
+</span><span id="__span-2-5"><a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>git<span class="w"> </span>remote<span class="w"> </span>rm<span class="w"> </span>origin<span class="w"> </span>//<span class="w"> </span>为本地仓库删除远程仓库连接
+</span></code></pre></div>
 <h3 id="git-checkout">git checkout<a class="headerlink" href="#git-checkout" title="Permanent link">¶</a></h3>
 <p>git checkout 命令用于切换分支。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>git<span class="w"> </span>checkout<span class="w"> </span><span class="o">[</span>branchName<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>切换分支
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span><span class="o">[</span>branchName<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>新建分支并切换到该分支
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>git<span class="w"> </span>checkout<span class="w"> </span><span class="o">[</span>branchName<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>切换分支
+</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span><span class="o">[</span>branchName<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>新建分支并切换到该分支
+</span></code></pre></div>
 <h3 id="git-branch">git branch<a class="headerlink" href="#git-branch" title="Permanent link">¶</a></h3>
 <p>git branch 命令用于查看、创建、删除分支。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>git<span class="w"> </span>branch<span class="w"> </span>//查看本地分支
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>git<span class="w"> </span>branch<span class="w"> </span>-r<span class="w"> </span>//查看远程分支
-<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>git<span class="w"> </span>branch<span class="w"> </span>-a<span class="w"> </span>//查看本地和远程分支
-<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>git<span class="w"> </span>branch<span class="w"> </span><span class="o">[</span>branchName<span class="o">]</span><span class="w"> </span>//新建本地分支但不切换
-<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span><span class="o">[</span>branchName<span class="o">]</span><span class="w"> </span>//删除本地分支
-<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a>git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span><span class="o">[</span>oldBranchName<span class="o">]</span><span class="w"> </span><span class="o">[</span>newBranchName<span class="o">]</span><span class="w"> </span>//重新命名分支
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>git<span class="w"> </span>branch<span class="w"> </span>//查看本地分支
+</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>git<span class="w"> </span>branch<span class="w"> </span>-r<span class="w"> </span>//查看远程分支
+</span><span id="__span-4-3"><a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>git<span class="w"> </span>branch<span class="w"> </span>-a<span class="w"> </span>//查看本地和远程分支
+</span><span id="__span-4-4"><a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>git<span class="w"> </span>branch<span class="w"> </span><span class="o">[</span>branchName<span class="o">]</span><span class="w"> </span>//新建本地分支但不切换
+</span><span id="__span-4-5"><a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span><span class="o">[</span>branchName<span class="o">]</span><span class="w"> </span>//删除本地分支
+</span><span id="__span-4-6"><a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a>git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span><span class="o">[</span>oldBranchName<span class="o">]</span><span class="w"> </span><span class="o">[</span>newBranchName<span class="o">]</span><span class="w"> </span>//重新命名分支
+</span></code></pre></div>
 <h3 id="git-tag">git tag<a class="headerlink" href="#git-tag" title="Permanent link">¶</a></h3>
 <p>git tag 用于创建、删除、查看标签。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>git<span class="w"> </span>tag<span class="w"> </span><span class="o">[</span>tagName<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>新建标签
-<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>git<span class="w"> </span>tag<span class="w"> </span>//<span class="w"> </span>查看标签列表
-<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>git<span class="w"> </span>tag<span class="w"> </span>-d<span class="w"> </span><span class="o">[</span>tagName<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>删除标签
-<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span><span class="o">[</span>tagName<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>推送标签到远程仓库
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>git<span class="w"> </span>tag<span class="w"> </span><span class="o">[</span>tagName<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>新建标签
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>git<span class="w"> </span>tag<span class="w"> </span>//<span class="w"> </span>查看标签列表
+</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>git<span class="w"> </span>tag<span class="w"> </span>-d<span class="w"> </span><span class="o">[</span>tagName<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>删除标签
+</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span><span class="o">[</span>tagName<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>推送标签到远程仓库
+</span></code></pre></div>
 <h3 id="git-add">git add<a class="headerlink" href="#git-add" title="Permanent link">¶</a></h3>
 <p><strong>git add</strong> 命令用于将本地文件添加到暂存区。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>git<span class="w"> </span>add<span class="w"> </span><span class="o">[</span>file1<span class="o">]</span><span class="w"> </span><span class="o">[</span>file2<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>添加指定文件至暂存区
-<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>git<span class="w"> </span>add<span class="w"> </span><span class="o">[</span>dir<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>添加指定目录至暂存区
-<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>git<span class="w"> </span>add<span class="w"> </span>.<span class="w"> </span>//<span class="w"> </span>添加当前目录下所有文件至暂存区
-<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>git<span class="w"> </span>add<span class="w"> </span>-A<span class="w"> </span>//<span class="w"> </span>添加当前仓库下的所有文件改动至暂存区
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>git<span class="w"> </span>add<span class="w"> </span><span class="o">[</span>file1<span class="o">]</span><span class="w"> </span><span class="o">[</span>file2<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>添加指定文件至暂存区
+</span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>git<span class="w"> </span>add<span class="w"> </span><span class="o">[</span>dir<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>添加指定目录至暂存区
+</span><span id="__span-6-3"><a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>git<span class="w"> </span>add<span class="w"> </span>.<span class="w"> </span>//<span class="w"> </span>添加当前目录下所有文件至暂存区
+</span><span id="__span-6-4"><a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>git<span class="w"> </span>add<span class="w"> </span>-A<span class="w"> </span>//<span class="w"> </span>添加当前仓库下的所有文件改动至暂存区
+</span></code></pre></div>
 <h3 id="git-commit">git commit<a class="headerlink" href="#git-commit" title="Permanent link">¶</a></h3>
 <p>git commit 命令用于将暂存区内容添加到本地仓库中。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">'xxx'</span><span class="w"> </span>//<span class="w"> </span>将暂存区文件添加到本地仓库，并记录下备注
-<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">'xxx'</span><span class="w"> </span>-n<span class="w"> </span>//<span class="w"> </span>将暂存区文件添加到本地仓库，并记录下备注，同时跳过<span class="w"> </span>husky<span class="w"> </span>hooks<span class="w"> </span>设置的规则校验
-<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s1">'xxx'</span><span class="w"> </span>//<span class="w"> </span>将文件添加到暂存区，再添加到本地仓库，并记录下备注
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">'xxx'</span><span class="w"> </span>//<span class="w"> </span>将暂存区文件添加到本地仓库，并记录下备注
+</span><span id="__span-7-2"><a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">'xxx'</span><span class="w"> </span>-n<span class="w"> </span>//<span class="w"> </span>将暂存区文件添加到本地仓库，并记录下备注，同时跳过<span class="w"> </span>husky<span class="w"> </span>hooks<span class="w"> </span>设置的规则校验
+</span><span id="__span-7-3"><a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s1">'xxx'</span><span class="w"> </span>//<span class="w"> </span>将文件添加到暂存区，再添加到本地仓库，并记录下备注
+</span></code></pre></div>
 <h3 id="git-push">git push<a class="headerlink" href="#git-push" title="Permanent link">¶</a></h3>
 <p>git push 命令用于将本地分支推送到远程仓库。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>git<span class="w"> </span>push<span class="w"> </span><span class="o">[</span>remoteName<span class="o">]</span><span class="w"> </span><span class="o">[</span>branchName<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>推送分支
-<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>git<span class="w"> </span>push<span class="w"> </span>--set-upstream<span class="w"> </span><span class="o">[</span>remoteName<span class="o">]</span><span class="w"> </span><span class="o">[</span>branchName<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>推送分支并建立关联关系
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>git<span class="w"> </span>push<span class="w"> </span><span class="o">[</span>remoteName<span class="o">]</span><span class="w"> </span><span class="o">[</span>branchName<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>推送分支
+</span><span id="__span-8-2"><a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>git<span class="w"> </span>push<span class="w"> </span>--set-upstream<span class="w"> </span><span class="o">[</span>remoteName<span class="o">]</span><span class="w"> </span><span class="o">[</span>branchName<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>推送分支并建立关联关系
+</span></code></pre></div>
 <h3 id="git-pull">git pull<a class="headerlink" href="#git-pull" title="Permanent link">¶</a></h3>
 <p>git pull 命令用于从远程仓库拉取代码并合并到本地当前分支。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>git<span class="w"> </span>pull<span class="w"> </span>//<span class="w"> </span>从远程仓库拉取代码合并到本地，等同于<span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>merge
-<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>git<span class="w"> </span>pull<span class="w"> </span>--rebase<span class="w"> </span>//<span class="w"> </span>使用rebase的模式进行合并
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>git<span class="w"> </span>pull<span class="w"> </span>//<span class="w"> </span>从远程仓库拉取代码合并到本地，等同于<span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>merge
+</span><span id="__span-9-2"><a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>git<span class="w"> </span>pull<span class="w"> </span>--rebase<span class="w"> </span>//<span class="w"> </span>使用rebase的模式进行合并
+</span></code></pre></div>
 <h3 id="git-fetch">git fetch<a class="headerlink" href="#git-fetch" title="Permanent link">¶</a></h3>
 <p>git fetch 命令用于从远程获取代码库。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>git<span class="w"> </span>fetch<span class="w"> </span>//<span class="w"> </span>从所有远程仓库拉取当前分支代码
-<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>git<span class="w"> </span>fetch<span class="w"> </span><span class="o">[</span>remoteName<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>从指定远程仓库拉取当前分支代码
-<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a>git<span class="w"> </span>fetch<span class="w"> </span>--all<span class="w"> </span>//<span class="w"> </span>获取所有远程仓库所有分支的更新
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>git<span class="w"> </span>fetch<span class="w"> </span>//<span class="w"> </span>从所有远程仓库拉取当前分支代码
+</span><span id="__span-10-2"><a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>git<span class="w"> </span>fetch<span class="w"> </span><span class="o">[</span>remoteName<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>从指定远程仓库拉取当前分支代码
+</span><span id="__span-10-3"><a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a>git<span class="w"> </span>fetch<span class="w"> </span>--all<span class="w"> </span>//<span class="w"> </span>获取所有远程仓库所有分支的更新
+</span></code></pre></div>
 <h3 id="git-cherry-pick">git cherry-pick<a class="headerlink" href="#git-cherry-pick" title="Permanent link">¶</a></h3>
 <p>git cherry-pick 命令用于获取指定的 commit，可以将分支 a 上的 commit 1，复制到分支 b上。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>git<span class="w"> </span>cherry-pick<span class="w"> </span><span class="o">[</span>commitId<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>获取指定的commit
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>git<span class="w"> </span>cherry-pick<span class="w"> </span><span class="o">[</span>commitId<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>获取指定的commit
+</span></code></pre></div>
 <h3 id="git-merge">git merge<a class="headerlink" href="#git-merge" title="Permanent link">¶</a></h3>
 <p>git merge 命令用于分支合并，将其他分支的内容合并到当前分支中。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>git<span class="w"> </span>merge<span class="w"> </span><span class="o">[</span>branchName<span class="o">]</span>
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>git<span class="w"> </span>merge<span class="w"> </span><span class="o">[</span>branchName<span class="o">]</span>
+</span></code></pre></div>
 <h3 id="git-rebase">git rebase<a class="headerlink" href="#git-rebase" title="Permanent link">¶</a></h3>
 <p>git rebase 用于分支变基。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>git<span class="w"> </span>rebase<span class="w"> </span>master<span class="w"> </span>//<span class="w"> </span>将当前分支变基到<span class="w"> </span>master<span class="w"> </span>分支上
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>git<span class="w"> </span>rebase<span class="w"> </span>master<span class="w"> </span>//<span class="w"> </span>将当前分支变基到<span class="w"> </span>master<span class="w"> </span>分支上
+</span></code></pre></div>
 <p>git rebase -i 交互模式：</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span><span class="o">[</span>commitId<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>基于<span class="w"> </span>commitId<span class="w"> </span>进行<span class="w"> </span>rebase，交互式变基，可以重新编辑<span class="w"> </span>commit，比如压缩合并
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-14-1"><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span><span class="o">[</span>commitId<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>基于<span class="w"> </span>commitId<span class="w"> </span>进行<span class="w"> </span>rebase，交互式变基，可以重新编辑<span class="w"> </span>commit，比如压缩合并
+</span></code></pre></div>
 <h3 id="git-reset">git reset<a class="headerlink" href="#git-reset" title="Permanent link">¶</a></h3>
 <p>git reset 命令用于回退版本，可以指定退回某一次提交的版本。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>git<span class="w"> </span>reset<span class="w"> </span>HEAD^<span class="w"> </span>//<span class="w"> </span>回退所有内容到上一个版本
-<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a>git<span class="w"> </span>reset<span class="w"> </span>HEAD^<span class="w"> </span><span class="o">[</span>filename<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>回退某文件到上一个版本
-<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a>git<span class="w"> </span>reset<span class="w"> </span><span class="o">[</span>commitId<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>回退所有内容到指定版本
-<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a>git<span class="w"> </span>reset<span class="w"> </span>--soft<span class="w"> </span>HEAD~1<span class="w"> </span>//<span class="w"> </span>回退本地仓库到上一个版本
-<a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD~1<span class="w"> </span>//<span class="w"> </span>回退本地仓库到上一个版本，并删除工作区所有未提交的修改内容
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-15-1"><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>git<span class="w"> </span>reset<span class="w"> </span>HEAD^<span class="w"> </span>//<span class="w"> </span>回退所有内容到上一个版本
+</span><span id="__span-15-2"><a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a>git<span class="w"> </span>reset<span class="w"> </span>HEAD^<span class="w"> </span><span class="o">[</span>filename<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>回退某文件到上一个版本
+</span><span id="__span-15-3"><a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a>git<span class="w"> </span>reset<span class="w"> </span><span class="o">[</span>commitId<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>回退所有内容到指定版本
+</span><span id="__span-15-4"><a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a>git<span class="w"> </span>reset<span class="w"> </span>--soft<span class="w"> </span>HEAD~1<span class="w"> </span>//<span class="w"> </span>回退本地仓库到上一个版本
+</span><span id="__span-15-5"><a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD~1<span class="w"> </span>//<span class="w"> </span>回退本地仓库到上一个版本，并删除工作区所有未提交的修改内容
+</span></code></pre></div>
 <h3 id="git-revert">git revert<a class="headerlink" href="#git-revert" title="Permanent link">¶</a></h3>
 <p>git revert 指令用于回滚提交，可以回滚某一次提交记录。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>git<span class="w"> </span>revert<span class="w"> </span><span class="o">[</span>commitId<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>回滚某次提交
-<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a>git<span class="w"> </span>revert<span class="w"> </span><span class="o">[</span>commitId<span class="o">]</span><span class="w"> </span>-m<span class="w"> </span><span class="m">1</span><span class="w"> </span>//<span class="w"> </span>回滚某次<span class="w"> </span>merge<span class="w"> </span>的<span class="w"> </span>commit，1<span class="w"> </span>代表保留主分支代码
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-16-1"><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>git<span class="w"> </span>revert<span class="w"> </span><span class="o">[</span>commitId<span class="o">]</span><span class="w"> </span>//<span class="w"> </span>回滚某次提交
+</span><span id="__span-16-2"><a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a>git<span class="w"> </span>revert<span class="w"> </span><span class="o">[</span>commitId<span class="o">]</span><span class="w"> </span>-m<span class="w"> </span><span class="m">1</span><span class="w"> </span>//<span class="w"> </span>回滚某次<span class="w"> </span>merge<span class="w"> </span>的<span class="w"> </span>commit，1<span class="w"> </span>代表保留主分支代码
+</span></code></pre></div>
 <h3 id="git-stash">git stash<a class="headerlink" href="#git-stash" title="Permanent link">¶</a></h3>
 <p>git stash 用于暂存文件。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>git<span class="w"> </span>stash<span class="w"> </span>//<span class="w"> </span>暂存文件
-<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a>git<span class="w"> </span>stash<span class="w"> </span>save<span class="w"> </span><span class="s1">'aa'</span><span class="w"> </span>//<span class="w"> </span>暂存文件，添加备注
-<a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a>git<span class="w"> </span>stash<span class="w"> </span>pop<span class="w"> </span>//<span class="w"> </span>应用最近一次暂存文件，并删除暂存记录
-<a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a>git<span class="w"> </span>stash<span class="w"> </span>apply<span class="w"> </span>//<span class="w"> </span>应用最近一次暂存，但不删除该暂存记录
-<a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a>git<span class="w"> </span>stash<span class="w"> </span>apply<span class="w"> </span>stash@<span class="o">{</span>第几次暂存的代码，例如0<span class="o">}</span><span class="w"> </span>//<span class="w"> </span>应用某一次暂存，但不删除该暂存记录；
-<a href="#__codelineno-17-6" id="__codelineno-17-6" name="__codelineno-17-6"></a>git<span class="w"> </span>stash<span class="w"> </span>list<span class="w"> </span>//<span class="w"> </span>暂存记录
-<a href="#__codelineno-17-7" id="__codelineno-17-7" name="__codelineno-17-7"></a>git<span class="w"> </span>stash<span class="w"> </span>clear<span class="w"> </span>//<span class="w"> </span>删除所有暂存记录
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-17-1"><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>git<span class="w"> </span>stash<span class="w"> </span>//<span class="w"> </span>暂存文件
+</span><span id="__span-17-2"><a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a>git<span class="w"> </span>stash<span class="w"> </span>save<span class="w"> </span><span class="s1">'aa'</span><span class="w"> </span>//<span class="w"> </span>暂存文件，添加备注
+</span><span id="__span-17-3"><a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a>git<span class="w"> </span>stash<span class="w"> </span>pop<span class="w"> </span>//<span class="w"> </span>应用最近一次暂存文件，并删除暂存记录
+</span><span id="__span-17-4"><a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a>git<span class="w"> </span>stash<span class="w"> </span>apply<span class="w"> </span>//<span class="w"> </span>应用最近一次暂存，但不删除该暂存记录
+</span><span id="__span-17-5"><a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a>git<span class="w"> </span>stash<span class="w"> </span>apply<span class="w"> </span>stash@<span class="o">{</span>第几次暂存的代码，例如0<span class="o">}</span><span class="w"> </span>//<span class="w"> </span>应用某一次暂存，但不删除该暂存记录；
+</span><span id="__span-17-6"><a href="#__codelineno-17-6" id="__codelineno-17-6" name="__codelineno-17-6"></a>git<span class="w"> </span>stash<span class="w"> </span>list<span class="w"> </span>//<span class="w"> </span>暂存记录
+</span><span id="__span-17-7"><a href="#__codelineno-17-7" id="__codelineno-17-7" name="__codelineno-17-7"></a>git<span class="w"> </span>stash<span class="w"> </span>clear<span class="w"> </span>//<span class="w"> </span>删除所有暂存记录
+</span></code></pre></div>
 <h3 id="git-reflog">git reflog<a class="headerlink" href="#git-reflog" title="Permanent link">¶</a></h3>
 <p>git reflog 记录了所有的 commit 操作记录，便于错误操作后找回。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>git<span class="w"> </span>reflog
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-18-1"><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>git<span class="w"> </span>reflog
+</span></code></pre></div>
 <h3 id="git-rm">git rm<a class="headerlink" href="#git-rm" title="Permanent link">¶</a></h3>
 <p>git rm 用于从 git 仓库删除指定文件或目录。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a>git<span class="w"> </span>rm<span class="w"> </span><span class="o">[</span>filname<span class="o">]</span>
-<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a>git<span class="w"> </span>rm<span class="w"> </span><span class="o">[</span>dir<span class="o">]</span>
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-19-1"><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a>git<span class="w"> </span>rm<span class="w"> </span><span class="o">[</span>filname<span class="o">]</span>
+</span><span id="__span-19-2"><a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a>git<span class="w"> </span>rm<span class="w"> </span><span class="o">[</span>dir<span class="o">]</span>
+</span></code></pre></div>
 <h3 id="git-log">git log<a class="headerlink" href="#git-log" title="Permanent link">¶</a></h3>
 <p>git log 命令用于查看 git commit 记录。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>git<span class="w"> </span>log<span class="w"> </span>//<span class="w"> </span>查看所有<span class="w"> </span>commit<span class="w"> </span>记录
-<a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a>git<span class="w"> </span>log<span class="w">  </span>--grep<span class="w">  </span>瀑布流<span class="w"> </span>//<span class="w"> </span>搜索<span class="w"> </span>commit<span class="w"> </span>msg<span class="w"> </span>有瀑布流关键字的<span class="w"> </span>记录
-</code></pre></div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-20-1"><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>git<span class="w"> </span>log<span class="w"> </span>//<span class="w"> </span>查看所有<span class="w"> </span>commit<span class="w"> </span>记录
+</span><span id="__span-20-2"><a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a>git<span class="w"> </span>log<span class="w">  </span>--grep<span class="w">  </span>瀑布流<span class="w"> </span>//<span class="w"> </span>搜索<span class="w"> </span>commit<span class="w"> </span>msg<span class="w"> </span>有瀑布流关键字的<span class="w"> </span>记录
+</span></code></pre></div>
 <h3 id="远程库强制覆盖本地">远程库强制覆盖本地<a class="headerlink" href="#远程库强制覆盖本地" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a>git<span class="w"> </span>fetch<span class="w"> </span>--all
-<a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>origin/master
-<a href="#__codelineno-21-3" id="__codelineno-21-3" name="__codelineno-21-3"></a>git<span class="w"> </span>pull
-</code></pre></div>
+<div class="language-BASH highlight"><pre><span></span><code><span id="__span-21-1"><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a>git<span class="w"> </span>fetch<span class="w"> </span>--all
+</span><span id="__span-21-2"><a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>origin/master
+</span><span id="__span-21-3"><a href="#__codelineno-21-3" id="__codelineno-21-3" name="__codelineno-21-3"></a>git<span class="w"> </span>pull
+</span></code></pre></div>
 <hr/>
 <div class="md-source-file">
 <small>
@@ -694,7 +685,12 @@
 </div>
 </article>
 </div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
 </div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            回到页面顶部
+          </a>
 </main>
 <footer class="md-footer">
 <div class="md-footer-meta md-typeset">
@@ -714,7 +710,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "content.code.annotate", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.path", "toc.follow", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.code.select"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
 <script src="../../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
