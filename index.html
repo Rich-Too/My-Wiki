@@ -9,13 +9,16 @@
 <link href="me/" rel="next"/>
 <link href="assets/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.8" name="generator"/>
-<title>Welcome to MkDocs - RichToo的垃圾堆</title>
+<title>Welcome to My Note site. - RichToo的垃圾堆</title>
 <link href="assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Noto+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Noto Serif";--md-code-font:"Roboto Mono"}</style>
 <link href="css/extra.css" rel="stylesheet"/>
+<link href="css/font.css" rel="stylesheet"/>
+<link href="css/heiti.css" rel="stylesheet"/>
+<link href="https://fonts.loli.net/css?family=Noto+Serif+SC" rel="stylesheet"/>
+<link href="https://fonts.loli.net/css?family=Open+Sans" rel="stylesheet"/>
+<link href="https://fonts.loli.net/css?family=JetBrains+Mono" rel="stylesheet"/>
+<link href="https://fonts.loli.net/css?family=Roboto+Mono" rel="stylesheet"/>
 <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -35,7 +38,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#welcome-to-mkdocs">
+<a class="md-skip" href="#welcome-to-my-note-site">
           跳转至
         </a>
 </div>
@@ -59,7 +62,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Welcome to MkDocs
+              Welcome to My Note site.
             
           </span>
 </div>
@@ -318,8 +321,13 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#commands">
-    Commands
+<a class="md-nav__link" href="#mkdocs-commands">
+    Mkdocs Commands
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#import-font">
+    Import font
   </a>
 </li>
 </ul>
@@ -329,9 +337,8 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs<a class="headerlink" href="#welcome-to-mkdocs" title="Permanent link">¶</a></h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">¶</a></h2>
+<h1 id="welcome-to-my-note-site">Welcome to My Note site.<a class="headerlink" href="#welcome-to-my-note-site" title="Permanent link">¶</a></h1>
+<h2 id="mkdocs-commands">Mkdocs Commands<a class="headerlink" href="#mkdocs-commands" title="Permanent link">¶</a></h2>
 <ul>
 <li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
 <li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
@@ -339,12 +346,29 @@
 <li><code>mkdocs -h</code> - Print help message and exit.</li>
 <li><code>mkdocs gh-deploy</code> - Deploy site on Github Pages, which will update gh-pages branch</li>
 </ul>
+<h2 id="import-font">Import font<a class="headerlink" href="#import-font" title="Permanent link">¶</a></h2>
+<p><strong>Global config</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>:root {
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>  --md-text-font: 'Noto Serif SC', serif;
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>  --md-text-font-weight: bold; /* 设置字体加粗 */
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>  --md-code-font: "Roboto Mono";
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>}
+</span></code></pre></div>
+<strong>Frome google fonts</strong></p>
+<p><a href="https://fonts.google.com/">https://fonts.google.com/</a>
+change CDN like below:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>extra_css:
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>  - https://fonts.loli.net/css?family=Noto+Serif+SC
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>  - https://fonts.loli.net/css?family=Open+Sans
+</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>  - https://fonts.loli.net/css?family=JetBrains+Mono
+</span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>  - https://fonts.loli.net/css?family=Roboto+Mono
+</span></code></pre></div></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年6月2日 12:38:55</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年6月3日 20:33:24</span>
 <br/>
         创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年1月30日 20:04:02</span>

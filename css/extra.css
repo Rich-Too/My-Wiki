@@ -1,5 +1,4 @@
-Logo title
-.md-header__topic:first-child {
+Logo title .md-header__topic:first-child {
     font-weight: initial !important;
 }
 
@@ -120,4 +119,24 @@ mjx-container>img {
 
 [data-md-color-scheme="slate"] .md-typeset img[src$=".svg"] {
     border: 4px solid white;
+}
+
+p {
+    font-size: .85rem;
+}
+
+li {
+    font-size: 0.85rem;
+}
+
+ul .md-nav__item {
+    font-size: 0.75rem
+}
+
+.md-header__title {
+    font-size: 1.1rem;
+}
+
+.md-tabs__item .md-tabs__link {
+    font-size: 0.85rem;
 }
