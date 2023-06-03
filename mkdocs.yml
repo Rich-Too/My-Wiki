@@ -129,7 +129,7 @@ plugins:
       timezone: Asia/Shanghai
       locale: zh
   - glightbox # add image zoom functionality
-
+  - statistics
 nav:
   - 主页: 
     - index.md
