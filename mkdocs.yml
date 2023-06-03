@@ -43,9 +43,9 @@ theme:
   include_search_page: false
   search_index_only: true
 
-  font:
-    text: Noto Serif
-    code: Roboto Mono
+  font: false
+    # text: Noto Serif
+    # code: Roboto Mono
 
 markdown_extensions:
   - toc:
@@ -85,7 +85,6 @@ markdown_extensions:
   - pymdownx.snippets:
       auto_append:
         - includes/abbreviations.md
-  # superfences tabbed --> Content tabs
   - pymdownx.superfences: 
       custom_fences:
         - name: mermaid
@@ -102,6 +101,13 @@ markdown_extensions:
 
 extra_css:
   - css/extra.css
+  - css/font.css
+  - css/heiti.css
+  - https://fonts.loli.net/css?family=Noto+Serif+SC
+  - https://fonts.loli.net/css?family=Open+Sans
+  - https://fonts.loli.net/css?family=JetBrains+Mono
+  - https://fonts.loli.net/css?family=Roboto+Mono
+
 extra_javascript:
   # - js/mathjax.js # 支持数学公式，ref : https://squidfunk.github.io/mkdocs-material/reference/mathjax
   - https://polyfill.io/v3/polyfill.min.js?features=es6

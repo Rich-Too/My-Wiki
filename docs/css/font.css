@@ -1,7 +1,4 @@
-@font-face {
-    font-family: "PingFangSC-Medium";
-    src: url("./苹方-简.ttf");
-}
 :root {
-  --md-text-font: "PingFangSC"; 
+  --md-text-font: 'Noto Serif SC', serif;
+  -md-code-font: "Roboto Mono";
 }
