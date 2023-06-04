@@ -1,0 +1,22 @@
+{
+  "cssTheme": "Things",
+  "theme": "moonstone",
+  "translucency": false,
+  "interfaceFontFamily": "Adobe 黑体 Std",
+  "textFontFamily": "思源黑体 CN",
+  "baseFontSize": 14,
+  "enabledCssSnippets": [
+    "external-link-edit-mode",
+    "column",
+    "admonition-highlight-block",
+    "font",
+    "tag-pills",
+    "folder-icons",
+    "external-link-icons",
+    "image-grid",
+    "general",
+    "clutter-free-headings"
+  ],
+  "accentColor": "",
+  "monospaceFontFamily": "DejaVu Sans Mono"
+}
