@@ -18,10 +18,10 @@ Shell 有两种执行命令的方式交互式和批处理，如下：
 - 批处理（Batch）：用户事先写一个Shell脚本(Script)，其中有很多条命令，让Shell一次把这些命令执行完，而不必一条一条地敲命令。 </aside>
 
 ## 参考资料
-
-[Linux 命令大全 | 菜鸟教程](https://www.runoob.com/linux/linux-command-manual.html)
-
-[Shell 教程 | 菜鸟教程](https://www.runoob.com/linux/linux-shell.html)
+!!! abstract "reference"
+    [Shell 教程 | 菜鸟教程](https://www.runoob.com/linux/linux-shell.html)
+    
+    [Shell Tools and Scripting | Missing Semester](https://missing.csail.mit.edu/2020/shell-tools/)
 
 ## 程序间连接
 

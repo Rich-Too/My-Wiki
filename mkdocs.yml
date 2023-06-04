@@ -103,14 +103,16 @@ extra_css:
   - css/extra.css
   - css/font.css
   - css/heiti.css
-  - https://fonts.loli.net/css?family=Noto+Serif+SC
+  - https://fonts.loli.net/css2?family=Noto+Sans&family=PT+Sans&display=swap
   - https://fonts.loli.net/css?family=Open+Sans
   - https://fonts.loli.net/css?family=JetBrains+Mono
   - https://fonts.loli.net/css?family=Roboto+Mono
+  - https://fonts.loli.net/css?family=Roboto
   - https://fonts.loli.net/css2?family=Source+Sans+Pro&display=swap 
   - https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.css
   - https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css
-  - https://fonts.loli.net/css2?family=Fira+Sans
+  - https://fonts.loli.net/css?family=Fira+Sans
+  - https://fonts.loli.net/css?family=PT+Sans
 
 extra_javascript:
   # - js/mathjax.js # 支持数学公式，ref : https://squidfunk.github.io/mkdocs-material/reference/mathjax
