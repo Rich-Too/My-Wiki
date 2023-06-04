@@ -129,8 +129,9 @@ p {
     font-size: 0.85rem;
 }
 
+/* 左右标题栏 */
 ul .md-nav__item {
-    font-size: 0.75rem
+    font: 1.2em "Fira Sans", "LXGW WenKai Screen", serif;
 }
 
 .md-header__title {
@@ -142,5 +143,5 @@ ul .md-nav__item {
 }
 
 .md-typeset code {
-    font-size: 0.75rem;
+    font-size: 0.82rem;
 }

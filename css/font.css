@@ -1,9 +1,4 @@
 :root {
-  --md-text-font: 'Roboto Mono', 'LXGW WenKai Screen';
-  --md-code-font: 'Hack';
+  --md-text-font: 'Noto Sans', 'LXGW WenKai Screen';
+  --md-code-font: 'Roboto Mono';
 }
-
-/* body,
-input {
-  font-family: 'LXGW WenKai Screen', 'Noto Serif SC', serif, 'Lexend', 'Noto Sans SC', 'Source Code Pro', -apple-system, Helvetica, Arial, sans-serif;
-} */
