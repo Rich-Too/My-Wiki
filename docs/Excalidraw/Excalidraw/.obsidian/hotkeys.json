@@ -1,5 +1,6 @@
 {
-  "app:toggle-left-sidebar": [
+  "editor:delete-paragraph": [],
+  "obsidian-excalidraw-plugin:Downloaded/Set Text Alignment": [
     {
       "modifiers": [
         "Mod"
@@ -7,12 +8,14 @@
       "key": "L"
     }
   ],
-  "app:toggle-right-sidebar": [
+  "editor:toggle-checklist-status": [],
+  "editor:toggle-source": [
     {
       "modifiers": [
         "Mod"
       ],
-      "key": "R"
+      "key": "/"
     }
-  ]
+  ],
+  "editor:toggle-comments": []
 }

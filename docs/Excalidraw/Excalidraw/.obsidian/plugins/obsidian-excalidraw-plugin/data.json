@@ -1,8 +1,8 @@
 {
-  "folder": "Excalidraw",
+  "folder": "/",
   "embedUseExcalidrawFolder": false,
   "templateFilePath": "Excalidraw/Template.excalidraw",
-  "scriptFolderPath": "Excalidraw/Scripts",
+  "scriptFolderPath": "attachment/Scripts",
   "compress": false,
   "autosave": true,
   "autosaveInterval": 15000,
@@ -17,7 +17,7 @@
   "displayExportedImageIfAvailable": false,
   "previewMatchObsidianTheme": false,
   "width": "400",
-  "dynamicStyling": "colorful",
+  "dynamicStyling": "none",
   "isLeftHanded": false,
   "matchTheme": false,
   "matchThemeAlways": false,
@@ -45,7 +45,7 @@
   "wordWrappingDefault": 0,
   "removeTransclusionQuoteSigns": true,
   "iframelyAllowed": true,
-  "pngExportScale": 2.5,
+  "pngExportScale": 1,
   "exportWithTheme": true,
   "exportWithBackground": true,
   "exportPaddingSVG": 10,
@@ -57,8 +57,8 @@
   "embedType": "excalidraw",
   "embedWikiLink": true,
   "syncExcalidraw": false,
-  "experimentalFileType": false,
-  "experimentalFileTag": "✏️",
+  "experimentalFileType": true,
+  "experimentalFileTag": "🥰",
   "experimentalLivePreview": true,
   "experimentalEnableFourthFont": true,
   "experimantalFourthFont": "attachment/font/LXGWWenKaiScreen.ttf",
@@ -70,17 +70,128 @@
     "type": "excalidrawlib",
     "version": 2,
     "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.9.3",
-    "libraryItems": []
+    "libraryItems": [
+      {
+        "id": "CP_5ZrAbeVKznXL-ucBq2",
+        "status": "unpublished",
+        "elements": [
+          {
+            "type": "text",
+            "version": 20,
+            "versionNonce": 2037081464,
+            "isDeleted": false,
+            "id": "vyXvAyaw",
+            "fillStyle": "hachure",
+            "strokeWidth": 1,
+            "strokeStyle": "solid",
+            "roughness": 1,
+            "opacity": 100,
+            "angle": 0,
+            "x": -2418.819626000635,
+            "y": 325.4259168555919,
+            "strokeColor": "#e03131",
+            "backgroundColor": "transparent",
+            "width": 706.25390625,
+            "height": 21.599999999999998,
+            "seed": 1714330376,
+            "groupIds": [],
+            "roundness": null,
+            "boundElements": [],
+            "updated": 1686402989745,
+            "link": null,
+            "locked": false,
+            "fontSize": 18,
+            "fontFamily": 4,
+            "text": "\"state-of-the-art\" 在某个领域或方向上的表现通常是指当前最好、最先进的技术或成果，",
+            "rawText": "\"state-of-the-art\" 在某个领域或方向上的表现通常是指当前最好、最先进的技术或成果，",
+            "textAlign": "left",
+            "verticalAlign": "top",
+            "containerId": null,
+            "originalText": "\"state-of-the-art\" 在某个领域或方向上的表现通常是指当前最好、最先进的技术或成果，",
+            "lineHeight": 1.2,
+            "baseline": 17
+          }
+        ],
+        "created": 1686403051193
+      },
+      {
+        "status": "unpublished",
+        "elements": [
+          {
+            "type": "rectangle",
+            "version": 12,
+            "versionNonce": 1500598482,
+            "isDeleted": false,
+            "id": "sDbRkqKUZ8iCcEdYkpCkq",
+            "fillStyle": "hachure",
+            "strokeWidth": 1,
+            "strokeStyle": "solid",
+            "roughness": 1,
+            "opacity": 100,
+            "angle": 0,
+            "x": -302.2857208251953,
+            "y": -10.620529174804688,
+            "strokeColor": "#1e1e1e",
+            "backgroundColor": "transparent",
+            "width": 158.28570556640625,
+            "height": 98.85711669921875,
+            "seed": 1172518162,
+            "groupIds": [],
+            "roundness": {
+              "type": 3
+            },
+            "boundElements": [],
+            "updated": 1685871268447,
+            "link": null,
+            "locked": false
+          }
+        ],
+        "id": "5vdEtXmLv0vgZApGTAJ5M",
+        "created": 1685871278786
+      }
+    ]
   },
   "imageElementNotice": true,
   "mdSVGwidth": 500,
   "mdSVGmaxHeight": 800,
-  "mdFont": "Virgil",
+  "mdFont": "attachment/font/LXGWWenKaiScreen.ttf",
   "mdFontColor": "Black",
   "mdBorderColor": "Black",
   "mdCSS": "",
-  "scriptEngineSettings": {},
-  "defaultTrayMode": true,
+  "scriptEngineSettings": {
+    "Downloaded/Auto Layout": {
+      "Layout Options JSON": {
+        "height": "450px",
+        "value": "{\n      \"org.eclipse.elk.layered.crossingMinimization.semiInteractive\": \"true\",\n      \"org.eclipse.elk.layered.considerModelOrder.components\": \"FORCE_MODEL_ORDER\"\n}",
+        "description": "You can use layout options to configure the layout algorithm. A list of all options and further details of their exact effects is available in <a href=\"http://www.eclipse.org/elk/reference.html\" rel=\"nofollow\">ELK's documentation</a>."
+      }
+    },
+    "Downloaded/Normalize Selected Arrows": {
+      "Gap": {
+        "value": 8,
+        "description": "The value of the gap between the connection line and the element, which must be greater than 0. If you want the connector to be next to the element, set it to 1."
+      }
+    },
+    "Downloaded/Mindmap format": {
+      "MindMap Format": {
+        "value": "Excalidraw/MindMap Format",
+        "description": "This is prepared for the namespace of MindMap Format and does not need to be modified"
+      },
+      "default gap": {
+        "value": 10,
+        "description": "Interval size of element"
+      },
+      "curve length": {
+        "value": 40,
+        "description": "The length of the curve part in the mind map line"
+      },
+      "length between element and line": {
+        "value": 50,
+        "description": "The distance between the tail of the connection and the connecting elements of the mind map"
+      }
+    }
+  },
+  "defaultTrayMode": false,
   "previousRelease": "1.9.3",
   "showReleaseNotes": true,
   "showNewVersionNotification": true,

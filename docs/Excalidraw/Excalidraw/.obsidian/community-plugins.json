@@ -1,6 +1,4 @@
 [
-  "obsidian-hider",
-  "obsidian-banners",
-  "dataview",
-  "obsidian-excalidraw-plugin"
+  "obsidian-excalidraw-plugin",
+  "floating-toc"
 ]

@@ -141,7 +141,17 @@ ul .md-nav__item {
 .md-tabs__item .md-tabs__link {
     font-size: 0.85rem;
 }
-
+.md-nav__link{
+    margin-top: 0.3em;
+}
 .md-typeset code {
-    font-size: 0.82rem;
+    font-size: 0.75rem;
+}
+
+td,
+th {
+    font-size: .8rem;
+}
+.md-header__button.md-logo img, .md-header__button.md-logo svg{
+    height: 2rem;
 }

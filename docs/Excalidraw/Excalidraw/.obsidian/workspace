@@ -1,16 +1,17 @@
 {
   "main": {
-    "id": "ec821402f08c769b",
+    "id": "95212b519691cbda",
     "type": "split",
     "children": [
       {
-        "id": "aa157cfd4747e13c",
+        "id": "db278a8154033ffc",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "pages/说明.md",
-            "mode": "preview"
+            "file": "Java应用技术5：GUI.md",
+            "mode": "source",
+            "source": false
           }
         }
       }
@@ -18,15 +19,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "3bff42b77a33b91b",
+    "id": "e180b4aafac20d00",
     "type": "split",
     "children": [
       {
-        "id": "72c1cba91b53d945",
+        "id": "45ed9d67f260b693",
         "type": "tabs",
         "children": [
           {
-            "id": "4d0f2db098c15946",
+            "id": "b5856e4da3c680bf",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -34,7 +35,7 @@
             }
           },
           {
-            "id": "fe62a92797a23092",
+            "id": "215ccecf4156f5ac",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -52,48 +53,30 @@
       }
     ],
     "direction": "horizontal",
-    "width": 154
+    "width": 199.99999809265137
   },
   "right": {
-    "id": "2081f9f9c3b7e1f1",
+    "id": "5412ac7cb94d518f",
     "type": "split",
     "children": [
       {
-        "id": "2672a96f35edca09",
+        "id": "0c5b0bf7b38ccb02",
         "type": "tabs",
         "children": [
           {
-            "id": "c59ae87c93164216",
+            "id": "e6470ec20722be4a",
             "type": "leaf",
             "state": {
-              "type": "calendar",
-              "state": {}
-            }
-          }
-        ]
-      },
-      {
-        "id": "34b8b9846a08df67",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "aae86988a70c4b69",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
+              "type": "backlink",
               "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              }
-            }
-          },
-          {
-            "id": "5a46ad54b95c613c",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "pages/说明.md"
+                "file": "Java应用技术5：GUI.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
               }
             }
           }
@@ -101,19 +84,20 @@
       }
     ],
     "direction": "horizontal",
-    "width": 244.5
+    "width": 300,
+    "collapsed": true
   },
-  "active": "aa157cfd4747e13c",
+  "active": "db278a8154033ffc",
   "lastOpenFiles": [
-    "pages/说明.md",
-    "advanced/Tag List.md",
-    "advanced/Random Note.md",
-    "journals/2022-04-22.md",
-    "pages/读《余生皆假期》.md",
-    "pages/读《指数基金投资指南》.md",
-    "pages/《拉丁美洲被切开的血管》笔记.md",
-    "pages/《江海寄余生》笔记.md",
-    "template/media/banner2.jpg",
-    "template/media/banner1.jpg"
+    "Java应用技术5：GUI.md",
+    "Java应用技术3：高级语法特性.md",
+    "Pasted image 20230601194551.png",
+    "未命名 2.md",
+    "未命名 1.md",
+    "未命名 3.md",
+    "未命名.md",
+    "Java应用技术1：基础语法.md",
+    "media/rich/Data/Course_ZJU/Junior/Java/笔记md/static/Java应用技术5：GUI/fMQDFCmyqIvJeTl.png.md",
+    "static/1fBdjMOy4SnADHu.png"
   ]
 }

@@ -197,7 +197,8 @@ git rm [dir]
 git log 命令用于查看 git commit 记录。
 
 ```shell
-git log // 查看所有 commit 记录
+git log <branch-name> // 查看某一分支的所有提交历史
+git log --oneline <branch-name> // 查看提交历史的简要摘要
 git log  --grep  瀑布流 // 搜索 commit msg 有瀑布流关键字的 记录
 ```
 
@@ -208,4 +209,3 @@ git fetch --all
 git reset --hard origin/master
 git pull
 ```
-

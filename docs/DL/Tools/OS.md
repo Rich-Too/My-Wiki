@@ -8,7 +8,7 @@
 
 此外，导入`os`模块时还要小心一点，千万**不要**为了图调用省事而将`os`模块解包导入，即不要使用`from os import *`来导入`os`模块；否则`os.open()`将会覆盖内置函数`open()`，从而造成预料之外的错误。
 
-## **2. 常用功能**
+## 2. 常用功能
 
 > 注意，`os`模块中大多数接受路径作为参数的函数也可以接受“文件描述符”作为参数。
 > 文件描述符：file descriptor，在 Python 文档中简记为 fd，是一个与某个打开的文件对象绑定的整数，可以理解为该文件在系统中的编号。
@@ -77,7 +77,6 @@ Linux 下，其值为：
 
 ![](static/v2-8be123b0dcf72bc5c03f764328531b91_b.jpg)
 
-
 ### **2.4 os.listdir()**
 
 “listdir”即“list directories”，列出（当前）目录下的全部路径（及文件）。该函数存在一个参数，用以指定要列出子目录的路径，默认为`“.”`，即“当前路径”。
@@ -125,6 +124,10 @@ Linux 下，其值为：
  >>> 
  >>> os.makedirs("test_os_mkdir/test_os_makedirs/just/do/python/hello")
 ```
+
+在Unix/Linux系统中，如果要在一个不存在的路径上创建一个子目录，则必须先创建包含该目录的父级目录。例如，如果要在 /home/user/data/output 下创建一个名为 "output_category" 的子目录，则必须先创建 /home/user/data 这个目录，最后才能在其中创建 output_category。
+
+为了解决这个问题，可以使用 `os.makedirs()` 函数代替 `os.mkdir() `函数，在创建目录之前自动创建整个路径中缺失的所有父目录。例如，可以将代码改为 `os.makedirs(output_category_path, exist_ok=True)`，则程序会在需要时自动创建所有缺失的父目录。其中，`exist_ok=True` 参数表示如果目录已经存在，则不再抛出异常，而是直接忽略。
 
 ### **2.6 os.remove()**
 
