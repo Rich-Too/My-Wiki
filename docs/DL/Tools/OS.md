@@ -126,6 +126,10 @@ Linux 下，其值为：
  >>> os.makedirs("test_os_mkdir/test_os_makedirs/just/do/python/hello")
 ```
 
+在Unix/Linux系统中，如果要在一个不存在的路径上创建一个子目录，则必须先创建包含该目录的父级目录。例如，如果要在 /home/user/data/output 下创建一个名为 "output_category" 的子目录，则必须先创建 /home/user/data 这个目录，最后才能在其中创建 output_category。
+
+为了解决这个问题，可以使用 `os.makedirs()` 函数代替 `os.mkdir() `函数，在创建目录之前自动创建整个路径中缺失的所有父目录。例如，可以将代码改为 `os.makedirs(output_category_path, exist_ok=True)`，则程序会在需要时自动创建所有缺失的父目录。其中，`exist_ok=True` 参数表示如果目录已经存在，则不再抛出异常，而是直接忽略。
+
 ### **2.6 os.remove()**
 
 用于删除文件，如果指定路径是目录而非文件的话，就会抛出`IsADirectoryError`异常。删除目录应该使用`os.rmdir()`函数。

@@ -1,20 +1,18 @@
 {
   "main": {
-    "id": "ec821402f08c769b",
+    "id": "95212b519691cbda",
     "type": "split",
     "children": [
       {
-        "id": "dcb02ffa0f89be5f",
+        "id": "38011ea9e813532a",
         "type": "tabs",
         "children": [
           {
-            "id": "d8517058e50b3722",
+            "id": "f5012a8daa5d1b41",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "生物信息学.excalidraw.md"
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -23,15 +21,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "3bff42b77a33b91b",
+    "id": "e180b4aafac20d00",
     "type": "split",
     "children": [
       {
-        "id": "72c1cba91b53d945",
+        "id": "45ed9d67f260b693",
         "type": "tabs",
         "children": [
           {
-            "id": "4d0f2db098c15946",
+            "id": "b5856e4da3c680bf",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -41,7 +39,7 @@
             }
           },
           {
-            "id": "fe62a92797a23092",
+            "id": "215ccecf4156f5ac",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -56,7 +54,7 @@
             }
           },
           {
-            "id": "a9b57b834bd6d4ea",
+            "id": "3f90ed0d0a0cb750",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -67,25 +65,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 277,
-    "collapsed": true
+    "width": 236.49999618530273
   },
   "right": {
-    "id": "2081f9f9c3b7e1f1",
+    "id": "5412ac7cb94d518f",
     "type": "split",
     "children": [
       {
-        "id": "2672a96f35edca09",
+        "id": "0c5b0bf7b38ccb02",
         "type": "tabs",
         "children": [
           {
-            "id": "320c4a5ddda12545",
+            "id": "e6470ec20722be4a",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "生物信息学.excalidraw.md",
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -96,37 +92,10 @@
             }
           }
         ]
-      },
-      {
-        "id": "34b8b9846a08df67",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "aae86988a70c4b69",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              }
-            }
-          },
-          {
-            "id": "5a46ad54b95c613c",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "生物信息学.excalidraw.md"
-              }
-            }
-          }
-        ]
       }
     ],
     "direction": "horizontal",
-    "width": 244.5,
+    "width": 300,
     "collapsed": true
   },
   "left-ribbon": {
@@ -134,37 +103,58 @@
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
-      "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "markdown-importer:打开 Markdown 格式转换器": false,
       "obsidian-excalidraw-plugin:新建 Excalidraw 绘图": false
     }
   },
-  "active": "d8517058e50b3722",
+  "active": "b5856e4da3c680bf",
   "lastOpenFiles": [
-    "生物信息学.excalidraw.md",
-    "Excalidraw/Drawing 2023-06-04 18.19.07_0.excalidraw.md",
-    "Excalidraw/Drawing 2023-06-04 18.19.07.excalidraw.md",
-    "Excalidraw",
+    "static/Pasted Image 20230609134342_161.png",
+    "static/Pasted Image 20230609134242_106.png",
+    "static/Pasted Image 20230609131025_021.png",
+    "static/Pasted Image 20230609130834_044.png",
+    "static/Pasted Image 20230609125138_021.png",
+    "static/Pasted Image 20230609120019_098.png",
+    "ALL/传感器.md",
+    "ALL/😵‍💫DIP.md",
     "未命名.md",
-    "attachment/font/LXGWWenKaiScreen.ttf",
-    "attachment/font",
-    "attachment/新建文件夹",
-    "attachment",
-    "excalidraw",
-    "新建文件夹",
-    "生物信息学.excalidraw",
-    "未命名.md.md",
-    "pages/说明.md",
-    "advanced/Tag List.md",
-    "advanced/Random Note.md",
-    "journals/2022-04-22.md",
-    "pages/读《余生皆假期》.md",
-    "pages/读《指数基金投资指南》.md",
-    "pages/《拉丁美洲被切开的血管》笔记.md",
-    "pages/《江海寄余生》笔记.md",
-    "template/media/banner2.jpg",
-    "template/media/banner1.jpg"
+    "ALL/生物信息学/展示.md",
+    "ALL/生物信息学/模型.md",
+    "static/Pasted Image 20230610205312_318.png",
+    "ALL/生物信息学/生物信息学.md",
+    "ALL/生物信息学/展示思路.md",
+    "ALL/生物信息学/划重点.md",
+    "attachment/未命名.canvas",
+    "Drawing 2023-06-10 22.24.47.excalidraw.md",
+    "static/Pasted Image 20230610215929_322.png",
+    "static/Pasted Image 20230610214649_314.png",
+    "attachment/Scripts/Downloaded/Copy Selected Element Styles to Global.svg",
+    "attachment/Scripts/Downloaded/Copy Selected Element Styles to Global.md",
+    "attachment/Scripts/Downloaded/Change shape of selected elements.svg",
+    "attachment/Scripts/Downloaded/Change shape of selected elements.md",
+    "attachment/Scripts/Downloaded/Mindmap connector.md",
+    "attachment/Scripts/Downloaded/Mindmap format.md",
+    "attachment/Scripts/Downloaded/Normalize Selected Arrows.md",
+    "attachment/Scripts/Downloaded/Set Text Alignment.md",
+    "attachment/Scripts/Downloaded/Auto Layout.md",
+    "attachment/Scripts/Downloaded/Expand rectangles horizontally.md",
+    "attachment/Scripts/Downloaded/Expand rectangles horizontally keep text centered.md",
+    "attachment/Scripts/Downloaded",
+    "attachment/Scripts",
+    "Excalidraw",
+    "ALL/生物信息学",
+    "ALL",
+    "static",
+    "Excalidraw/Drawing 2023-06-05 18.34.28.excalidraw.md",
+    "Excalidraw/Drawing 2023-06-05 18.34.31.excalidraw.md",
+    "Drawing 2023-06-05 18.33.44.excalidraw.md",
+    "Drawing 2023-06-05 18.33.41.excalidraw.md",
+    "attachment/Excalidraw",
+    "Excalidraw/Drawing 2023-06-05 18.33.24.excalidraw.md",
+    "Java应用技术1：基础语法.md",
+    "本课程粗略地介绍了数据科学，强化学习和机器学习。.md",
+    "未命名.canvas",
+    "未命名 1.canvas"
   ]
 }
