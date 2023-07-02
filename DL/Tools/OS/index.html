@@ -571,7 +571,7 @@
 </blockquote>
 <p>当然，使用<code>os</code>模块可以写出操作系统无关的代码并不意味着<code>os</code>无法调用一些特定系统的扩展功能，但要切记一点：一旦这样做就会极大<strong>损害代码的可移植性</strong>。</p>
 <p>此外，导入<code>os</code>模块时还要小心一点，千万<strong>不要</strong>为了图调用省事而将<code>os</code>模块解包导入，即不要使用<code>from os import *</code>来导入<code>os</code>模块；否则<code>os.open()</code>将会覆盖内置函数<code>open()</code>，从而造成预料之外的错误。</p>
-<h2 id="2-常用功能"><strong>2. 常用功能</strong><a class="headerlink" href="#2-常用功能" title="Permanent link">¶</a></h2>
+<h2 id="2-常用功能">2. 常用功能<a class="headerlink" href="#2-常用功能" title="Permanent link">¶</a></h2>
 <blockquote>
 <p>注意，<code>os</code>模块中大多数接受路径作为参数的函数也可以接受“文件描述符”作为参数。
 文件描述符：file descriptor，在 Python 文档中简记为 fd，是一个与某个打开的文件对象绑定的整数，可以理解为该文件在系统中的编号。</p>
