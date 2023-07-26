@@ -2,6 +2,7 @@ site_name: RichToo的垃圾堆
 site_url: https://rich-too.github.io/My-Wiki/
 repo_name: My-Wiki
 repo_url: https://github.com/Rich-Too/My-Wiki
+copyright: 
 
 theme:
   name: material
@@ -16,7 +17,7 @@ theme:
     
     - toc.follow # toc 跟随
     # - toc.integrate # 相同栏左边加竖线
-
+    - navigation.footer
     - content.code.copy # 允许代码拷贝
     - content.code.annotate # 允许代码 annotations
     - content.tabs.link # 
@@ -115,10 +116,11 @@ extra_css:
   - https://fonts.loli.net/css?family=PT+Sans
 
 extra_javascript:
-  # - js/mathjax.js # 支持数学公式，ref : https://squidfunk.github.io/mkdocs-material/reference/mathjax
+  - javascripts/mathjax.js # 支持数学公式，ref : https://squidfunk.github.io/mkdocs-material/reference/mathjax
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js # 支持表格排序
+  - 'javascripts/link.js'
   # - js/tablesort.js
   - //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
 
