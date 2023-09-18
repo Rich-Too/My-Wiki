@@ -1,0 +1,1204 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rich-too.github.io/My-Wiki/C%2B%2B/C%2B%2B/">
+      
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.19">
+    
+    
+      
+        <title>1 从C到C++ - RichToo的垃圾堆</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="../../assets/css/font.css">
+    
+      <link rel="stylesheet" href="../../assets/css/heiti.css">
+    
+      <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Noto+Sans&family=PT+Sans&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.loli.net/css?family=Open+Sans">
+    
+      <link rel="stylesheet" href="https://fonts.loli.net/css?family=JetBrains+Mono">
+    
+      <link rel="stylesheet" href="https://fonts.loli.net/css?family=Roboto+Mono">
+    
+      <link rel="stylesheet" href="https://fonts.loli.net/css?family=Roboto">
+    
+      <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Source+Sans+Pro&display=swap">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css">
+    
+      <link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Sans">
+    
+      <link rel="stylesheet" href="https://fonts.loli.net/css?family=PT+Sans">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="black">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-从c到c" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="RichToo的垃圾堆" class="md-header__button md-logo" aria-label="RichToo的垃圾堆" data-md-component="logo">
+      
+  <img src="../../assets/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RichToo的垃圾堆
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1 从C到C++
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="black"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="default" data-md-color-accent="default"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Rich-Too/My-Wiki" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    My-Wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        主页
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Toolkit/" class="md-tabs__link">
+        开发工具
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../DL/Tools/Math/" class="md-tabs__link">
+        深度学习
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="RichToo的垃圾堆" class="md-nav__button md-logo" aria-label="RichToo的垃圾堆" data-md-component="logo">
+      
+  <img src="../../assets/favicon.png" alt="logo">
+
+    </a>
+    RichToo的垃圾堆
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Rich-Too/My-Wiki" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    My-Wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../..">主页</a>
+          
+            <label for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          主页
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../me/" class="md-nav__link">
+        关于我
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../Toolkit/">开发工具</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          开发工具
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../Toolkit/git/">Git</a>
+          
+            <label for="__nav_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Toolkit/git/01.Git%E8%B5%B7%E6%AD%A5/" class="md-nav__link">
+        Git起步
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Toolkit/git/02.Git%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        Git基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Toolkit/git/03.%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%B8%8E%E5%88%86%E6%94%AF/" class="md-nav__link">
+        Git远程仓库与分支
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Toolkit/git/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        Git常用命令
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Toolkit/vim/vim/" class="md-nav__link">
+        Vim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Toolkit/shell/Shell%20Tools%20and%20Scripting/" class="md-nav__link">
+        Shell
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          深度学习
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          深度学习
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DL/Tools/Math/" class="md-nav__link">
+        Math
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DL/Tools/NumPy/" class="md-nav__link">
+        Numpy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DL/Tools/OS/" class="md-nav__link">
+        OS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DL/Tools/Pandas/" class="md-nav__link">
+        Pandas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DL/Tools/python/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-引用" class="md-nav__link">
+    1.1 引用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-const" class="md-nav__link">
+    1.2 const
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-动态内存分配" class="md-nav__link">
+    1.3 动态内存分配
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-内联函数和函数重载" class="md-nav__link">
+    1.4 内联函数和函数重载
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15函数的缺省参数" class="md-nav__link">
+    1.5函数的缺省参数
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="1-从c到c">1 从C到C++<a class="headerlink" href="#1-从c到c" title="Permanent link">&para;</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2365 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 108 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 9 分钟</p>
+</div>
+<p><strong>参考资料：</strong></p>
+<ul>
+<li><a href="https://www.runoob.com/cplusplus/cpp-tutorial.html">https://www.runoob.com/cplusplus/cpp-tutorial.html</a></li>
+<li>《essential C++》</li>
+</ul>
+<p>​       <a class="glightbox" href=".static/1661074503251-9b9e6f50-080f-4c60-8691-e0e5884438dd.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="img" src=".static/1661074503251-9b9e6f50-080f-4c60-8691-e0e5884438dd.png" /></a></p>
+<h2 id="11-引用">1.1 引用<a class="headerlink" href="#11-引用" title="Permanent link">&para;</a></h2>
+<p>下面的写法定义了一个引用，并将其初始化为引用某个变量。 类型名 &amp; 引用名 = 某变量名;<code>int n = 4; int &amp; r = n; // r引用了 n, r的类型是 int &amp;</code>某个变量的引用，等价于这个变量，相当于该变量的一个别名。<strong>注意事项：</strong> 定义引用时一定要将其初始化成引用某个变量。初始化后，它就一直引用该变量，不会再引用别的变量了。 引用只能引用变量，不能引用常量和表达式，引用不能计算没有引用的引用<strong>引用作为函数的返回值:</strong><code>int n = 4; int &amp; SetValue() { return n; }//这里返回的是对于n的引用 int main() {    SetValue() = 40;    cout &lt;&lt; n;    return 0; } //输出： 40</code><strong>引用只能绑定左值</strong></p>
+<h2 id="12-const">1.2 const<a class="headerlink" href="#12-const" title="Permanent link">&para;</a></h2>
+<p>常引用 定义引用时，前面加const关键字，即为“常引用”<code>int n;``const int &amp; r = n;</code>r 的类型是 const int &amp;不能通过常引用去修改其引用的内容<code>int n = 100; const int &amp; r = n; r = 200; //编译错 n = 300; // 没问题</code>“const”关键字的用法定义常量定义常量指针不可通过常量指针修改其指向的内容可以重新指向别的位置不能把常量指针赋值给非常量指针，反过来可以<code>int n,m; const int * p = &amp; n; * p = 5; //编译出错 n = 4; //ok p = &amp;m; //ok, 常量指针的指向可以变化 const int * p1; int * p2; p1 = p2; //ok p2 = p1; //error p2 = (int * ) p1; //ok,强制类型转换</code>函数参数为常量指针时，可避免函数内部不小心改变参数指针所指地方的内容</p>
+<h2 id="13-动态内存分配">1.3 动态内存分配<a class="headerlink" href="#13-动态内存分配" title="Permanent link">&para;</a></h2>
+<p>用 <code>new</code> 运算符实现动态内存分配new是一个运算符使用方式 <code>P = new T</code></p>
+<p><a class="glightbox" href=".static/1661068619171-71ec471f-1c04-442b-918c-c2efb0c51e98.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="img" src=".static/1661068619171-71ec471f-1c04-442b-918c-c2efb0c51e98.png" /></a><code>P = new T[N]</code></p>
+<p><a class="glightbox" href=".static/1661068629808-2794c99f-14df-4409-842b-b67a839f31cf.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="img" src=".static/1661068629808-2794c99f-14df-4409-842b-b67a839f31cf.png" /></a>Test * test3=new Test();在堆中分配了内存，堆上的内存分配，亦称动态内存分配。程序在运行的期间用malloc申请的内存，这部分内存由程序员自己负责管理，其生存期由开发者决定：在何时分配，分配多少，并在何时用free来释放该内存。<strong>栈中内存的分配和管理由操作系统决定，而堆中内存的分配和管理由管理者决定</strong>用delete运算符释放动态分配的内存delete 指针；//该指针必须指向new出来的空间用“delete”释放动态分配的数组，要加“[]”</p>
+<h2 id="14-内联函数和函数重载">1.4 内联函数和函数重载<a class="headerlink" href="#14-内联函数和函数重载" title="Permanent link">&para;</a></h2>
+<p>为了减少函数调用的开销，引入了内联函数机制。编译器处理对内联函数的调用语句时，是将整个函数的代码插入到调用语句处，而不会产生调用函数的语句   使用方式是在函数前加inline <code>inline int Max(int a,int b)</code> 一个或多个函数，名字相同，然而参数个数或参数类型不相同，这叫做函数的重载函数重载使得函数命名变得简单。编译器根据调用语句的中的实参的个数和类型判断应该调用哪个函数</p>
+<h2 id="15函数的缺省参数">1.5函数的缺省参数<a class="headerlink" href="#15函数的缺省参数" title="Permanent link">&para;</a></h2>
+<p>C++中，定义函数的时候可以让最右边的连续若干个参数有缺省值，那么调用函数的时候，若相应位置不写参数，参数就是缺省值    <a class="glightbox" href=".static/1661069208158-7c37c0d8-c05f-4fdf-9c4a-50b529d67816.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="img" src=".static/1661069208158-7c37c0d8-c05f-4fdf-9c4a-50b529d67816.png" /></a>函数参数可缺省的目的在于提高程序的可扩充性。 即如果某个写好的函数要添加新的参数，而原先那些调用该函数的语句，未必需要使用新增的参数，那么为了避免对原先那些函数调用语句的修改，就可以使用缺省参数。如果两个函数只有返回值类型不同，视为重复定义</p>
+<h1 id="2-类和对象">2 类和对象<a class="headerlink" href="#2-类和对象" title="Permanent link">&para;</a></h1>
+<h2 id="21-类成员">2.1 类成员<a class="headerlink" href="#21-类成员" title="Permanent link">&para;</a></h2>
+<h3 id="211类成员的可访问范围">2.1.1类成员的可访问范围<a class="headerlink" href="#211类成员的可访问范围" title="Permanent link">&para;</a></h3>
+<p>private: 私有成员，只能在成员函数内访问public : 公有成员，可以在任何地方访问protected: 保护成员，以后再说在类的成员函数内部，能够访问：当前对象的全部属性、函数；同类其它对象的全部属性、函数。在类的成员函数以外的地方，只能够访问该类对象的公有成员未说明的定义为私有变量用struct定义类和用"class"的唯一区别，就是未说明是公有还是私有的成员，就是公有的</p>
+<h3 id="212成员函数的重载及参数缺省">2.1.2成员函数的重载及参数缺省<a class="headerlink" href="#212成员函数的重载及参数缺省" title="Permanent link">&para;</a></h3>
+<ul>
+<li>要注意避免有函数重载时的二义性</li>
+</ul>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Location</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">private</span><span class="w"> </span><span class="o">:</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">public</span><span class="o">:</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kt">void</span><span class="w"> </span><span class="n">init</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kt">void</span><span class="w"> </span><span class="nf">valueX</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">val</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kt">int</span><span class="w"> </span><span class="nf">valueX</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">};</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">Location</span><span class="w"> </span><span class="n">A</span><span class="p">;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">A</span><span class="p">.</span><span class="n">valueX</span><span class="p">();</span><span class="w"> </span><span class="c1">//错误，编译器无法判断调用哪个valueX</span>
+</span></code></pre></div>
+<h2 id="22-构造函数">2.2 构造函数<a class="headerlink" href="#22-构造函数" title="Permanent link">&para;</a></h2>
+<h3 id="221概念">2.2.1概念<a class="headerlink" href="#221概念" title="Permanent link">&para;</a></h3>
+<p>成员函数的一种名字与类名相同，可以有参数，不能有返回值(void也不行)作用是对对象进行初始化，如给成员变量赋初值如果定义类时没写构造函数，则编译器生成一个默认的无参数的构造函数默认构造函数无参数，不做任何操作如果定义了构造函数，则编译器不生成默认的无参数的构造函数对象生成时构造函数自动被调用。对象一旦生成，就再也不能在其上执行构造函数一个类可以有多个构造函数。
+<a class="glightbox" href=".static/1661072829640-c2f9e7e4-d281-4464-a105-d11438c9a8aa.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="img" src=".static/1661072829640-c2f9e7e4-d281-4464-a105-d11438c9a8aa.png" /></a>构造函数最好是public的，private构造函数不能直接用来初始化对象<a class="glightbox" href=".static/1661073196192-d9a82021-78eb-4d6d-9bf2-576fa465813b.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="img" src=".static/1661073196192-d9a82021-78eb-4d6d-9bf2-576fa465813b.png" /></a>pArray[2]实际并未生成</p>
+<h3 id="222-复制构造函数">2.2.2 复制构造函数<a class="headerlink" href="#222-复制构造函数" title="Permanent link">&para;</a></h3>
+<p>只有一个参数,即对同类对象的引用。形如 X::X( X&amp; )或X::X(const X &amp;), 二者选一后者能以常量对象作为参数如果没有定义复制构造函数，那么编译器生成默认复制构造函数,该构造函数完成复制功能。<code>class Complex { public :    double real,imag;    Complex(){ }    Complex( const Complex &amp; c )     {        real = c.real;        imag = c.imag;        cout &lt;&lt; "Copy Constructor called";    } }; Complex c1; Complex c2(c1);//调用自己定义的复制构造函数，输出 Copy Constructor called</code><strong>起作用的情景：</strong>当用一个对象去初始化同类的另一个对象时。对象间赋值并不导致复制构造函数被调用<code>Complex c2(c1);``Complex c2 = c1; //初始化语句，非赋值语句</code>如果某函数有一个参数是类 A 的对象，那么该函数被调用时，类A的复制构造函数将被调用。形参是对实参的复制，复制过程中调用复制构造函数。 如果函数的返回值是类A的对象时，则函数返回时，A的复制构造函数被调用。也就是实际返回的值是return 的复制。<strong>C++中临时变量不能作为非const的引用参数,所以最好加上const</strong><strong>常量引用参数的使用：</strong><a class="glightbox" href=".static/1661139728430-0fac4c0c-1c6c-4d8b-a0cb-a3ec32e91cdb.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="img" src=".static/1661139728430-0fac4c0c-1c6c-4d8b-a0cb-a3ec32e91cdb.png" /></a></p>
+<h3 id="223-类型转换构造函数">2.2.3 类型转换构造函数<a class="headerlink" href="#223-类型转换构造函数" title="Permanent link">&para;</a></h3>
+<p>定义转换构造函数的目的是实现类型的自动转换。只有一个参数，而且不是复制构造函数的构造函数，一般就可以看作是转换构造函数。当需要的时候，编译系统会自动调用转换构造函数，建立一个无名的临时对象(或临时变量)<code>class Complex { public:    double real, imag;     Complex( int i)     {//类型转换构造函数        cout &lt;&lt; "IntConstructor called" &lt;&lt; endl;        real = i; imag = 0;    }    Complex(double r,double i) {real = r; imag = i; } }; int main () {    Complex c1(7,8);    Complex c2 = 12;    c1 = 9; // 9被自动转换成一个临时Complex对象    cout &lt;&lt; c1.real &lt;&lt; "," &lt;&lt; c1.imag &lt;&lt; endl;    return 0; }</code></p>
+<h2 id="23-析构函数">2.3 析构函数<a class="headerlink" href="#23-析构函数" title="Permanent link">&para;</a></h2>
+<p>名字与类名相同，在前面加‘~’， 没有参数和返回值，一个类最多只能有一个析构函数。析构函数对象消亡时即自动被调用。可以定义析构函数来在对象消亡前做善后工作，比如释放分配的空间等。如果定义类时没写析构函数，则编译器生成缺省析构函数。缺省析构函数什么也不做。如果定义了析构函数，则编译器不生成缺省析构函数。<strong>注意：</strong>对象数组生命期结束时，对象数组的每个元素的析构函数都会被调用。若new一个对象数组，那么用delete释放时应该写 []。否则只delete一个对象(调用一次析构函数)析构函数在对象作为函数返回值返回后被调用<code>class CMyclass { public:    ~CMyclass() { cout &lt;&lt; "destructor" &lt;&lt; endl; } }; CMyclass obj; CMyclass fun(CMyclass sobj) { //参数对象消亡也会导致析    //构函数被调用    return sobj; //函数调用返回时生成临时对象返回 } int main() {    obj = fun(obj); //函数调用的返回值（临时对象）被    return 0;    //用过后，该临时对象析构函数被调用 }//会调用三次析构函数</code>先初始化的对象后析构，this出来的对象如果没有delete会一直存在不析构。</p>
+<h2 id="24-this静态变量友元">2.4 this、静态变量、友元<a class="headerlink" href="#24-this静态变量友元" title="Permanent link">&para;</a></h2>
+<h3 id="241-this">2.4.1 this<a class="headerlink" href="#241-this" title="Permanent link">&para;</a></h3>
+<p>​         <a class="glightbox" href=".static/1661158272640-c18e9d8a-75fe-40f2-ad9d-9c4a088aad4f.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="img" src=".static/1661158272640-c18e9d8a-75fe-40f2-ad9d-9c4a088aad4f.png" /></a>其作用就是指向成员函数所作用的对象，非静态成员函数中可以直接使用this来代表指向该函数作用的对象的指针，可以认为this是参数之一静态成员函数中不能使用 this 指针，因为静态成员函数并不具体作用与某个对象<a class="glightbox" href=".static/1661158392656-00834ec8-5751-4b1d-9e03-290318edb5fc.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="img" src=".static/1661158392656-00834ec8-5751-4b1d-9e03-290318edb5fc.png" /></a></p>
+<h3 id="242-静态成员">2.4.2 静态成员<a class="headerlink" href="#242-静态成员" title="Permanent link">&para;</a></h3>
+<p>静态成员：在说明前面加了static关键字的成员，有变量也有函数普通成员变量每个对象有各自的一份，而静态成员变量一共就一份，为所有对象共享。sizeof不会计算静态成员变量普通成员函数必须具体作用于某个对象，而静态成员函数并不具体作用于某个对象，不需要通过对象就能访问静态成员变量本质上是全局变量，哪怕一个对象都不存在，类的静态成员变量也存在静态成员函数本质上是全局函数。设置静态成员这种机制的目的是将和某些类紧密相关的全局变量和函数写到类里面，看上去像一个整体，易于维护和理解在静态成员函数中，不能访问非静态成员变量，也不能调用非静态成员函数<code>int CRectangle::nTotalNumber = 0;``int CRectangle::nTotalArea = 0;``//必须在定义类的文件中对静态成员变量进行一次说明  //或初始化。否则编译能通过，链接不能通过</code></p>
+<h3 id="243-成员对象和封闭类">2.4.3 成员对象和封闭类<a class="headerlink" href="#243-成员对象和封闭类" title="Permanent link">&para;</a></h3>
+<p>有成员对象的类叫 封闭（enclosing)类，任何生成封闭类对象的语句，都要让编译器明白，对象中的成员对象，是如何初始化的。<code>class CTyre //轮胎类 { private:    int radius;    //半径    int width; //宽度 public:    CTyre(int r, int w) : radius(r), width(w) {} }; class CEngine //引擎类 { }; class CCar { //汽车类 private:    int price; //价格    CTyre tyre;    CEngine engine; public:    CCar(int p, int tr, int tw); }; CCar::CCar(int p, int tr, int w) : price(p), tyre(tr, w){}; int main() {    CCar car(20000, 17, 225);    return 0; }</code>如果CCar类不定义构造函数， 则<code>CCar car;</code>会出错。因为编译器不明白 car.tyre该如何初始化，它没有默认构造函数。而car.engine 的初始化用默认构造函数即可。<strong>执行顺序：</strong>封闭类对象生成时，先执行所有对象成员的构造函数，然后才执行封闭类的构造函数。对象成员的构造函数调用次序和对象成员在类中的说明次序一致，与它们在成员初始化列表中出现的次序无关。当封闭类的对象消亡时，先执行封闭类的析构函数，然后再执行成员对象的析构函数。次序和构造函数的调用次序相反，先初始化的后析构封闭类的对象，如果是用默认复制构造函数初始化的，那么它里面包含的成员对象，也会用复制构造函数初始化。<a class="glightbox" href=".static/1661164604832-03ca898d-8a12-41a9-a75b-0758a430b50a.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="img" src=".static/1661164604832-03ca898d-8a12-41a9-a75b-0758a430b50a.png" /></a></p>
+<h3 id="244-常量对象和常量成员函数">2.4.4 常量对象和常量成员函数<a class="headerlink" href="#244-常量对象和常量成员函数" title="Permanent link">&para;</a></h3>
+<p>如果不希望某个对象的值被改变，则定义该对象的时候可以在前面加 const关键字，即常量对象。常量 对象只能使用构造函数、析构函数和有const 说明的函数(常量方法）在类的成员函数说明后面加上const关键字，则该成员函数成为常量成员函数，常量成员函数内部不能改变属性的值，也不能调用非常量成员函数<strong>在定义常量成员函数和声明常量成员函数时都应该使用const 关键字：</strong><code>class Sample { private:    int value; public:    void PrintValue() const; }; void Sample::PrintValue() const { //此处不使用const会导致编译出错    cout &lt;&lt; value; } void Print(const Sample &amp;o) {    o.PrintValue(); //若 PrintValue非const则编译错 }</code><strong>常量成员函数的重载：</strong>名字和参数表都一样，const有或无，视为重载。<code>class CTest { private:    int n; public:    CTest() { n = 1; }    int GetValue() const { return n; }    int GetValue() { return 2 * n; } }; int main() {    const CTest objTest1;    CTest objTest2;    cout &lt;&lt; objTest1.GetValue() &lt;&lt; "," &lt;&lt; objTest2.GetValue();    return 0; }</code><strong>mutable成员变量</strong>可以在const成员函数中修改的成员变量<a class="glightbox" href=".static/1661179499904-21a0c2ae-88a1-4765-abdb-5efd8654521f.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="img" src=".static/1661179499904-21a0c2ae-88a1-4765-abdb-5efd8654521f.png" /></a></p>
+<h3 id="245-友元">2.4.5 友元<a class="headerlink" href="#245-友元" title="Permanent link">&para;</a></h3>
+<p><strong>友元函数：一个类的友元函数可以访问该类的私有成员</strong><code>class CCar; //提前声明 CCar类，以便后面的CDriver类使用 class CDriver { public:    void ModifyCar(CCar *pCar); //改装汽车 }; class CCar { private:    int price;    friend int MostExpensiveCar(CCar cars[], int total); //声明友元    friend void CDriver::ModifyCar(CCar *pCar);    //声明友元 }; void CDriver::ModifyCar( CCar * pCar){} int MostExpensiveCar( CCar cars[],int total){} //可以将一个类的成员函数(包括构造、析构函数)说明为另一个类的友元</code><strong>友元类: 如果A是B的友元类，那么A的成员函数可以访问B的私成员</strong><code>class CCar { private:    int price;    friend class CDriver; //声明CDriver为友元类 }; class CDriver { public:    CCar myCar;    void ModifyCar()    {                        //改装汽车        myCar.price += 1000; //因CDriver是CCar的友元类，        //故此处可以访问其私有成员    } }; int main() {    return 0; }</code></p>
+<h1 id="3-运算符重载">3 运算符重载<a class="headerlink" href="#3-运算符重载" title="Permanent link">&para;</a></h1>
+<h2 id="31-基本概念">3.1 基本概念<a class="headerlink" href="#31-基本概念" title="Permanent link">&para;</a></h2>
+<p>运算符重载的实质是函数重载，可以重载为普通函数，也可以重载为成员函数 把含运算符的表达式转换成对运算符函数的调用，把运算符的操作数转换成运算符函数的参数运算符被多次重载时，根据实参的类型决定调用哪个运算符函数重载为成员函数时，参数个数为运算符目数减一重载为普通函数时，参数个数为运算符目数<code>class Complex { public:    double real, imag;    Complex(double r = 0.0, double i = 0.0) : real(r), imag(i) {}    Complex operator-(const Complex &amp;c); }; Complex operator+(const Complex &amp;a, const Complex &amp;b) {    return Complex(a.real + b.real, a.imag + b.imag); //返回一个临时对象 } Complex Complex::operator-(const Complex &amp;c) {    return Complex(real - c.real, imag - c.imag); //返回一个临时对象 } int main() {    Complex a(4, 4), b(1, 1), c;    c = a + b; //等价于c=operator+(a,b);    cout &lt;&lt; c.real &lt;&lt; "," &lt;&lt; c.imag &lt;&lt; endl;    cout &lt;&lt; (a - b).real &lt;&lt; "," &lt;&lt; (a - b).imag &lt;&lt; endl;    // a-b等价于a.operator-(b)    return 0; }</code></p>
+<h2 id="32-赋值运算符的重载">3.2 赋值运算符的重载<a class="headerlink" href="#32-赋值运算符的重载" title="Permanent link">&para;</a></h2>
+<p>有时候希望赋值运算符两边的类型可以不匹配，比如，把一个int类型变量赋值给一个Complex对象，或把一个 char * 类型的字符串赋值给一个字符串对象,此时就需要重载赋值运算符“=”赋值运算符“=”只能重载为成员函数<code>class String { private:    char *str; public:    String() : str(new char[1]) { str[0] = 0; }    const char *c_str() { return str; };    String &amp;operator=(const char *str);    ~String() { delete[] str; }; }; String &amp;String::operator=(const char *s) {    if( this == &amp; s)        return * this;    delete[] str;    str = new char[strlen(str) + 1];    strcpy(str, s);    return *this; } int main() {    String a;    a = "hello";    cout &lt;&lt; a.c_str(); }</code><strong>为什么要定义赋值运算符？</strong>如不定义自己的赋值运算符，那么S1=S2实际上导致 S1.str和 S2.str指向同一地方。如果S1对象消亡，析构函数将释放 S1.str指向的空间，则S2消亡时还要释放一次，不妥。另外，如果执行 S1 = "other"；会导致S2.str指向的地方被delete（见代码16行）一般情况下，将运算符重载为类的成员函数，是较好的选择。但有时，重载为成员函数不能满足使用要求，重载为普通函数，又不能访问类的私有成员，所以需要将运算符重载为友元。<code>class Complex {    double real,imag; public:    Complex( double r, double i):real(r),imag(i){ };    Complex operator+( double r );    friend Complex operator + (double r,const Complex &amp; c); };//满足c = 5 + c;</code></p>
+<h2 id="33-可变长数组类的实现">3.3 可变长数组类的实现<a class="headerlink" href="#33-可变长数组类的实现" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>class CArray {    int size; //数组元素的个数    int *ptr; //指向动态分配的数组 public:    CArray(int s = 0); //s代表数组元素的个数    CArray(CArray &amp; a);    ~CArray();    void push_back(int v); //用于在数组尾部添加一个元素v    CArray &amp; operator=( const CArray &amp; a);    //用于数组对象间的赋值    int length() { return size; } //返回数组元素个数    int &amp; CArray::operator[](int i) //返回值为 int 不行!不支持 a[i] = 4    {  //用以支持根据下标访问数组元素，        // 如n = a[i] 和a[i] = 4; 这样的语句        return ptr[i];    } }; CArray &amp; CArray::operator=( const CArray &amp; a) { //赋值号的作用是使&quot;=&quot;左边对象里存放的数组，大小和内容都和右边的对象一样    if( ptr == a.ptr) //防止a=a这样的赋值导致出错        return * this;    if( a.ptr == NULL) { //如果a里面的数组是空的        if( ptr )            delete [] ptr;        ptr = NULL;        size = 0;        return * this;    }    if( size &lt; a.size) { //如果原有空间够大，就不用分配新的空间        if(ptr)            delete [] ptr;            ptr = new int[a.size];    }    memcpy( ptr,a.ptr,sizeof(int)*a.size);    size = a.size;    return * this; }
+</span></code></pre></div>
+<h2 id="34-流插入运算符和流提取运算符的重载">3.4 流插入运算符和流提取运算符的重载<a class="headerlink" href="#34-流插入运算符和流提取运算符的重载" title="Permanent link">&para;</a></h2>
+<p>cout 是在 iostream 中定义的，ostream 类的对象,所以只能将其重载为全局函数。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>class CStudent{ public: int nAge; }; int main(){    CStudent s ;        s.nAge = 5;    cout &lt;&lt; s &lt;&lt;&quot;hello&quot;;    return 0; } ostream &amp; operator&lt;&lt;( ostream &amp; o,const CStudent &amp; s) {    o &lt;&lt; s.nAge ;    return o; }
+</span></code></pre></div>
+<h2 id="35-类型转换运算符和自增自减运算符的重载">3.5 类型转换运算符和自增、自减运算符的重载<a class="headerlink" href="#35-类型转换运算符和自增自减运算符的重载" title="Permanent link">&para;</a></h2>
+<p>类型强制转换运算符被重载时不能写返回值类型，实际上其返回值类型就是该类型强制转换运算符代表的类型。<code>#include &lt;iostream&gt; using namespace std; class Complex {    double real,imag;    public:    Complex(double r=0,double i=0):real(r),imag(i) { };    operator double () { return real; }    //重载强制类型转换运算符 double }; int main() {    Complex c(1.2,3.4);    cout &lt;&lt; (double)c &lt;&lt; endl; //输出 1.2    double n = 2 + c; //等价于 double n=2+c.operator double()    cout &lt;&lt; n;    //输出 3.2 }</code>前置运算符作为一元运算符重载<strong>重载为成员函数：</strong>T &amp; operator++();T &amp; operator--();<strong>重载为全局函数：</strong>T1 &amp; operator++(T2);T1 &amp; operator—(T2);后置运算符作为二元运算符重载，多写一个没用的参数<strong>重载为成员函数：</strong>T operator++(int);T operator--(int);<strong>重载为全局函数：</strong>T1 operator++(T2,int );T1 operator—( T2,int);C++不允许定义新的运算符 ；运算符重载不改变运算符的优先级；以下运算符不能被重载：“.”、“.*”、“::”、“?:”、sizeof；重载运算符()、[]、-&gt;或者赋值运算符=时，运算符重载函数必须声明为 类的成员函数</p>
+<h1 id="4-继承和派生">4 继承和派生<a class="headerlink" href="#4-继承和派生" title="Permanent link">&para;</a></h1>
+<h2 id="41-概念">4.1 概念<a class="headerlink" href="#41-概念" title="Permanent link">&para;</a></h2>
+<p><strong>继承</strong>：在定义一个新的类B时，如果该类与某个已有的类A相似(指的是B拥有A的全部特点)，那么就可以把A作为一个基类，而把B作为基类的一个派生类(也称子类)。派生类是通过对基类进行修改和扩充得到，在派生类中，可以扩充新的成员变量和成员函数。派生类一经定义后，可以独立使用，不依赖于基类。派生类拥有基类的全部成员函数和成员变量，不论是private、protected、public 。在派生类的各个成员函数中，不能访问基类中的private成员。<a class="glightbox" href=".static/1662388235217-34480c09-b64c-4b99-9153-c6f0e729d6b6.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="img" src=".static/1662388235217-34480c09-b64c-4b99-9153-c6f0e729d6b6.png" /></a><code>class CStudent { private: string sName; int nAge; public: bool IsThreeGood() { }; void SetName( const string &amp; name ) { sName = name; } //...... }; class CUndergraduateStudent: public CStudent { private: int nDepartment; public: bool IsThreeGood() { ...... }; //覆盖 bool CanBaoYan() { .... }; }; // 派生类的写法是：类名: public 基类名</code><strong>派生类对象的内存空间</strong>派生类对象的体积等于基类对象的体积，再加上派生类对象自己的成员变量的体积。在派生类对象中，包含着基类对象，而且基类对象的存储位置位于派生类对象新增的成员变量之前。</p>
+<h2 id="42-继承关系和复合关系">4.2 继承关系和复合关系<a class="headerlink" href="#42-继承关系和复合关系" title="Permanent link">&para;</a></h2>
+<ul>
+<li>继承：“是”关系。基类 A，B是基类A的派生类。逻辑上要求：“一个B对象也是一个A对象”</li>
+<li>复合：“有”关系。类C中“有”成员变量k，k是类D的对象，则C和D是复合关系。一般逻辑上要求：“D对象是C对象的固有属性或组成部分”</li>
+</ul>
+<h2 id="43-派生类覆盖基类成员">4.3 派生类覆盖基类成员<a class="headerlink" href="#43-派生类覆盖基类成员" title="Permanent link">&para;</a></h2>
+<p>派生类可以定义一个和基类成员同名的成员，即为覆盖。在派生类中访问这类成员时，缺省的情况是访问派生类中定义的成员。要在派生类中访问由基类定义的同名成员时，要使用作用域符号:: 。</p>
+<h2 id="44-类的保护成员">4.4 类的保护成员<a class="headerlink" href="#44-类的保护成员" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>基类的private成员：可以被下列函数访问</p>
+</li>
+<li>
+<ul>
+<li>基类的成员函数 </li>
+</ul>
+</li>
+<li>
+<p>基类的友元函数</p>
+</li>
+<li>
+<p>基类的public成员：可以被下列函数访问</p>
+</li>
+<li>
+<ul>
+<li>基类的成员函数</li>
+</ul>
+</li>
+<li>基类的友元函数</li>
+<li>派生类的成员函数</li>
+<li>派生类的友元函数</li>
+<li>
+<p>其他的函数</p>
+</li>
+<li>
+<p>基类的protected成员：可以被下列函数访问</p>
+</li>
+<li>
+<ul>
+<li>基类的成员函数</li>
+</ul>
+</li>
+<li>基类的友元函数</li>
+<li>派生类的成员函数可以访问当前对象的基类的保护成员</li>
+</ul>
+<h2 id="45-派生类的构造函数">4.5 派生类的构造函数<a class="headerlink" href="#45-派生类的构造函数" title="Permanent link">&para;</a></h2>
+<p><strong>包含成员对象的派生类的构造函数写法</strong><code>class Bug { private:    int nLegs;    int nColor; public:    int nType;    Bug(int legs, int color);    void PrintBug(){}; }; class Skill { public:    Skill(int n) {} }; class FlyBug : public Bug {    int nWings;    Skill sk1, sk2; public:    FlyBug(int legs, int color, int wings); }; FlyBug::FlyBug(int legs, int color, int wings) :  Bug(legs, color), sk1(5), sk2(color), nWings(wings) { }</code>在创建派生类的对象时:1) 先执行基类的构造函数，用以初始化派生类对象中从基类继承的成员；2) 再执行成员对象类的构造函数，用以初始化派生类对象中成员对象;3) 最后执行派生类自己的构造函数在派生类对象消亡时：1) 先执行派生类自己的析构函数;2) 再依次执行各成员对象类的析构函数;3) 最后执行基类的析构函数析构函数的调用顺序与构造函数的调用顺序相反</p>
+<h2 id="46-public继承的赋值兼容规则">4.6 public继承的赋值兼容规则<a class="headerlink" href="#46-public继承的赋值兼容规则" title="Permanent link">&para;</a></h2>
+<p><strong>4.6.1 public继承的赋值兼容规则</strong><code>class base { }; class derived : public base { }; base b; derived d;</code>1） 派生类的对象可以赋值给基类对象<code>b = d;</code>2） 派生类对象可以初始化基类引用<code>base &amp; br = d;</code>3） 派生类对象的地址可以赋值给基类指针<code>base * pb = &amp; d;</code><strong>4.6.2 protected继承和private继承</strong>protected继承时，基类的public成员和protected成员成为派生类的protected成员。private继承时，基类的public成员成为派生类的private成员，基类的protected成员成为派生类的不可访问成员。protected和private继承不是“是”的关系</p>
+<h2 id="47-直接基类和间接基类">4.7 直接基类和间接基类<a class="headerlink" href="#47-直接基类和间接基类" title="Permanent link">&para;</a></h2>
+<p>类A派生类B，类B派生类C，类C派生类D，……类A是类B的直接基类类B是类C的直接基类，类A是类C的间接基类类C是 类D的直接基类，类A、B是类D的间接基类                            在声明派生类时，只需要列出它的直接基类<a class="glightbox" href=".static/1662556891800-06436e6a-8827-4768-b7a6-41ee06c5f5f8.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="img" src=".static/1662556891800-06436e6a-8827-4768-b7a6-41ee06c5f5f8.png" /></a></p>
+<h1 id="5-多态">5 多态<a class="headerlink" href="#5-多态" title="Permanent link">&para;</a></h1>
+<h2 id="51-虚函数和多态">5.1 虚函数和多态<a class="headerlink" href="#51-虚函数和多态" title="Permanent link">&para;</a></h2>
+<p><strong>在类的定义中，前面有 virtual 关键字的成员函数就是虚函数</strong>多态的表现形式：派生类的指针可以赋给基类指针和基类引用通过基类指针调用基类和派生类中的同名虚函数时：该引用引用的是一个基类的对象，那么被调用是基类的虚函数；若该引用引用的是一个派生类的对象，那么被调用的是派生类的虚函数若调用的不是同名虚函数，则调用基类函数在面向对象的程序设计中使用多态，能够增强程序的可扩充性，即程序需要修改或增加功能的时候，需要改动和增加的代码较少<strong>例子：几何形体处理程序</strong><code>#include &lt;iostream&gt; #include &lt;stdlib.h&gt; #include &lt;math.h&gt; using namespace std; class CShape { public:    virtual double Area() = 0; //纯虚函数    virtual void PrintInfo() = 0; }; class CRectangle : public CShape { public:    int w, h;    virtual double Area();    virtual void PrintInfo(); }; class CCircle : public CShape { public:    int r;    virtual double Area();    virtual void PrintInfo(); }; class CTriangle : public CShape { public:    int a, b, c;    virtual double Area();    virtual void PrintInfo(); }; CShape *pShapes[100]; int MyCompare(const void *s1, const void *s2); int main() {    int i;    int n;    CRectangle *pr;    CCircle *pc;    CTriangle *pt;    cin &gt;&gt; n;    for (i = 0; i &lt; n; i++)    {        char c;        cin &gt;&gt; c;        switch (c)        {        case 'R':            pr = new CRectangle();            cin &gt;&gt; pr-&gt;w &gt;&gt; pr-&gt;h;            pShapes[i] = pr;            break;        case 'C':            pc = new CCircle();            cin &gt;&gt; pc-&gt;r;            pShapes[i] = pc;            break;        case 'T':            pt = new CTriangle();            cin &gt;&gt; pt-&gt;a &gt;&gt; pt-&gt;b &gt;&gt; pt-&gt;c;            pShapes[i] = pt;            break;        }    }    qsort(pShapes, n, sizeof(CShape *), MyCompare);    for (i = 0; i &lt; n; i++)        pShapes[i]-&gt;PrintInfo();    return 0; } int MyCompare(const void *s1, const void *s2) {    double a1, a2;    CShape **p1; // s1,s2 是 void * ，不可写 “* s1”来取得s1指向的内容    CShape **p2;    p1 = (CShape **)s1; // s1,s2指向pShapes数组中的元素，数组元素的类型是CShape *    p2 = (CShape **)s2; // 故 p1,p2都是指向指针的指针，类型为 CShape **    a1 = (*p1)-&gt;Area(); // * p1 的类型是 Cshape * ,是基类指针，故此句为多态    a2 = (*p2)-&gt;Area();    if (a1 &lt; a2)        return -1;    else if (a2 &lt; a1)        return 1;    else        return 0; }</code>用基类指针数组存放指向各种派生类对象的指针，然后遍历该数组，就能对各个派生类对象做各种操作，是很常用的做法</p>
+<h2 id="52-构造函数和析构函数中调用虚函数">5.2 构造函数和析构函数中调用虚函数<a class="headerlink" href="#52-构造函数和析构函数中调用虚函数" title="Permanent link">&para;</a></h2>
+<p>在构造函数和析构函数中调用虚函数，不是多态。编译时即可确定，调用的函数是自己的类或基类中定义的函数，不会等到运行时才决定调用自己的还是派生类的函数</p>
+<p>派生类中和基类中虚函数同名同参数表的函数，不加virtual也自动成为虚函数</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">myclass</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">public</span><span class="o">:</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hello from myclass&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">bye</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;bye from myclass&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">};</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">class</span><span class="w"> </span><span class="nc">son</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">myclass</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">{</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">public</span><span class="o">:</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hello from son&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="n">son</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">hello</span><span class="p">();</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="o">~</span><span class="n">son</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">bye</span><span class="p">();</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="p">};</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="k">class</span><span class="w"> </span><span class="nc">grandson</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">son</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="p">{</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="k">public</span><span class="o">:</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hello from grandson&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">bye</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;bye from grandson&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="n">grandson</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;constructing grandson&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="o">~</span><span class="n">grandson</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;destructing grandson&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="p">};</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="p">{</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="n">grandson</span><span class="w"> </span><span class="n">gson</span><span class="p">;</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">    </span><span class="n">son</span><span class="w"> </span><span class="o">*</span><span class="n">pson</span><span class="p">;</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">    </span><span class="n">pson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">gson</span><span class="p">;</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">    </span><span class="n">pson</span><span class="o">-&gt;</span><span class="n">hello</span><span class="p">();</span><span class="w"> </span><span class="c1">//多态</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><a class="glightbox" href=".static/1662625241035-85c65a01-7158-4bd6-ab22-3ce95cdecb5a.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="img" src=".static/1662625241035-85c65a01-7158-4bd6-ab22-3ce95cdecb5a.png" /></a></p>
+<h2 id="53-虚函数的访问权限">5.3 虚函数的访问权限<a class="headerlink" href="#53-虚函数的访问权限" title="Permanent link">&para;</a></h2>
+<ul>
+<li>编译出错是因为 fun2() 是Base的私有成员。即使运行到此时实际上调用的应该是Derived的公有成员 fun2()也不行，因为语法检查是不考虑运行结果的。</li>
+<li>如果 将Base中的 private换成public,即使Derived中的fun2() 是private的，编译依然能通过，也能正确调用Derived::fun2()。</li>
+</ul>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">private</span><span class="o">:</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">fun2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Base::fun2()&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">};</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">Derived</span><span class="o">:</span><span class="k">public</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">public</span><span class="o">:</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">fun2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Derived:fun2()&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">};</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">Derived</span><span class="w"> </span><span class="n">d</span><span class="p">;</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">Base</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pBase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">d</span><span class="p">;</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="n">pBase</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">fun2</span><span class="p">();</span>
+</span></code></pre></div>
+<h2 id="54-多态的实现原理">5.4 多态的实现原理<a class="headerlink" href="#54-多态的实现原理" title="Permanent link">&para;</a></h2>
+<p>“多态”的关键在于通过基类指针或引用调用一个虚函数时，编译时不确定到底调用的是基类还是派生类的函数，运行时才确定 ---- 这叫“动态联编”。</p>
+<p><a class="glightbox" href=".static/1662644673544-b7d95c75-89db-4353-b278-2e8990818302.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="img" src=".static/1662644673544-b7d95c75-89db-4353-b278-2e8990818302.png" /></a></p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">A</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">public</span><span class="o">:</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">Func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;A::Func&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">};</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">B</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">A</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">{</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="k">public</span><span class="o">:</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">Func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;B::Func&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p">};</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="p">{</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="o">*</span><span class="n">pa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">B</span><span class="p">();</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="n">pa</span><span class="o">-&gt;</span><span class="n">Func</span><span class="p">();</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="c1">// 64位程序指针为8字节</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="o">*</span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="o">*</span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">pa</span><span class="p">;</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">    </span><span class="o">*</span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">p1</span><span class="p">;</span><span class="c1">//B对象头部存放的8字节虚函数表地址指针变成了A对象的</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">    </span><span class="n">pa</span><span class="o">-&gt;</span><span class="n">Func</span><span class="p">();</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="p">}</span><span class="c1">//输出为B::Func</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="c1">//A::Func</span>
+</span></code></pre></div>
+<h2 id="55-虚析构函数">5.5 虚析构函数<a class="headerlink" href="#55-虚析构函数" title="Permanent link">&para;</a></h2>
+<ul>
+<li>通过基类的指针删除派生类对象时，通常情况下只调用基类的析构函数。</li>
+<li>把基类的析构函数声明为virtual(派生类的析构函数可以virtual不进行声明)通过基类的指针删除派生类对象时，首先调用派生类的析构函数，然后调用基类的析构函数。</li>
+<li>一个类如果定义了虚函数，则应该将析构函数也定义成虚函数。或者，一个类打算作为基类使用，也应该将析构函数定义成虚函数。</li>
+<li>不允许以虚函数作为构造函数</li>
+</ul>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">son</span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">public</span><span class="o">:</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">son</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;bye from son&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;};</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">};</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">grandson</span><span class="o">:</span><span class="k">public</span><span class="w"> </span><span class="n">son</span><span class="p">{</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="k">public</span><span class="o">:</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="o">~</span><span class="n">grandson</span><span class="p">(){</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;bye from grandson&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;};</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">};</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="n">son</span><span class="w"> </span><span class="o">*</span><span class="n">pson</span><span class="p">;</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="n">pson</span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">grandson</span><span class="p">();</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">pson</span><span class="p">;</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="p">}</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="c1">//输出</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="c1">//bye from grandson</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="c1">//bye from son</span>
+</span></code></pre></div>
+<h2 id="56-纯虚函数和抽象类">5.6 纯虚函数和抽象类<a class="headerlink" href="#56-纯虚函数和抽象类" title="Permanent link">&para;</a></h2>
+<p>纯虚函数： 没有函数体的虚函数<code>class A { private: int a; public: virtual void Print( ) = 0 ; //纯虚函数 void fun() { cout &lt;&lt; "fun"; } };</code>包含纯虚函数的类叫抽象类抽象类只能作为基类来派生新类使用，不能创建抽象类的对象抽象类的指针和引用可以指向由抽象类派生出来的类的对象<code>A a ; // 错，A 是抽象类，不能创建对象</code> <code>A * pa ; // ok,可以定义抽象类的指针和引用</code> <code>pa = new A ; //错误, A 是抽象类，不能创建对象</code>在抽象类的成员函数内可以调用纯虚函数，但是在构造函数或析构函数内部不能调用纯虚函数如果一个类从抽象类派生而来，当且仅当实现了基类中的所有纯虚函数，它才能成为非抽象类</p>
+<h1 id="6-输入输出和文件操作">6 输入输出和文件操作<a class="headerlink" href="#6-输入输出和文件操作" title="Permanent link">&para;</a></h1>
+<h2 id="61-输入输出相关的类">6.1 输入输出相关的类<a class="headerlink" href="#61-输入输出相关的类" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href=".static/1662775341692-232b685c-bb46-438a-950b-308590afcd76.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="img" src=".static/1662775341692-232b685c-bb46-438a-950b-308590afcd76.png" /></a></p>
+<p>istream是用于输入的流类，cin就是该类的对象</p>
+<p>ostream是用于输出的流类，cout就是该类的对象</p>
+<p>ifstream是用于从文件读取数据的类</p>
+<p>ofstream是用于向文件写入数据的类</p>
+<p>iostream是既能用于输入，又能用于输出的类</p>
+<p>fstream 是既能从文件读取数据，又能向文件写入数据的类</p>
+<ul>
+<li>
+<p>cin对应于标准输入流，用于从键盘读取数据，也可以被重定向为从文件中读取数据。</p>
+</li>
+<li>
+<p>cout对应于标准输出流，用于向屏幕输出数据，也可以被重定向为向文件写入数据。</p>
+</li>
+<li>
+<p>cerr和clog对应于标准错误输出流，用于向屏幕输出出错信息，cerr和clog的区别在于cerr不使用缓冲区,直接向显示器输出信息；而输出到clog中的信息先会被存放在缓冲区,缓冲区满或者刷新时才输出到屏幕。</p>
+</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>istream &amp; getline(char * buf, int bufSize);
+</span></code></pre></div>
+<p>从输入流中读取bufSize-1个字符到缓冲区buf，或读到碰到‘\n’为止（哪个先到算哪个）</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>istream &amp; getline(char * buf, int bufSize,char delim);
+</span></code></pre></div>
+<p>从输入流中读取bufSize-1个字符到缓冲区buf，或读到碰到delim字符为止（哪个先到算哪个）
+    两个函数都会自动在buf中读入数据的结尾添加‘\0’。 ‘\n’或delim都不会被读入buf，但会被从输入流中取走。可以用 if(!cin.getline(…)) 判断输入是否结束</p>
+<p><strong>输入输出重定向</strong></p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="n">freopen</span><span class="p">(</span><span class="s">&quot;test.txt&quot;</span><span class="p">,</span><span class="s">&quot;w&quot;</span><span class="p">,</span><span class="n">stdout</span><span class="p">);</span><span class="w"> </span><span class="c1">//将标准输出重定向到 test.txt文件</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="c1">//除数为0则在屏幕上输出错误信息</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">        </span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;error.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="k">else</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">/</span><span class="n">y</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">//输出结果到test.txt</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="c1">//***************************************************************</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">f</span><span class="p">;</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">    </span><span class="n">freopen</span><span class="p">(</span><span class="s">&quot;t.txt&quot;</span><span class="p">,</span><span class="s">&quot;r&quot;</span><span class="p">,</span><span class="n">stdin</span><span class="p">);</span><span class="w"> </span><span class="c1">//cin被改为从 t.txt中读取数据</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;,&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="62-流操纵算子">6.2 流操纵算子<a class="headerlink" href="#62-流操纵算子" title="Permanent link">&para;</a></h2>
+<h2 id="63-文件读写">6.3 文件读写<a class="headerlink" href="#63-文件读写" title="Permanent link">&para;</a></h2>
+<p>可以将顺序文件看作一个有限字符构成的顺序字符流，然后像对cin, cout 一样的读写<strong>创建文件:</strong><strong>直接创建</strong><code>#include &lt;fstream&gt; // 包含头文件</code>       <code>ofstream outFile("clients.dat", ios::out|ios::binary);//创建文件</code>clients.dat  要创建的文件的名字ios::out       文件打开方式ios:out        输出到文件, 删除原有内容ios::app      输出到文件, 保留原有内容，总是在尾部添加ios::binary 以二进制文件格式打开文件<strong>也可以先创建ofstream对象，再用 open函数打开</strong><code>ofstream fout;</code> <code>fout.open("test.out",ios::out|ios::binary);</code><strong>判断是否打开成功</strong><code>if(!fout){``cout &lt;&lt; "File open error!"&lt;&lt;endl;``}</code><strong>文件名的绝对路径和相对路径</strong>绝对路径:"c:\tmp\mydir\some.txt"相对路径："\tmp\mydir\some.txt"当前盘符的根目录下的tmp\dir\some.txt"tmp\mydir\some.txt"当前文件夹的tmp子文件夹里面的….."..\tmp\mydir\some.txt"当前文件夹的父文件夹下面的tmp子文件夹里面的…..<strong>文件的读写指针</strong>对于输入文件,有一个读指针;对于输出文件,有一个写指针;对于输入输出文件,有一个读写指针;标识文件操作的当前位置, 该指针在哪里,读写操作就在哪里进行<strong>显式关闭文件</strong><code>ifstream fin("test.dat",ios::in);``fin.close();``ofstream fout("test.dat",ios::out);``fout.close();</code><strong>字符文件读写</strong><code>//因为文件流也是流，所以流的成员函数和流操作算子也同样适用于文件流 //程序将文件 in.txt 里面的整数排序后，输出到out.txt #include &lt;iostream&gt; #include &lt;fstream&gt; #include &lt;vector&gt; #include &lt;algorithm&gt; using namespace std; int main() { vector&lt;int&gt; v; ifstream srcFile("in.txt",ios::in); ofstream destFile("out.txt",ios::out); int x; while( srcFile &gt;&gt; x ) v.push_back(x); sort(v.begin(),v.end()); for( int i = 0;i &lt; v.size();i ++ )    destFile &lt;&lt; v[i] &lt;&lt; " "; destFile.close(); srcFile.close(); return 0; }</code><strong>二进制文件读写</strong>二进制读文件ifstream 和 fstream的成员函数：<code>istream&amp; read (char* s, long n);</code>将文件读指针指向的地方的n个字节内容，读入到内存地址s，然后将文件读指针向后移动n字节 (以ios::in方式打开文件时，文件读指针开始指向文件开头) 二进制写文件ofstream 和 fstream的成员函数：<code>istream&amp; write (const char* s, long n);</code>将内存地址s处的n个字节内容，写入到文件中写指针指向的位置，然后将文件写指针向后移动n字节(以ios::out方式打开文件时，文件写指针开始指向文件开头, 以ios::app方式打开文件时，文件写指针开始指向文件尾部 ) <strong>从键盘输入几个学生的姓名的成绩，并以二进制文件形式保存</strong><code>#include &lt;iostream&gt; #include &lt;fstream&gt; using namespace std; struct Student { char name[20]; int score; }; int main() { Student s; ofstream OutFile( "c:\\tmp\\students.dat",ios::out|ios::binary); while( cin &gt;&gt; s.name &gt;&gt; s.score )   OutFile.write( (char * ) &amp; s, sizeof( s) ); OutFile.close(); return 0; } //输入 //Tom 60 //Jack 80 //Jane 40 //^Z+回车</code><strong>将 students.dat 文件的内容读出并显示</strong><code>#include &lt;iostream&gt; #include &lt;fstream&gt; using namespace std; struct Student { char name[20]; int score; }; int main() {    Student s;    ifstream inFile("students.dat",ios::in | ios::binary );    if(!inFile) {        cout &lt;&lt; "error" &lt;&lt;endl;        return 0;    }    while( inFile.read( (char* ) &amp; s, sizeof(s) ) ) {        int readedBytes = inFile.gcount(); //看刚才读了多少字节        cout &lt;&lt; s.name &lt;&lt; " " &lt;&lt; s.score &lt;&lt; endl;    }    inFile.close();    return 0; }</code><strong>将 students.dat 文件的Jane的名字改成Mike</strong><code>int main() {    Student s;    fstream iofile( "c:\\tmp\\students.dat",    ios::in|ios::out|ios::binary);    if( !iofile) {        cout &lt;&lt; "error" ;        return 0;    }    iofile.seekp( 2 * sizeof(s),ios::beg); //定位写指针到第三个记录    iofile.write("Mike",strlen("Mike")+1);    iofile.seekg(0,ios::beg); //定位读指针到开头    while( iofile.read( (char* ) &amp; s, sizeof(s)) )        cout &lt;&lt; s.name &lt;&lt; " " &lt;&lt; s.score &lt;&lt; endl;    iofile.close();    return 0; }</code><strong>文件拷贝程序mycopy 示例</strong><code>/*用法示例： mycopy src.dat dest.dat 即将 src.dat 拷贝到 dest.dat 如果 dest.dat 原来就有，则原来的文件会被覆 盖 */ #include &lt;iostream&gt; #include &lt;fstream&gt; using namespace std; int main(int argc, char * argv[]) {    if( argc != 3 ) {        cout &lt;&lt; "File name missing!" &lt;&lt; endl;        return 0;    }    ifstream inFile(argv[1],ios::binary|ios::in); //打开文件用于读    if( ! inFile ) {        cout &lt;&lt; "Source file open error." &lt;&lt; endl;        return 0;    }    ofstream outFile(argv[2],ios::binary|ios::out); //打开文件用于写    if( !outFile) {        cout &lt;&lt; "New file open error." &lt;&lt; endl;        inFile.close(); //打开的文件一定要关闭        return 0;    }    char c;    while( inFile.get(c)) //每次读取一个字符        outFile.put(c); //每次写入一个字符    outFile.close();    inFile.close();    return 0; }</code><strong>二进制文件和文本文件的区别</strong>Linux,Unix下的换行符号：‘\n’ (ASCII码: 0x0a) Windows 下的换行符号：‘\r\n’ (ASCII码： 0x0d0a) endl 就是 '\n' Mac OS下的换行符号： ‘\r’ (ASCII码：0x0d) <strong>导致 Linux, Mac OS 文本文件在Windows 记事本中打开时不换行</strong>Unix/Linux下打开文件，用不用 ios::binary 没区别Windows下打开文件，如果不用 ios::binary，则：读取文件时，所有的 '\r\n’会被当做一个字符'\n'处理，即少读了一个字符'\r'。写入文件时，写入单独的'\n'时，系统自动在前面加一个'\r'，即多写了一个'\r'。</p>
+<h1 id="7-函数模板和类模板">7 函数模板和类模板<a class="headerlink" href="#7-函数模板和类模板" title="Permanent link">&para;</a></h1>
+<h2 id="71-函数模板">7.1 函数模板<a class="headerlink" href="#71-函数模板" title="Permanent link">&para;</a></h2>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年9月19日 03:08:06</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年9月19日 03:08:06</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "content.code.annotate", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.path", "toc.follow", "navigation.footer", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.code.select"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="../../assets/javascripts/mathjax.js"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+        
+          <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+        
+      
+        
+          <script src="../../assets/javascripts/link.js"></script>
+        
+      
+        
+          <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
