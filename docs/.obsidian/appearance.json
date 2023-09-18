@@ -1,0 +1,13 @@
+{
+  "theme": "moonstone",
+  "translucency": false,
+  "cssTheme": "Things",
+  "textFontFamily": "PingFang SC",
+  "accentColor": "",
+  "interfaceFontFamily": "Noto Sans",
+  "monospaceFontFamily": "DejaVu Sans Mono",
+  "baseFontSize": 20,
+  "enabledCssSnippets": [
+    "adjust"
+  ]
+}

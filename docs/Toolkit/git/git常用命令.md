@@ -48,6 +48,7 @@ git branch -a //查看本地和远程分支
 git branch [branchName] //新建本地分支但不切换
 git branch -D [branchName] //删除本地分支
 git branch -m [oldBranchName] [newBranchName] //重新命名分支
+git branch -u origin/master //追踪 origin 远程仓库的 master 分支
 ```
 
 ### git tag

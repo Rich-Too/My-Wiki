@@ -1,0 +1,168 @@
+{
+  "main": {
+    "id": "95212b519691cbda",
+    "type": "split",
+    "children": [
+      {
+        "id": "8c026be679b1141c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cd5d12c7757a5593",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/ALL/quicka.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e180b4aafac20d00",
+    "type": "split",
+    "children": [
+      {
+        "id": "45ed9d67f260b693",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b5856e4da3c680bf",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "215ccecf4156f5ac",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3f90ed0d0a0cb750",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "right": {
+    "id": "5412ac7cb94d518f",
+    "type": "split",
+    "children": [
+      {
+        "id": "0c5b0bf7b38ccb02",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e6470ec20722be4a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Excalidraw/ALL/quicka.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
+    }
+  },
+  "active": "cd5d12c7757a5593",
+  "lastOpenFiles": [
+    "Excalidraw/ALL/quicka.md",
+    "Excalidraw/ALL/parse.md",
+    "DL/Tools/Math.md",
+    "static/image-20230128113726955.png.md",
+    "static/image-20230128112218282.png.md",
+    "static",
+    "home/richtoo/Documents/My-Wiki/docs/C&system/${static}/image-20230730200002768.png.md",
+    "home/richtoo/Documents/My-Wiki/docs/C&system/${static}",
+    "home/richtoo/Documents/My-Wiki/docs/C&system",
+    "home/richtoo/Documents/My-Wiki/docs",
+    "home/richtoo/Documents/My-Wiki",
+    "home/richtoo/Documents",
+    "home/richtoo",
+    "home",
+    "css/font.css",
+    "css/heiti.css",
+    "static/image-20230128112218282.png",
+    "Excalidraw/ALL/传感器.md",
+    "Excalidraw/ALL/😵‍💫DIP.md",
+    "Excalidraw/Excalidraw/ALL/传感器.md",
+    "Excalidraw/attachment/Scripts/Downloaded/Set Text Alignment.svg",
+    "Excalidraw/attachment/Scripts/Downloaded/Set Text Alignment.md",
+    "Excalidraw/attachment/Scripts/Downloaded/Normalize Selected Arrows.svg",
+    "Excalidraw/attachment/Scripts/Downloaded/Normalize Selected Arrows.md",
+    "Excalidraw/attachment/Scripts/Downloaded/Mindmap format.svg",
+    "Excalidraw/attachment/Scripts/Downloaded/Mindmap format.md",
+    "Excalidraw/attachment/Scripts/Downloaded/Mindmap connector.svg",
+    "Excalidraw/attachment/Scripts/Downloaded/Mindmap connector.md",
+    "Excalidraw/attachment/Scripts/Downloaded/Expand rectangles horizontally.svg",
+    "Excalidraw/attachment/Scripts/Downloaded/Expand rectangles horizontally.md",
+    "Excalidraw/attachment/Scripts/Downloaded/Expand rectangles horizontally keep text centered.svg",
+    "Excalidraw/attachment/Scripts/Downloaded/Expand rectangles horizontally keep text centered.md",
+    "Excalidraw/attachment/Scripts/Downloaded/Copy Selected Element Styles to Global.svg",
+    "Excalidraw/attachment/Scripts/Downloaded/Copy Selected Element Styles to Global.md",
+    "Excalidraw/attachment/Scripts/Downloaded/Change shape of selected elements.svg",
+    "Excalidraw/attachment/Scripts/Downloaded/Change shape of selected elements.md",
+    "Excalidraw/attachment/Scripts/Downloaded/Auto Layout.svg",
+    "Excalidraw/attachment/Scripts/Downloaded/Auto Layout.md",
+    "Excalidraw/ALL/课程/生物信息学/展示思路.md",
+    "Excalidraw/ALL/课程/生物信息学/生物信息学.md",
+    "Excalidraw/ALL/课程/生物信息学/模型.md",
+    "Excalidraw/ALL/课程/生物信息学/展示.md",
+    "Excalidraw/ALL/课程/生物信息学/划重点.md",
+    "Excalidraw/ALL/课程/😵‍💫DIP.md",
+    "Excalidraw/ALL/课程/传感器.md",
+    "Excalidraw/ALL/生物信息学/生物信息学.md",
+    "Untitled.canvas",
+    "attachment/未命名.canvas",
+    "未命名.canvas",
+    "未命名 1.canvas"
+  ]
+}

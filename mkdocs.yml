@@ -101,9 +101,9 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra_css:
-  - css/extra.css
-  - css/font.css
-  - css/heiti.css
+  - assets/css/extra.css
+  - assets/css/font.css
+  - assets/css/heiti.css
   - https://fonts.loli.net/css2?family=Noto+Sans&family=PT+Sans&display=swap
   - https://fonts.loli.net/css?family=Open+Sans
   - https://fonts.loli.net/css?family=JetBrains+Mono
@@ -116,11 +116,11 @@ extra_css:
   - https://fonts.loli.net/css?family=PT+Sans
 
 extra_javascript:
-  - javascripts/mathjax.js # 支持数学公式，ref : https://squidfunk.github.io/mkdocs-material/reference/mathjax
+  - assets/javascripts/mathjax.js # 支持数学公式，ref : https://squidfunk.github.io/mkdocs-material/reference/mathjax
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js # 支持表格排序
-  - 'javascripts/link.js'
+  - assets/javascripts/link.js
   # - js/tablesort.js
   - //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
 
