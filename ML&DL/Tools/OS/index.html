@@ -1,0 +1,1254 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rich-too.github.io/My-Wiki/ML%26DL/Tools/OS/">
+      
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.19">
+    
+    
+      
+        <title>OS - RichToo的垃圾堆</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="../../../assets/css/font.css">
+    
+      <link rel="stylesheet" href="../../../assets/css/heiti.css">
+    
+      <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Noto+Sans&family=PT+Sans&display=swap">
+    
+      <link rel="stylesheet" href="https://fonts.loli.net/css?family=Open+Sans">
+    
+      <link rel="stylesheet" href="https://fonts.loli.net/css?family=JetBrains+Mono">
+    
+      <link rel="stylesheet" href="https://fonts.loli.net/css?family=Roboto+Mono">
+    
+      <link rel="stylesheet" href="https://fonts.loli.net/css?family=Roboto">
+    
+      <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Source+Sans+Pro&display=swap">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css">
+    
+      <link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Sans">
+    
+      <link rel="stylesheet" href="https://fonts.loli.net/css?family=PT+Sans">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="black">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-简介" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="RichToo的垃圾堆" class="md-header__button md-logo" aria-label="RichToo的垃圾堆" data-md-component="logo">
+      
+  <img src="../../../assets/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RichToo的垃圾堆
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="black"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="default" data-md-color-accent="default"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Rich-Too/My-Wiki" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    My-Wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        主页
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Toolkit/" class="md-tabs__link">
+        开发工具
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../DL/Tools/Math.md" class="md-tabs__link">
+        深度学习
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="RichToo的垃圾堆" class="md-nav__button md-logo" aria-label="RichToo的垃圾堆" data-md-component="logo">
+      
+  <img src="../../../assets/favicon.png" alt="logo">
+
+    </a>
+    RichToo的垃圾堆
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Rich-Too/My-Wiki" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    My-Wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../..">主页</a>
+          
+            <label for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          主页
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../me.md" class="md-nav__link">
+        关于我
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Toolkit/">开发工具</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          开发工具
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../Toolkit/git/">Git</a>
+          
+            <label for="__nav_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Toolkit/git/01.Git%E8%B5%B7%E6%AD%A5/" class="md-nav__link">
+        Git起步
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Toolkit/git/02.Git%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        Git基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Toolkit/git/03.%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%B8%8E%E5%88%86%E6%94%AF/" class="md-nav__link">
+        Git远程仓库与分支
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Toolkit/git/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        Git常用命令
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Toolkit/vim/vim/" class="md-nav__link">
+        Vim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Toolkit/shell/Shell%20Tools%20and%20Scripting/" class="md-nav__link">
+        Shell
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          深度学习
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          深度学习
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DL/Tools/Math.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DL/Tools/NumPy.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DL/Tools/OS.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DL/Tools/Pandas.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DL/Tools/python.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-简介" class="md-nav__link">
+    1. 简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-常用功能" class="md-nav__link">
+    2. 常用功能
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 常用功能">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-osname" class="md-nav__link">
+    2.1 os.name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-osenviron" class="md-nav__link">
+    2.2 os.environ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-oswalk" class="md-nav__link">
+    2.3 os.walk()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-oslistdir" class="md-nav__link">
+    2.4 os.listdir()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-osmkdir" class="md-nav__link">
+    2.5 os.mkdir()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-osremove" class="md-nav__link">
+    2.6 os.remove()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-osrename" class="md-nav__link">
+    2.7 os.rename()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-osgetcwd" class="md-nav__link">
+    2.8 os.getcwd()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-oschdir" class="md-nav__link">
+    2.9 os.chdir()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ospath-模块" class="md-nav__link">
+    3. os.path 模块
+  </a>
+  
+    <nav class="md-nav" aria-label="3. os.path 模块">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-ospathjoin" class="md-nav__link">
+    3.1 os.path.join()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-ospathabspath" class="md-nav__link">
+    3.2 os.path.abspath()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-ospathbasename" class="md-nav__link">
+    3.3 os.path.basename()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-ospathdirname" class="md-nav__link">
+    3.4 os.path.dirname()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-ospathsplit" class="md-nav__link">
+    3.5 os.path.split()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-ospathexists" class="md-nav__link">
+    3.6 os.path.exists()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-ospathisabs" class="md-nav__link">
+    3.7 os.path.isabs()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#38-ospathisfile-和-ospathisdir" class="md-nav__link">
+    3.8 os.path.isfile() 和 os.path.isdir()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>OS</h1>
+
+<h2 id="1-简介"><strong>1. 简介</strong><a class="headerlink" href="#1-简介" title="Permanent link">&para;</a></h2>
+<p><code>os</code>就是“operating system”的缩写，顾名思义，<code>os</code>模块提供的就是各种 Python 程序与操作系统进行交互的接口。通过使用<code>os</code>模块，一方面可以方便地与操作系统进行交互，另一方面页可以极大增强代码的可移植性。如果该模块中相关功能出错，会抛出<code>OSError</code>异常或其子类异常。</p>
+<blockquote>
+<p>注意，如果是读写文件的话，建议使用内置函数<code>open()</code>；如果是路径相关的操作，建议使用<code>os</code>的子模块<code>os.path</code>；如果要逐行读取多个文件，建议使用<code>fileinput</code>模块；要创建临时文件或路径，建议使用<code>tempfile</code>模块；要进行更高级的文件和路径操作则应当使用<code>shutil</code>模块。</p>
+</blockquote>
+<p>当然，使用<code>os</code>模块可以写出操作系统无关的代码并不意味着<code>os</code>无法调用一些特定系统的扩展功能，但要切记一点：一旦这样做就会极大<strong>损害代码的可移植性</strong>。</p>
+<p>此外，导入<code>os</code>模块时还要小心一点，千万<strong>不要</strong>为了图调用省事而将<code>os</code>模块解包导入，即不要使用<code>from os import *</code>来导入<code>os</code>模块；否则<code>os.open()</code>将会覆盖内置函数<code>open()</code>，从而造成预料之外的错误。</p>
+<h2 id="2-常用功能">2. 常用功能<a class="headerlink" href="#2-常用功能" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>注意，<code>os</code>模块中大多数接受路径作为参数的函数也可以接受“文件描述符”作为参数。
+文件描述符：file descriptor，在 Python 文档中简记为 fd，是一个与某个打开的文件对象绑定的整数，可以理解为该文件在系统中的编号。</p>
+</blockquote>
+<h3 id="21-osname"><strong>2.1 os.name</strong><a class="headerlink" href="#21-osname" title="Permanent link">&para;</a></h3>
+<p>该属性宽泛地指明了当前 Python 运行所在的环境，实际上是导入的操作系统相关模块的名称。这个名称也决定了模块中<strong>哪些功能是可用</strong>的，哪些是没有相应实现的。</p>
+<p>目前有效名称为以下三个：<code>posix</code>，<code>nt</code>，<code>java</code>。</p>
+<p>其中<code>posix</code>是 Portable Operating System Interface of UNIX（可移植操作系统接口）的缩写。Linux 和 Mac OS 均会返回该值；<code>nt</code>全称应为“Microsoft Windows NT”，大体可以等同于 Windows 操作系统，因此 Windows 环境下会返回该值；<code>java</code>则是 Java 虚拟机环境下的返回值。</p>
+<p>因此在我的电脑（win10）上执行下述代码，返回值是<code>nt</code>：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">os</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> <span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a> <span class="s1">&#39;nt&#39;</span>
+</span></code></pre></div>
+<p>而在 WSL（Windows Subsystem Linux，Windows 下的 Linux 子系统）上的结果则是：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a> <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">os</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a> <span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a> <span class="s1">&#39;posix&#39;</span>
+</span></code></pre></div>
+<blockquote>
+<p>查看<code>sys</code>模块中的<code>sys.platform</code>属性可以得到关于运行平台更详细的信息，在此不再赘述</p>
+</blockquote>
+<h3 id="22-osenviron"><strong>2.2 os.environ</strong><a class="headerlink" href="#22-osenviron" title="Permanent link">&para;</a></h3>
+<p><code>os.environ</code>属性可以返回环境相关的信息，主要是各类环境变量。返回值是一个映射（类似字典类型），具体的值为第一次导入<code>os</code>模块时的快照；其中的各个键值对，键是环境变量名，值则是环境变量对应的值。在第一次导入<code>os</code>模块之后，除非直接修改<code>os.environ</code>的值，否则该属性的值不再发生变化。</p>
+<p>比如其中键为“HOMEPATH”（Windows 下，Linux 下为“HOME”）的项，对应的值就是用户主目录的路径。Windows 下，其值为：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a> <span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;HOMEPATH&quot;</span><span class="p">]</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a> <span class="s1">&#39;d:</span><span class="se">\\</span><span class="s1">justdopython&#39;</span>
+</span></code></pre></div>
+<p>Linux 下，其值为：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a> <span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;HOME&quot;</span><span class="p">]</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a> <span class="s1">&#39;/home/justdopython&#39;</span>
+</span></code></pre></div>
+<h3 id="23-oswalk"><strong>2.3 os.walk()</strong><a class="headerlink" href="#23-oswalk" title="Permanent link">&para;</a></h3>
+<p>这个函数需要传入一个路径作为<code>top</code>参数，函数的作用是在以<code>top</code>为根节点的目录树中游走，对树中的每个目录生成一个由<code>(dirpath, dirnames, filenames)</code>三项组成的三元组。</p>
+<p>其中，<code>dirpath</code>是一个指示这个目录路径的字符串，<code>dirnames</code>是一个<code>dirpath</code>下子目录名（除去<code>“.”</code>和<code>“..”</code>）组成的列表，<code>filenames</code>则是由<code>dirpath</code>下所有非目录的文件名组成的列表。要注意的是，这些名称并不包含所在路径本身，要获取<code>dirpath</code>下某个文件或路径从<code>top</code>目录开始的完整路径，需要使用<code>os.path.join(dirpath, name)</code>。</p>
+<p>注意最终返回的结果是一个迭代器，我们可以使用<code>for</code>语句逐个取得迭代器的每一项：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a> <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">):</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a> <span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a> <span class="o">...</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a> <span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;do&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;go_go_go.txt&#39;</span><span class="p">])</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a> <span class="p">(</span><span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">do&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;IAmDirectory&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">],</span> <span class="p">[])</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a> <span class="p">(</span><span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">do</span><span class="se">\\</span><span class="s1">IAmDirectory&#39;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[])</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a> <span class="p">(</span><span class="s1">&#39;.</span><span class="se">\\</span><span class="s1">do</span><span class="se">\\</span><span class="s1">python&#39;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[</span><span class="s1">&#39;hello_justdopython.txt&#39;</span><span class="p">])</span>
+</span></code></pre></div>
+<p><a class="glightbox" href="v2-8be123b0dcf72bc5c03f764328531b91_b.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="v2-8be123b0dcf72bc5c03f764328531b91_b.jpg" /></a></p>
+<h3 id="24-oslistdir"><strong>2.4 os.listdir()</strong><a class="headerlink" href="#24-oslistdir" title="Permanent link">&para;</a></h3>
+<p>“listdir”即“list directories”，列出（当前）目录下的全部路径（及文件）。该函数存在一个参数，用以指定要列出子目录的路径，默认为<code>“.”</code>，即“当前路径”。</p>
+<p>函数返回值是一个列表，其中各元素均为字符串，分别是各路径名和文件名。</p>
+<p>通常在需要遍历某个文件夹中文件的场景下极为实用。</p>
+<p>比如定义以下函数：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a> <span class="k">def</span> <span class="nf">get_filelists</span><span class="p">(</span><span class="n">file_dir</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>     <span class="n">list_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">file_dir</span><span class="p">)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>     <span class="n">filelists</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>     <span class="k">for</span> <span class="n">directory</span> <span class="ow">in</span> <span class="n">list_directory</span><span class="p">:</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>         <span class="c1"># os.path 模块稍后会讲到</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="o">&lt;</span><span class="n">div</span> <span class="n">markdown</span><span class="o">=</span><span class="s2">&quot;1&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;margin-top: -30px; font-size: 0.75em; opacity: 0.7;&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">:</span><span class="n">material</span><span class="o">-</span><span class="n">circle</span><span class="o">-</span><span class="n">edit</span><span class="o">-</span><span class="n">outline</span><span class="p">:</span> <span class="n">约</span> <span class="mi">3404</span> <span class="n">个字</span> <span class="p">:</span><span class="n">fontawesome</span><span class="o">-</span><span class="n">solid</span><span class="o">-</span><span class="n">code</span><span class="p">:</span> <span class="mi">110</span> <span class="n">行代码</span> <span class="p">:</span><span class="n">material</span><span class="o">-</span><span class="n">clock</span><span class="o">-</span><span class="n">time</span><span class="o">-</span><span class="n">two</span><span class="o">-</span><span class="n">outline</span><span class="p">:</span> <span class="n">预计阅读时间</span> <span class="mi">13</span> <span class="n">分钟</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>         <span class="k">if</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">directory</span><span class="p">)):</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>             <span class="n">filelists</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>     <span class="k">return</span> <span class="n">filelists</span>
+</span></code></pre></div>
+<p>该函数的返回值就是当前目录下所有文件而非文件夹的名称列表。</p>
+<h3 id="25-osmkdir"><strong>2.5 os.mkdir()</strong><a class="headerlink" href="#25-osmkdir" title="Permanent link">&para;</a></h3>
+<p>“mkdir”，即“make directory”，用处是“新建一个路径”。需要传入一个类路径参数用以指定新建路径的位置和名称，如果指定路径已存在，则会抛出<code>FileExistsError</code>异常。</p>
+<p>该函数只能在已有的路径下新建一级路径，否则（即新建多级路径）会抛出<code>FileNotFoundError</code>异常。</p>
+<p>相应地，在需要新建多级路径的场景下，可以使用<code>os.makedirs()</code>来完成任务。函数<code>os.makedirs()</code>执行的是递归创建，若有必要，会分别新建指定路径经过的中间路径，直到最后创建出末端的“叶子路径”。</p>
+<p>示例如下：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a> <span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;test_os_mkdir&quot;</span><span class="p">)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a> <span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;test_os_mkdir&quot;</span><span class="p">)</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a> <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>   <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a> <span class="ne">FileExistsError</span><span class="p">:</span> <span class="p">[</span><span class="n">WinError</span> <span class="mi">183</span><span class="p">]</span> <span class="n">当文件已存在时</span><span class="err">，</span><span class="n">无法创建该文件</span><span class="err">。</span><span class="p">:</span> <span class="s1">&#39;test_os_mkdir&#39;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a> <span class="o">&gt;&gt;&gt;</span> 
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a> <span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;test_os_mkdir/test_os_makedirs/just/do/python/hello&quot;</span><span class="p">)</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a> <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>   <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a> <span class="ne">FileNotFoundError</span><span class="p">:</span> <span class="p">[</span><span class="n">WinError</span> <span class="mi">3</span><span class="p">]</span> <span class="n">系统找不到指定的路径</span><span class="err">。</span><span class="p">:</span> <span class="s1">&#39;test_os_mkdir/test_os_makedirs/just/do/python/hello&#39;</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a> <span class="o">&gt;&gt;&gt;</span> 
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a> <span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">&quot;test_os_mkdir/test_os_makedirs/just/do/python/hello&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>在Unix/Linux系统中，如果要在一个不存在的路径上创建一个子目录，则必须先创建包含该目录的父级目录。例如，如果要在 /home/user/data/output 下创建一个名为 "output_category" 的子目录，则必须先创建 /home/user/data 这个目录，最后才能在其中创建 output_category。</p>
+<p>为了解决这个问题，可以使用 <code>os.makedirs()</code> 函数代替 <code>os.mkdir()</code>函数，在创建目录之前自动创建整个路径中缺失的所有父目录。例如，可以将代码改为 <code>os.makedirs(output_category_path, exist_ok=True)</code>，则程序会在需要时自动创建所有缺失的父目录。其中，<code>exist_ok=True</code> 参数表示如果目录已经存在，则不再抛出异常，而是直接忽略。</p>
+<h3 id="26-osremove"><strong>2.6 os.remove()</strong><a class="headerlink" href="#26-osremove" title="Permanent link">&para;</a></h3>
+<p>用于删除文件，如果指定路径是目录而非文件的话，就会抛出<code>IsADirectoryError</code>异常。删除目录应该使用<code>os.rmdir()</code>函数。</p>
+<p>同样的，对应于<code>os.makedirs()</code>，删除路径操作<code>os.rmdir()</code>也有一个递归删除的函数<code>os.removedirs()</code>，该函数会尝试从最下级目录开始，逐级删除指定的路径，几乎就是一个<code>os.makedirs()</code>的逆过程；一旦遇到非空目录即停止。</p>
+<h3 id="27-osrename"><strong>2.7 os.rename()</strong><a class="headerlink" href="#27-osrename" title="Permanent link">&para;</a></h3>
+<p>该函数的作用是将文件或路径重命名，一般调用格式为<code>os.rename(src, dst)</code>，即将<code>src</code>指向的文件或路径重命名为<code>dst</code>指定的名称。</p>
+<p>注意，如果指定的目标路径在其他目录下，该函数还可实现文件或路径的“剪切并粘贴”功能。但无论直接原地重命名还是“剪切粘贴”，中间路径都必须要存在，否则就会抛出<code>FileNotFoundError</code>异常。如果目标路径已存在，Windows 下会抛出<code>FileExistsError</code>异常；Linux 下，如果目标路径为空且用户权限允许，则会静默覆盖原路径，否则抛出<code>OSError</code>异常，</p>
+<p>和上两个函数一样，该函数也有对应的递归版本<code>os.renames()</code>，能够创建缺失的中间路径。</p>
+<p>注意，这两种情况下，如果函数执行成功，都会调用<code>os.removedir()</code>函数来递归删除源路径的最下级目录。</p>
+<h3 id="28-osgetcwd"><strong>2.8 os.getcwd()</strong><a class="headerlink" href="#28-osgetcwd" title="Permanent link">&para;</a></h3>
+<p>“getcwd”实际上是“get the current working directory”的简写，顾名思义，也就是说这个函数的作用是“获取当前工作路径”。在程序运行的过程中，无论物理上程序在实际存储空间的什么地方，“当前工作路径”即可认为是程序所在路径；与之相关的“相对路径”、“同目录下模块导入”等相关的操作均以“当前工作路径”为准。</p>
+<p>在交互式环境中，返回的就是交互终端打开的位置；而在 Python 文件中，返回的则是文件所在的位置。</p>
+<p>在 Windows 下会有如下输出：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a> <span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a> <span class="s1">&#39;d:</span><span class="se">\\</span><span class="s1">justdopython</span><span class="se">\\</span><span class="s1">just</span><span class="se">\\</span><span class="s1">do</span><span class="se">\\</span><span class="s1">python&#39;</span>
+</span></code></pre></div>
+<p>Linux 下的输出则是：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="s1">&#39;/home/justdopython/just/do/python&#39;</span>
+</span></code></pre></div>
+<h3 id="29-oschdir"><strong>2.9 os.chdir()</strong><a class="headerlink" href="#29-oschdir" title="Permanent link">&para;</a></h3>
+<p>“chdir”其实是“change the directory”的简写，因此<code>os.chdir()</code>的用处实际上是切换当前工作路径为指定路径。其中“指定路径”需要作为参数传入函数<code>os.chdir()</code>，该参数既可以是文本或字节型字符串，也可以是一个文件描述符，还可以是一个广义的类路径（path-like）对象。若指定路径不存在，则会抛出<code>FileNotFoundError</code>异常。</p>
+<p>在 Windows 下，调用该函数的效果为：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;d:/justdopython/just/do&quot;</span><span class="p">)</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="s1">&#39;d:</span><span class="se">\\</span><span class="s1">justdopython</span><span class="se">\\</span><span class="s1">just</span><span class="se">\\</span><span class="s1">do&#39;</span>
+</span></code></pre></div>
+<p>在 Linux 下的效果则是：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;/home/justdopython/just/do&quot;</span><span class="p">)</span> <span class="c1"># 也可将参数指定为&quot;..&quot;，即可切换到父目录</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="s1">&#39;/home/justdopython/just/do&#39;</span>
+</span></code></pre></div>
+<p>有了这个函数，跨目录读写文件和调用模块就会变得非常方便了，很多时候也就不必再反复将同一个文件在各个目录之间复制粘贴运行，脚本完全可以坐镇中军，在一个目录下完成对其他目录文件的操作，正所谓“运筹帷幄之中，决胜于千里之外”也。</p>
+<p>举例来说，可以通过将“当前工作目录”切换到父目录，从而直接访问父目录的文件内容：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="s1">&#39;D:</span><span class="se">\\</span><span class="s1">justdopython</span><span class="se">\\</span><span class="s1">just&#39;</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;hello_justdopython.txt&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="o">...</span>     <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="o">...</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="s1">&#39;欢迎访问 justdopython.com，一起学习 Python 技术~&#39;</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="p">[</span><span class="s1">&#39;hello_justdopython.txt&#39;</span><span class="p">]</span>
+</span></code></pre></div>
+<h2 id="3-ospath-模块"><strong>3. os.path 模块</strong><a class="headerlink" href="#3-ospath-模块" title="Permanent link">&para;</a></h2>
+<p>其实这个模块是<code>os</code>模块根据系统类型从另一个模块导入的，并非直接由<code>os</code>模块实现，比如<code>os.name</code>值为<code>nt</code>，则在<code>os</code>模块中执行<code>import ntpath as path</code>；如果<code>os.name</code>值为<code>posix</code>，则导入<code>posixpath</code>。</p>
+<p>使用该模块要注意一个很重要的特性：<code>os.path</code>中的函数基本上是纯粹的字符串操作。换句话说，传入该模块函数的参数甚至不需要是一个有效路径，该模块也不会试图访问这个路径，而仅仅是按照“路径”的通用格式对字符串进行处理。</p>
+<p>更进一步地说，<code>os.path</code>模块的功能我们都可以自己使用字符串操作手动实现，该模块的作用是让我们在实现相同功能的时候不必考虑具体的系统，尤其是不需要过多关注文件系统分隔符的问题。</p>
+<h3 id="31-ospathjoin"><strong>3.1 os.path.join()</strong><a class="headerlink" href="#31-ospathjoin" title="Permanent link">&para;</a></h3>
+<p>这是一个十分实用的函数，可以将多个传入路径组合为一个路径。实际上是将传入的几个字符串用系统的分隔符连接起来，组合成一个新的字符串，所以一般的用法是将第一个参数作为父目录，之后每一个参数即使下一级目录，从而组合成一个新的符合逻辑的路径。</p>
+<p>但如果传入路径中存在一个“绝对路径”格式的字符串，且这个字符串不是函数的第一个参数，那么其他在这个参数之前的所有参数都会被丢弃，余下的参数再进行组合。更准确地说，只有最后一个“绝对路径”及其之后的参数才会体现在返回结果中。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;just&quot;</span><span class="p">,</span> <span class="s2">&quot;do&quot;</span><span class="p">,</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;dot&quot;</span><span class="p">,</span> <span class="s2">&quot;com&quot;</span><span class="p">)</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="s1">&#39;just</span><span class="se">\\</span><span class="s1">do</span><span class="se">\\</span><span class="s1">python</span><span class="se">\\</span><span class="s1">dot</span><span class="se">\\</span><span class="s1">com&#39;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="o">&gt;&gt;&gt;</span> 
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;just&quot;</span><span class="p">,</span> <span class="s2">&quot;do&quot;</span><span class="p">,</span> <span class="s2">&quot;d:/&quot;</span><span class="p">,</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;dot&quot;</span><span class="p">,</span> <span class="s2">&quot;com&quot;</span><span class="p">)</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="s1">&#39;d:/python</span><span class="se">\\</span><span class="s1">dot</span><span class="se">\\</span><span class="s1">com&#39;</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="o">&gt;&gt;&gt;</span> 
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;just&quot;</span><span class="p">,</span> <span class="s2">&quot;do&quot;</span><span class="p">,</span> <span class="s2">&quot;d:/&quot;</span><span class="p">,</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;dot&quot;</span><span class="p">,</span> <span class="s2">&quot;g:/&quot;</span><span class="p">,</span> <span class="s2">&quot;com&quot;</span><span class="p">)</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="s1">&#39;g:/com&#39;</span>
+</span></code></pre></div>
+<h3 id="32-ospathabspath"><strong>3.2 os.path.abspath()</strong><a class="headerlink" href="#32-ospathabspath" title="Permanent link">&para;</a></h3>
+<p>将传入路径规范化，返回一个相应的绝对路径格式的字符串。</p>
+<p>也就是说当传入路径符合“绝对路径”的格式时，该函数仅仅将路径分隔符替换为适应当前系统的字符，不做其他任何操作，并将结果返回。所谓“绝对路径的格式”，其实指的就是一个字母加冒号，之后跟分隔符和字符串序列的格式：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;a:/just/do/python&quot;</span><span class="p">)</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="s1">&#39;a:</span><span class="se">\\</span><span class="s1">just</span><span class="se">\\</span><span class="s1">do</span><span class="se">\\</span><span class="s1">python&#39;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="c1"># 我的系统中并没有 a 盘</span>
+</span></code></pre></div>
+<p>当指定的路径不符合上述格式时，该函数会自动获取当前工作路径，并使用<code>os.path.join()</code>函数将其与传入的参数组合成为一个新的路径字符串。示例如下：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;ityouknow&quot;</span><span class="p">)</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="s1">&#39;D:</span><span class="se">\\</span><span class="s1">justdopython</span><span class="se">\\</span><span class="s1">ityouknow&#39;</span>
+</span></code></pre></div>
+<h3 id="33-ospathbasename"><strong>3.3 os.path.basename()</strong><a class="headerlink" href="#33-ospathbasename" title="Permanent link">&para;</a></h3>
+<p>该函数返回传入路径的“基名”，即传入路径的最下级目录。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="s2">&quot;/ityouknow/justdopython/IAmBasename&quot;</span><span class="p">)</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="s1">&#39;IAmBasename&#39;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="c1"># 我的系统中同样没有这么一个路径。可见 os.path.basename() 页是单纯进行字符串处理</span>
+</span></code></pre></div>
+<p>整这个函数要注意的一点是，返回的“基名”实际上是传入路径最后一个分隔符之后的子字符串，也就是说，如果最下级目录之后还有一个分隔符，得到的就会是一个空字符串：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="s2">&quot;/ityouknow/justdopython/IAmBasename/&quot;</span><span class="p">)</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="s1">&#39;&#39;</span>
+</span></code></pre></div>
+<h3 id="34-ospathdirname"><strong>3.4 os.path.dirname()</strong><a class="headerlink" href="#34-ospathdirname" title="Permanent link">&para;</a></h3>
+<p>与上一个函数正好相反，返回的是最后一个分隔符前的整个字符串：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s2">&quot;/ityouknow/justdopython/IAmBasename&quot;</span><span class="p">)</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="s1">&#39;/ityouknow/justdopython&#39;</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="o">&gt;&gt;&gt;</span> 
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s2">&quot;/ityouknow/justdopython/IAmBasename/&quot;</span><span class="p">)</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="s1">&#39;/ityouknow/justdopython/IAmBasename&#39;</span>
+</span></code></pre></div>
+<h3 id="35-ospathsplit"><strong>3.5 os.path.split()</strong><a class="headerlink" href="#35-ospathsplit" title="Permanent link">&para;</a></h3>
+<p>哈哈实际上前两个函数都是弟弟，这个函数才是老大。</p>
+<p>函数<code>os.path.split()</code>的功能就是将传入路径以最后一个分隔符为界，分成两个字符串，并打包成元组的形式返回；前两个函数<code>os.path.dirname()</code>和<code>os.path.basename()</code>的返回值分别是函数<code>os.path.split()</code>返回值的第一个、第二个元素。就连二者的具体实现都十分真实：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">def</span> <span class="nf">basename</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the final component of a pathname&quot;&quot;&quot;</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    <span class="k">return</span> <span class="n">split</span><span class="p">(</span><span class="n">p</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="k">def</span> <span class="nf">dirname</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the directory component of a pathname&quot;&quot;&quot;</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>    <span class="k">return</span> <span class="n">split</span><span class="p">(</span><span class="n">p</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</span></code></pre></div>
+<p>通过<code>os.path.join()</code>函数又可以把它们组合起来得到原先的路径。</p>
+<h3 id="36-ospathexists"><strong>3.6 os.path.exists()</strong><a class="headerlink" href="#36-ospathexists" title="Permanent link">&para;</a></h3>
+<p>这个函数用于判断路径所指向的位置是否存在。若存在则返回<code>True</code>，不存在则返回<code>False</code>：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="kc">True</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;./just&quot;</span><span class="p">)</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="kc">True</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;./Inexistence&quot;</span><span class="p">)</span> <span class="c1"># 不存在的路径</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="kc">False</span>
+</span></code></pre></div>
+<p>一般的用法是在需要持久化保存某些数据的场景，为避免重复创建某个文件，需要在写入前用该函数检测一下相应文件是否存在，若不存在则新建，若存在则在文件内容之后增加新的内容。</p>
+<h3 id="37-ospathisabs"><strong>3.7 os.path.isabs()</strong><a class="headerlink" href="#37-ospathisabs" title="Permanent link">&para;</a></h3>
+<p>该函数判断传入路径是否是绝对路径，若是则返回<code>True</code>，否则返回<code>False</code>。当然，仅仅是检测格式，同样不对其有效性进行任何核验：</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a> <span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="s2">&quot;a:/justdopython&quot;</span><span class="p">)</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a> <span class="kc">True</span>
+</span></code></pre></div>
+<h3 id="38-ospathisfile-和-ospathisdir"><strong>3.8 os.path.isfile() 和 os.path.isdir()</strong><a class="headerlink" href="#38-ospathisfile-和-ospathisdir" title="Permanent link">&para;</a></h3>
+<p>这两个函数分别判断传入路径是否是文件或路径，注意，此处会核验路径的有效性，如果是无效路径将会持续返回<code>False</code>。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a> <span class="o">&gt;&gt;&gt;</span> <span class="c1"># 无效路径</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a> <span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s2">&quot;a:/justdopython&quot;</span><span class="p">)</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a> <span class="kc">False</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a> <span class="o">&gt;&gt;&gt;</span> 
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a> <span class="o">&gt;&gt;&gt;</span> <span class="c1"># 有效路径</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a> <span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s2">&quot;./just/plain_txt&quot;</span><span class="p">)</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a> <span class="kc">True</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a> <span class="o">&gt;&gt;&gt;</span> 
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a> <span class="o">&gt;&gt;&gt;</span> <span class="c1"># 无效路径</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a> <span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="s2">&quot;a:/justdopython/&quot;</span><span class="p">)</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a> <span class="kc">False</span>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a> <span class="o">&gt;&gt;&gt;</span> <span class="c1"># 有效路径</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a> <span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="s2">&quot;./just/&quot;</span><span class="p">)</span>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a> <span class="kc">True</span>
+</span></code></pre></div>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年10月16日 12:41:02</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2023年10月16日 12:41:02</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "content.code.annotate", "navigation.tracking", "navigation.indexes", "navigation.top", "navigation.path", "toc.follow", "navigation.footer", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.code.select"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="../../../assets/javascripts/mathjax.js"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+        
+          <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+        
+      
+        
+          <script src="../../../assets/javascripts/link.js"></script>
+        
+      
+        
+          <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
