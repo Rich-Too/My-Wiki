@@ -4,16 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "8c026be679b1141c",
+        "id": "b2ac07d25bd8a362",
         "type": "tabs",
         "children": [
           {
-            "id": "cd5d12c7757a5593",
+            "id": "cfa749c839298cbd",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Excalidraw/ALL/quicka.md"
+                "file": "读论文/{45}.xiaUnmannedEmergencyBlood2023a.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -84,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Excalidraw/ALL/quicka.md",
+                "file": "读论文/{45}.xiaUnmannedEmergencyBlood2023a.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,8 +114,23 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "cd5d12c7757a5593",
+  "active": "cfa749c839298cbd",
   "lastOpenFiles": [
+    "读论文/论文分类.md",
+    "论文分类.md",
+    "Untitled.md",
+    "读论文/{46}.zhuEndtoEndDataAdaptivePancreas2023.md",
+    "读论文/{45}.xiaUnmannedEmergencyBlood2023a.md",
+    "读论文/template/Mdnotes Default Template.md",
+    "index.md",
+    "zhuEndtoEndDataAdaptivePancreas2023-zotero.md",
+    "读论文/template/Mdnotes Default Template.md ",
+    "读论文/template",
+    "读论文",
+    "me.md",
+    "al.png",
+    "index2.md",
+    "展示视频.gif",
     "Excalidraw/ALL/quicka.md",
     "Excalidraw/ALL/parse.md",
     "DL/Tools/Math.md",
@@ -127,9 +144,6 @@
     "home/richtoo/Documents/My-Wiki",
     "home/richtoo/Documents",
     "home/richtoo",
-    "home",
-    "css/font.css",
-    "css/heiti.css",
     "static/image-20230128112218282.png",
     "Excalidraw/ALL/传感器.md",
     "Excalidraw/ALL/😵‍💫DIP.md",
@@ -148,18 +162,6 @@
     "Excalidraw/attachment/Scripts/Downloaded/Expand rectangles horizontally keep text centered.md",
     "Excalidraw/attachment/Scripts/Downloaded/Copy Selected Element Styles to Global.svg",
     "Excalidraw/attachment/Scripts/Downloaded/Copy Selected Element Styles to Global.md",
-    "Excalidraw/attachment/Scripts/Downloaded/Change shape of selected elements.svg",
-    "Excalidraw/attachment/Scripts/Downloaded/Change shape of selected elements.md",
-    "Excalidraw/attachment/Scripts/Downloaded/Auto Layout.svg",
-    "Excalidraw/attachment/Scripts/Downloaded/Auto Layout.md",
-    "Excalidraw/ALL/课程/生物信息学/展示思路.md",
-    "Excalidraw/ALL/课程/生物信息学/生物信息学.md",
-    "Excalidraw/ALL/课程/生物信息学/模型.md",
-    "Excalidraw/ALL/课程/生物信息学/展示.md",
-    "Excalidraw/ALL/课程/生物信息学/划重点.md",
-    "Excalidraw/ALL/课程/😵‍💫DIP.md",
-    "Excalidraw/ALL/课程/传感器.md",
-    "Excalidraw/ALL/生物信息学/生物信息学.md",
     "Untitled.canvas",
     "attachment/未命名.canvas",
     "未命名.canvas",
