@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "b2ac07d25bd8a362",
+        "id": "bf89df37ffa324f1",
         "type": "tabs",
         "children": [
           {
-            "id": "cfa749c839298cbd",
+            "id": "f01d305a4c935746",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "读论文/{45}.xiaUnmannedEmergencyBlood2023a.md",
+                "file": "读论文/论文分类.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "5412ac7cb94d518f",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "读论文/{45}.xiaUnmannedEmergencyBlood2023a.md",
+                "file": "读论文/论文分类.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,15 +113,24 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "cfa749c839298cbd",
+  "active": "f01d305a4c935746",
   "lastOpenFiles": [
-    "读论文/论文分类.md",
-    "论文分类.md",
-    "Untitled.md",
     "读论文/{46}.zhuEndtoEndDataAdaptivePancreas2023.md",
     "读论文/{45}.xiaUnmannedEmergencyBlood2023a.md",
     "读论文/template/Mdnotes Default Template.md",
+    "ML&DL/Tools/pytorch/start.md",
+    "ML&DL/Tools/static/v2-8be123b0dcf72bc5c03f764328531b91_b.jpg",
+    "ML&DL/Tools/static/numpy_2D_slicing_diagram-1.jpg",
+    "ML&DL/Tools/static/image-20230308214124864.png",
+    "ML&DL/Tools/static/image-20230308210425842.png",
+    "Toolkit/index.md",
+    "ML&DL/Tools/conda.md",
+    "ML&DL/Tools/pytorch.md",
+    "ML&DL/index.md",
+    "ML&DL/plan.md",
     "index.md",
+    "读论文/论文分类.md",
+    "论文分类.md",
     "zhuEndtoEndDataAdaptivePancreas2023-zotero.md",
     "读论文/template/Mdnotes Default Template.md ",
     "读论文/template",
@@ -133,7 +141,7 @@
     "展示视频.gif",
     "Excalidraw/ALL/quicka.md",
     "Excalidraw/ALL/parse.md",
-    "DL/Tools/Math.md",
+    "ML&DL/Tools/Math.md",
     "static/image-20230128113726955.png.md",
     "static/image-20230128112218282.png.md",
     "static",
@@ -151,17 +159,7 @@
     "Excalidraw/attachment/Scripts/Downloaded/Set Text Alignment.svg",
     "Excalidraw/attachment/Scripts/Downloaded/Set Text Alignment.md",
     "Excalidraw/attachment/Scripts/Downloaded/Normalize Selected Arrows.svg",
-    "Excalidraw/attachment/Scripts/Downloaded/Normalize Selected Arrows.md",
     "Excalidraw/attachment/Scripts/Downloaded/Mindmap format.svg",
-    "Excalidraw/attachment/Scripts/Downloaded/Mindmap format.md",
-    "Excalidraw/attachment/Scripts/Downloaded/Mindmap connector.svg",
-    "Excalidraw/attachment/Scripts/Downloaded/Mindmap connector.md",
-    "Excalidraw/attachment/Scripts/Downloaded/Expand rectangles horizontally.svg",
-    "Excalidraw/attachment/Scripts/Downloaded/Expand rectangles horizontally.md",
-    "Excalidraw/attachment/Scripts/Downloaded/Expand rectangles horizontally keep text centered.svg",
-    "Excalidraw/attachment/Scripts/Downloaded/Expand rectangles horizontally keep text centered.md",
-    "Excalidraw/attachment/Scripts/Downloaded/Copy Selected Element Styles to Global.svg",
-    "Excalidraw/attachment/Scripts/Downloaded/Copy Selected Element Styles to Global.md",
     "Untitled.canvas",
     "attachment/未命名.canvas",
     "未命名.canvas",
