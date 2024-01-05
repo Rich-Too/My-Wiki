@@ -14,7 +14,7 @@
 >
 > https://github.com/Skyellbin/neo4j-python-pandas-py2neo-v3
 >
-> 
+> 同济子豪兄的问答项目
 
 知识图谱是一个具有属性的实体通过关系连接而成的网状[知识库](https://www.zhihu.com/search?q=知识库&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"answer"%2C"sourceId"%3A1758435012})，是知识的符号表达。本质上知识图谱技术从[非结构化数据](https://www.zhihu.com/search?q=非结构化数据&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"answer"%2C"sourceId"%3A1758435012})中抽取结构化知识，并将其组织为事实[三元组](https://www.zhihu.com/search?q=三元组&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"answer"%2C"sourceId"%3A1758435012})的形式。通过知识图谱表示学习可以获得实体和关系的嵌入，从而与当前基于[神经网络](https://www.zhihu.com/search?q=神经网络&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"answer"%2C"sourceId"%3A1758435012})的模型融合，将实体和关系的知识隐式地融入到模型中。
 
@@ -65,9 +65,9 @@ semantic web
 
 属性图数据库片段可视化示例（包含演员、导演和电影或电视节目）：
 
-![img](.static/Pasted image 20220222191134.png)
+![](.static/Pasted image 20220222191134.png)
 
-> 其中蓝色椭圆表示节点；深蓝色框表示节点的标签；黄色框表示属性（键值对）；绿色方框表示边；红色方框表示边的类型。需要注意的是节点和边都会有唯一的ID。
+> 其中蓝色椭圆表示节点；深蓝色框表示节点的标签；黄色框表示属性（键值对）；绿色方框表示边，红色方框表示边的类型，边也可以有属性。需要注意的是节点和边都会有唯一的ID。
 
 ==不支持符号推理。==
 

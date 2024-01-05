@@ -4,18 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "bf89df37ffa324f1",
+        "id": "c65504b276dd99a6",
         "type": "tabs",
         "children": [
           {
-            "id": "f01d305a4c935746",
+            "id": "b750b6461edd4578",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "读论文/论文分类.md",
-                "mode": "source",
-                "source": false
+                "file": "读论文/文献综述.excalidraw.md"
               }
             }
           }
@@ -69,7 +67,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 221.5069465637207
   },
   "right": {
     "id": "5412ac7cb94d518f",
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "读论文/论文分类.md",
+                "file": "读论文/文献综述.excalidraw.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,11 +111,26 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "f01d305a4c935746",
+  "active": "b750b6461edd4578",
   "lastOpenFiles": [
+    "读论文/论文分类.md",
+    "读论文/文献综述.excalidraw.md",
+    "Algorithm/Note/C_and_leetcode.md",
+    "Algorithm/Code/leetcode/11.cpp",
+    "Algorithm/Note/01_基础算法.md",
+    "Algorithm/Note/Untitled.md",
+    "Algorithm/Code/leetcode/49",
+    "Algorithm/Code/leetcode/49.out",
+    "Algorithm/Code/leetcode/clear.sh",
+    "Algorithm/Code/template/clear.sh",
+    "Algorithm/Code/template/08prefix_sum.cpp",
+    "Algorithm/Code/template/07high_div.cpp",
+    "Algorithm/Code/template/06high_mul.cpp",
+    "Algorithm/Code/template/05high_sub.cpp",
+    "Algorithm/Code/template/04high_add.cpp",
+    "读论文/template/Mdnotes Default Template.md",
     "读论文/{46}.zhuEndtoEndDataAdaptivePancreas2023.md",
     "读论文/{45}.xiaUnmannedEmergencyBlood2023a.md",
-    "读论文/template/Mdnotes Default Template.md",
     "ML&DL/Tools/pytorch/start.md",
     "ML&DL/Tools/static/v2-8be123b0dcf72bc5c03f764328531b91_b.jpg",
     "ML&DL/Tools/static/numpy_2D_slicing_diagram-1.jpg",
@@ -129,12 +142,8 @@
     "ML&DL/index.md",
     "ML&DL/plan.md",
     "index.md",
-    "读论文/论文分类.md",
     "论文分类.md",
     "zhuEndtoEndDataAdaptivePancreas2023-zotero.md",
-    "读论文/template/Mdnotes Default Template.md ",
-    "读论文/template",
-    "读论文",
     "me.md",
     "al.png",
     "index2.md",
@@ -144,20 +153,10 @@
     "ML&DL/Tools/Math.md",
     "static/image-20230128113726955.png.md",
     "static/image-20230128112218282.png.md",
-    "static",
     "home/richtoo/Documents/My-Wiki/docs/C&system/${static}/image-20230730200002768.png.md",
-    "home/richtoo/Documents/My-Wiki/docs/C&system/${static}",
-    "home/richtoo/Documents/My-Wiki/docs/C&system",
-    "home/richtoo/Documents/My-Wiki/docs",
-    "home/richtoo/Documents/My-Wiki",
-    "home/richtoo/Documents",
-    "home/richtoo",
     "static/image-20230128112218282.png",
     "Excalidraw/ALL/传感器.md",
-    "Excalidraw/ALL/😵‍💫DIP.md",
-    "Excalidraw/Excalidraw/ALL/传感器.md",
     "Excalidraw/attachment/Scripts/Downloaded/Set Text Alignment.svg",
-    "Excalidraw/attachment/Scripts/Downloaded/Set Text Alignment.md",
     "Excalidraw/attachment/Scripts/Downloaded/Normalize Selected Arrows.svg",
     "Excalidraw/attachment/Scripts/Downloaded/Mindmap format.svg",
     "Untitled.canvas",

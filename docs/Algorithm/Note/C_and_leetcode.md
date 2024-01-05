@@ -1,4 +1,4 @@
- 
+🔬 
 
 和本文无关，但是推荐阅读：https://leetcode.cn/circle/discuss/WMD02i/view/cpLrhM/
 
@@ -275,8 +275,7 @@ void main()
 ### 3.6 其他
 
 - 内置类型的最大 / 最小值：
-
-- - \#include <limits>
+  - `#include <limits>`
   - `std::numeric_limits<int>::max()`、`std::numeric_limits<char>::min()`之类的
 
 - 可以用 `x & (x - 1) == 0`检验`x`是不是 2 的整数次幂
@@ -287,13 +286,7 @@ void main()
 
 ## 4 数据结构之类的东西
 
-这部分其实不太清楚该怎么写QWQ，所以我尝试大概描述每种数据结构是干什么的以及它的用法；关于具体的实现相关的知识我尽量贴上链接~
-
-
-
 它们都可以通过`a.size()`获取元素个数、`a.empty()`判断是否为空（返回 bool），就不在每个里面写一遍了！
-
-未特殊说明的操作，复杂度均为![img](.static/a2006f1ac61cb1902beacb3e29fff089.svg+xml)。
 
 下面均以元素类型为`int`为例，但是这个类型也可以是其他任意类型，比如`stack<map<string, Foo>>`之类的也都可以！
 
@@ -301,11 +294,11 @@ void main()
 
 这三种数据结构是不能遍历的。“如果你需要遍历它们，那么你就不应当选择它们。”
 
-### 4.1.1 ☆ stack & queue
+### 4.1.1 stack & queue
 
 **栈**（stack）是一个后进先出（LIFO）表，限制了插入和删除只能在表的末端（成为栈顶，top）进行。典型的操作是 Push, Pop 和 Top（读取栈顶元素的值）。
 
-\#include <stack>
+`#include <stack>`
 
 - 构造：`stack<int> s;`
 - 压栈：`s.push(1)`
@@ -314,7 +307,7 @@ void main()
 
 **队列**（queue）是一个先进先出（FIFO）表。入队（Enqueue）在队尾（rear）插入一个元素，出队（Dequeue）则删除队头（front）的一个元素。
 
-\#include <queue>
+`#include <queue>`
 
 - 构造：`queue<int> q;`
 - 入队：`q.push(2)`
@@ -329,11 +322,11 @@ See Also：
 
 
 
-### 4.1.2 ☆☆ priority_queue
+### 4.1.2 priority_queue
 
 **优先队列**（priority queue）是始终保证队头元素是队列中最小的一种数据结构，这里用堆实现。支持的主要操作有：插入（入队），查询和删除最小值（出队）。
 
-\#include <queue>
+`#include <queue>`
 
 - 构造
 
@@ -385,28 +378,28 @@ See Also：
 
 ### 4.2.1 set & multiset
 
-\#include <set>
+`#include <set>`
 
 - 构造：`set<int> s;` 或 `multiset<int> s;`
 
 - - 也可以类似 priority_queue 用数组等构造，复杂度是 ![img](.static/391e48baddd4a41ffd6ef700a6507116.svg+xml)的
   - 也可以自定义比较函数：`auto cmp = [](int a, int b) { return ... };  std::set<int, decltype(cmp)> s(cmp);`
 
-- 插入：`s.insert(3);`，复杂度是![img](.static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)的
-- 删除：`s.erase(2)`，返回删除了多少个，复杂度是![img](.static/92c6f275db17cb145b7c5b3f292706b5.svg+xml)的，![img](.static/df976ff7fcf17d60490267d18a1e3996.svg+xml)是找到的个数
-- 计数：`s.count(3)`，返回有多少个对应元素，复杂度是![img](.static/92c6f275db17cb145b7c5b3f292706b5.svg+xml)的，![img](.static/df976ff7fcf17d60490267d18a1e3996.svg+xml)是找到的个数
+- 插入：`s.insert(3);`，复杂度是的
+- 删除：`s.erase(2)`，返回删除了多少个，复杂度是是找到的个数
+- 计数：`s.count(3)`，返回有多少个对应元素，复杂度是是找到的个数
 - 查找：`s.find(2)`，返回一个值相等的元素的迭代器，如果没找到，返回`s.end()`。复杂度是![img](.static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)的
 - 也有 `s.lower_bound(2)`、`s.upper_bound(3)`函数。
 
 - 构造：`set<int> s;` 或 `multiset<int> s;`
 
-- - 也可以类似 priority_queue 用数组等构造，复杂度是 ![img](.static/391e48baddd4a41ffd6ef700a6507116.svg+xml)的
+- - 也可以类似 priority_queue 用数组等构造，复杂度是 的
   - 也可以自定义比较函数：`auto cmp = [](int a, int b) { return ... };  std::set<int, decltype(cmp)> s(cmp);`
 
-- 插入：`s.insert(3);`，复杂度是![img](.static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)的
-- 删除：`s.erase(2)`，返回删除了多少个，复杂度是![img](https://cdn.nlark.com/yuque/__latex/92c6f275db17cb145b7c5b3f292706b5.svg)的，![img](.static/df976ff7fcf17d60490267d18a1e3996.svg+xml)是找到的个数
-- 计数：`s.count(3)`，返回有多少个对应元素，复杂度是![img](https://cdn.nlark.com/yuque/__latex/92c6f275db17cb145b7c5b3f292706b5.svg)的，![img](.static/df976ff7fcf17d60490267d18a1e3996.svg+xml)是找到的个数
-- 查找：`s.find(2)`，返回一个值相等的元素的迭代器，如果没找到，返回`s.end()`。复杂度是![img](.static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)的
+- 插入：`s.insert(3);`，复杂度是的
+- 删除：`s.erase(2)`，返回删除了多少个，复杂度是![img](https://cdn.nlark.com/yuque/__latex/92c6f275db17cb145b7c5b3f292706b5.svg)的，是找到的个数
+- 计数：`s.count(3)`，返回有多少个对应元素，复杂度是![img](https://cdn.nlark.com/yuque/__latex/92c6f275db17cb145b7c5b3f292706b5.svg)的，是找到的个数
+- 查找：`s.find(2)`，返回一个值相等的元素的迭代器，如果没找到，返回`s.end()`。
 - 也有 `s.lower_bound(2)`、`s.upper_bound(3)`函数。
 
 ![img](.static/1667808046410-7586dd31-1d8d-4ad6-a8a4-8d588ab48281.png)
@@ -421,7 +414,7 @@ See Also：
 
 - - 附注同 set & multiset
 
-- 访问或新建：`s[1]`，如果 key`1`存在则返回对应 value 的引用，否则插入 key 为`1`，value 为对应类型默认值的键值对，并返回 value 的引用。复杂度是![img](.static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)的
+- 访问或新建：`s[1]`，如果 key`1`存在则返回对应 value 的引用，否则插入 key 为`1`，value 为对应类型默认值的键值对，并返回 value 的引用。
 
 - - 也就是说，可以直接用 `s[1] = "123"`的方式新建键值对或者覆盖已有的，无论 key `1`之前是否存在。
   - 下面两个并不常用：

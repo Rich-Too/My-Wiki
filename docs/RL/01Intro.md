@@ -2,7 +2,17 @@
 
 > 强化学习的目标是研究从马尔科夫决策过程出发，放松各种限制。
 >
-> $s_t$可能是数量庞大或者无限的，或者是连续而非离散的，或者是只能部分被观察或者不能被观察。在此情况下，强化学习的目标不是寻找最优解，而是寻找次优解。
+> $s_t$ 可能是数量庞大或者无限的，或者是连续而非离散的，或者是只能部分被观察或者不能被观察。在此情况下，强化学习的目标不是寻找最优解，而是寻找次优解。
+
+![Figure_chapterRelationship.png](.static/Figure_chapterRelationship.png)
+
+
+
+
+
+
+
+
 
 ## **Terminology:**
 
@@ -23,6 +33,9 @@
   - Future reward is less valuable than present reward.
   - $R_{t+1}$ should be given less weight than $R_t$.
   - $U_t=R_t+\gamma\cdot R_{t+1}+\gamma^2\cdot R_{t+2}+\gamma^3\cdot R_{t+3}+\cdots $
+- Episode
+  - An episode is usually assumed to be a finite trajectory. 
+
 - Value Function for MRP
 
 $$
@@ -41,17 +54,17 @@ $$
 
 - 	  Action-Value Function
   -  $Q_\pi(s_t,a_t)=\mathbb{E}_{S_{t+1},A_{t+1},\cdots,S_n,A_n}\Big[U_t\Big|S_t=s_t,A_t=a_t\Big]$
-  -  Regard $S_{t+1},...S_n$ and $A_{t+1},...,A_n$ as random variables.
+  -  Regard $S_{t+1},...S_n$ and $A_{t+1},...,A_n$ as random variables. 
   -  $Q_\pi(s_t,a_t)$ is dependent of $S_{t+1},...S_n$ and $A_{t+1},...,A_n$.
   -  ![image-20231123220145161](.static/image-20231123220145161.png)
   -  Evaluates how good it is for an agent to pick action $a$ while being in state $s$.
-  -  Relation with State-Value Function.
+  -  Relawtion with State-Value Function.
      -  $$Q_\pi(s,a)=r(s,a)+\gamma\sum_{s^{\prime}\in S}P(s^{\prime}|s,a)V^\pi(s^{\prime})$$
 - 	  Optimal action-value function
 
   - $Q^*(s_t,{a_t})=\underset{\pi}{\max}Q_\pi(s_t,a_t).$
   - Whatever policy function $π$ is used, the result of taking $a_t$ at state $s_t$ cannot be better than $Q^*(s_t,{a_t})$.
-  - Exclude the influence of strategy $\pi$.
+  - Exclude the influenced of strategy $\pi$.
   - ~~Input $s_t$, output judgment for $a_t$ (vector), we can judge if $a_t$ is good at $s_t$ by $Q^*(s_t,a_t)$.~~
 - 	  State-Value Function
 
@@ -65,20 +78,11 @@ $$
   - 	  Evaluates how good the situation is in state $s$.
 
   - 	  $\mathbb{E}_S[V_\pi(S)]$ evaluates how good the policy $\pi$ is.
-- 	  Bellman Expectation Equation
-  - $v_{\pi}(s)=\mathbb{E}_{\pi}[R_{t+1}+\gamma v_{\pi}(S_{t+1})|S_{t}=s]$
-    - $v_{\pi}(s)=\sum_{a\in\mathcal{A}}\pi(a|s)\left(\mathcal{R}_{s}^{a}+\gamma\sum_{s'\in\mathcal{S}}\mathcal{P}_{ss'}^{a}v_{\pi}(s')\right)=\sum_{a\in\mathcal{A}}\pi(a|s)q_\pi(s,a)$
-
-  - $q_\pi(s,a)=\mathbb{E}_\pi[R_{t+1}+\gamma q_\pi(S_{t+1},A_{t+1})|S_t=s,A_t=a]$
-    - $q_{\pi}(s,a)=\mathcal{R}_{s}^{a}+\gamma\sum_{s^{\prime}\in\mathcal{S}}\mathcal{P}_{\mathrm{~ss'}}^{a}\sum_{a^{\prime}\in\mathcal{A}}\pi(a^{\prime}|s^{\prime})q_{\pi}(s^{\prime},a^{\prime})=\mathcal{R}_s^a+\gamma\sum_{s^{\prime}\in\mathcal{S}}\mathcal{P}_{\mathrm{ss}^{\prime}}^av_\pi(s^{\prime})$
 - 	  Markov decision process (MDP)
 
   - [Link](https://hrl.boyuai.com/chapter/1/%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B)
-- 	  Monte-Carlo methods
-- 	  Dynamic programming
 
-     - 	  
-
+- Deterministic and stochastic
 
 ---
 
@@ -87,12 +91,6 @@ $$
 > So we have two choices, looking for good policy or optimal action-value function.
 
 ---
-
-
-
-
-
-
 
 
 
