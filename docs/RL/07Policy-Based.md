@@ -15,9 +15,13 @@ Approximate state-value function: $V(s;\mathbf{\theta})=\underset{a}{\sum}\pi(a|
 **Policy-based learning:**
 
 - Learn $θ$ that maximizes $J(\mathbf{\theta})=\mathbb{E}_{S}[V(S;\mathbf{\theta})]$.
+- $\theta_{t+1}=\theta_t+\alpha\nabla_\theta J(\theta_t)  =\theta_t+\alpha\mathbb{E}\left[\nabla_\theta\ln\pi(A|S,\theta_t)q_\pi(S,A)\right]$
+  - $\theta_{t+1}=\theta_t+\underbrace{\alpha\left(\frac{q_t(s_t,a_t)}{\pi(a_t|s_t,\theta_t)}\right)}_{\beta_t}\nabla_\theta\pi(a_t|s_t,\theta_t)$
+  - $\theta_{t+1}=\theta_t+\alpha\beta_t\nabla_\theta\pi(a_t|s_t,\theta_t)$
+
 - Using policy gradient ascent:
   - Observe state $s$.
-  - Update policy by: $\mathbf{\theta}\leftarrow\mathbf{\theta}+\beta\cdot\frac{\partial V(s;\mathbf{\theta})}{\partial\mathbf{\theta}}$
+  - 3Update policy by: $\mathbf{\theta}\leftarrow\mathbf{\theta}+\beta\cdot\frac{\partial V(s;\mathbf{\theta})}{\partial\mathbf{\theta}}$
   - $\frac{\partial V(s;\mathbf{\theta})}{\partial\mathbf{\theta}}\neq \nabla_\theta J(\theta)$
 
 ## Policy Gradient

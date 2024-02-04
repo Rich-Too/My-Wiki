@@ -6,14 +6,6 @@
 
 ![Figure_chapterRelationship.png](.static/Figure_chapterRelationship.png)
 
-
-
-
-
-
-
-
-
 ## **Terminology:**
 
 - Agent

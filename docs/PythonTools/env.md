@@ -9,3 +9,11 @@ conda deactivate # 退出
 conda config --set auto_activate_base false # 关闭自动激活环境
 ```
 
+```python
+python3 -m venv .venv
+. .venv/bin/activate
+```
+
+热重载
+
+​			
