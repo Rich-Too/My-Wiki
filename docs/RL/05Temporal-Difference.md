@@ -18,8 +18,6 @@ All the algorithms can be viewed as stochastic approximation algorithms solving 
 
 ![image-20231220152510379](.static/image-20231220152510379.png)
 
-
-
 ## Off-policy vs on-policy
 
 **There exist two policies in a TD learning task:**
@@ -41,3 +39,7 @@ All the algorithms can be viewed as stochastic approximation algorithms solving 
 
 - First, check what the algorithm does mathematically.
 - Second, check what things are required to implement the algorithm.
+
+
+
+$\text{Softmax}(x_{i}) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}$

@@ -1,4 +1,4 @@
-# [Welcome to My Note site.](https://github.com/Rich-Too/My-Wiki/blob/master/docs/index2.md#welcome-to-my-note-site)
+# Welcome to My Note site.
 
 ## [Mkdocs Commands](https://github.com/Rich-Too/My-Wiki/blob/master/docs/index2.md#mkdocs-commands)
 

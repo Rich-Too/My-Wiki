@@ -1,11 +1,11 @@
 {
-  "theme": "obsidian",
+  "theme": "system",
   "translucency": false,
   "cssTheme": "Things",
   "textFontFamily": "PingFang SC",
   "accentColor": "",
   "interfaceFontFamily": "Noto Sans",
-  "monospaceFontFamily": "DejaVu Sans Mono",
+  "monospaceFontFamily": "Fira Code,DejaVu Sans Mono",
   "baseFontSize": 17,
   "enabledCssSnippets": [
     "adjust"

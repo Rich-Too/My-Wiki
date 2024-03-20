@@ -181,6 +181,38 @@ t.shape
 
 ```
 
+**torch.gather**
+
+`torch.gather(input, dim, index, *, sparse_grad=False, out=None) → Tensor`
+
+input 和 index 必须维度相同，本质上是一种索引取值。
+
+- **输入index的shape等于输出value的shape**
+- **输入index的索引值仅替换该index中对应dim的index值**
+- **最终输出为替换index后在原tensor中的值**
+
+
+```python
+out[i][j][k] = input[index[i][j][k]][j][k]  # if dim == 0
+out[i][j][k] = input[i][index[i][j][k]][k]  # if dim == 1
+out[i][j][k] = input[i][j][index[i][j][k]]  # if dim == 2
+```
+
+```python
+>>>t = torch.tensor([[1, 2], [3, 4]])
+>>>torch.gather(t, 1, torch.tensor([[0, 0], [1, 0]]))
+tensor([[ 1,  1],
+        [ 4,  3]])
+```
+
+
+
+
+
+
+
+
+
 numpy 和 pytorch
 
 ```python

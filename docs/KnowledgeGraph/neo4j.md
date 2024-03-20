@@ -22,3 +22,17 @@ MATCH (a:Person {name:'Liz'}) SET a.age=34
 MATCH (a:Location {city:'Portland'}) DELETE a
 MATCH (a:Person {name:'Mike'}) REMOVE a.test
 ```
+
+
+
+败血症
+
+少数疾病
+
+states 固定
+
+1, 0  0-1 正反馈
+
+action
+
+腹部疾病 2000例
