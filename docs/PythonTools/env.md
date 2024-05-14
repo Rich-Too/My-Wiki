@@ -1,4 +1,6 @@
-# Conda
+# ENV
+
+## Conda
 
 ```bash
 conda create -n ENV_NAME python=x.x 
@@ -16,4 +18,10 @@ python3 -m venv .venv
 
 热重载
 
-​			
+## Vscode
+
+https://k0nze.dev/posts/python-relative-imports-vscode/
+
+https://www.zhihu.com/question/50700473
+
+https://blog.csdn.net/gongjianbo1992/article/details/106981599

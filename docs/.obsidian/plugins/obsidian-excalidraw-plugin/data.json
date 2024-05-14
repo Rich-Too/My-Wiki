@@ -58,7 +58,7 @@
   "embedWikiLink": true,
   "syncExcalidraw": false,
   "experimentalFileType": true,
-  "experimentalFileTag": "🥰",
+  "experimentalFileTag": "",
   "experimentalLivePreview": true,
   "experimentalEnableFourthFont": true,
   "experimantalFourthFont": "attachment/font/LXGWWenKaiScreen.ttf",
@@ -109,7 +109,7 @@
             "containerId": null,
             "originalText": "\"state-of-the-art\" 在某个领域或方向上的表现通常是指当前最好、最先进的技术或成果，",
             "lineHeight": 1.2,
-            "baseline": 17
+            "baseline": 15
           }
         ],
         "created": 1686403051193
