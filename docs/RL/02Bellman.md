@@ -59,17 +59,17 @@ ${v=\underset{\pi}{\max}(r_\pi+\gamma P_\pi v)}$
 
 ### Value iteration algorithm
 
-![image-20231213204931407](.static/image-20231213204931407.png)
+![image-20231213204931407](static/image-20231213204931407.png)
 
-![image-20231213204942261](.static/image-20231213204942261.png)
+![image-20231213204942261](static/image-20231213204942261.png)
 
 Summary:
 
-![image-20231213204703044](.static/image-20231213204703044.png)
+![image-20231213204703044](static/image-20231213204703044.png)
 
 ### Policy iteration algorithm
 
-![image-20231213210828193](.static/image-20231213210828193.png)
+![image-20231213210828193](static/image-20231213210828193.png)
 
 ### Truncated policy iteration algorithm
 

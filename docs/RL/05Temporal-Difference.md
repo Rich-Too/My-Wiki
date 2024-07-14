@@ -1,22 +1,22 @@
-![image-20231220151524173](.static/image-20231220151524173.png)
+![image-20231220151524173](static/image-20231220151524173.png)
 
 Using RM to get $\bar{q}_t$ .
 
-![image-20231220151752109](.static/image-20231220151752109.png)
+![image-20231220151752109](static/image-20231220151752109.png)
 
 All the algorithms can be viewed as stochastic approximation algorithms solving the Bellman equation or Bellman optimality equation:
 
-![image-20231220151820988](.static/image-20231220151820988.png)
+![image-20231220151820988](static/image-20231220151820988.png)
 
 ## Q-learning
 
  First, Q-learning aims to solve the Bellman optimality equation.
 
-![image-20231220152500314](.static/image-20231220152500314.png)
+![image-20231220152500314](static/image-20231220152500314.png)
 
 
 
-![image-20231220152510379](.static/image-20231220152510379.png)
+![image-20231220152510379](static/image-20231220152510379.png)
 
 ## Off-policy vs on-policy
 

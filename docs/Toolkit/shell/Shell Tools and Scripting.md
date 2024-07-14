@@ -204,9 +204,13 @@ rg --stats PATTERN
 
 ## 查找 shell 命令
 
-`history` 	`history | grep find`会打印包含"find"子串的命令 `Ctrl+R`	对命令历史记录进行回溯搜索。 `ls -R`		列出目录结构
+`history` 	`history | grep find`会打印包含"find"子串的命令 
 
-## echo
+`Ctrl+R`	对命令历史记录进行回溯搜索。
+
+ `ls -R`	列出目录结构
+
+## echo,
 
 ### 1.显示变量
 

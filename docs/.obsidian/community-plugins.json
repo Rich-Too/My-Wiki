@@ -2,5 +2,8 @@
   "dataview",
   "obsidian-excalidraw-plugin",
   "obsidian-citation-plugin",
-  "obsidian-custom-attachment-location"
+  "obsidian-custom-attachment-location",
+  "floating-toc",
+  "easy-typing-obsidian",
+  "zotlit"
 ]

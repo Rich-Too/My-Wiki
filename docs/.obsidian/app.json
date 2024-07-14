@@ -1,11 +1,11 @@
 {
   "legacyEditor": false,
   "promptDelete": false,
-  "vimMode": true,
-  "attachmentFolderPath": "./.static",
+  "vimMode": false,
+  "attachmentFolderPath": "./static",
   "spellcheck": false,
   "readableLineLength": true,
-  "livePreview": false,
+  "livePreview": true,
   "showInlineTitle": false,
   "strictLineBreaks": false,
   "showFrontmatter": false,
@@ -20,5 +20,6 @@
   "defaultViewMode": "source",
   "newFileLocation": "current",
   "useMarkdownLinks": true,
-  "newLinkFormat": "relative"
+  "newLinkFormat": "relative",
+  "useTab": false
 }

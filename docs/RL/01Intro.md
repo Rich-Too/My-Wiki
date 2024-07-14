@@ -4,7 +4,7 @@
 >
 > $s_t$ 可能是数量庞大或者无限的，或者是连续而非离散的，或者是只能部分被观察或者不能被观察。在此情况下，强化学习的目标不是寻找最优解，而是寻找次优解。
 
-![Figure_chapterRelationship.png](.static/Figure_chapterRelationship.png)
+![Figure_chapterRelationship.png](static/Figure_chapterRelationship.png)
 
 ## **Terminology:**
 
@@ -48,7 +48,7 @@ $$
   -  $Q_\pi(s_t,a_t)=\mathbb{E}_{S_{t+1},A_{t+1},\cdots,S_n,A_n}\Big[U_t\Big|S_t=s_t,A_t=a_t\Big]$
   -  Regard $S_{t+1},...S_n$ and $A_{t+1},...,A_n$ as random variables. 
   -  $Q_\pi(s_t,a_t)$ is dependent of $S_{t+1},...S_n$ and $A_{t+1},...,A_n$.
-  -  ![image-20231123220145161](.static/image-20231123220145161.png)
+  -  ![image-20231123220145161](static/image-20231123220145161.png)
   -  Evaluates how good it is for an agent to pick action $a$ while being in state $s$.
   -  Relawtion with State-Value Function.
      -  $$Q_\pi(s,a)=r(s,a)+\gamma\sum_{s^{\prime}\in S}P(s^{\prime}|s,a)V^\pi(s^{\prime})$$
@@ -78,7 +78,7 @@ $$
 
 ---
 
-![image-20231123221452360](.static/image-20231123221452360.png)
+![image-20231123221452360](static/image-20231123221452360.png)
 
 > So we have two choices, looking for good policy or optimal action-value function.
 
@@ -101,7 +101,7 @@ $R(τ)$并不只是一个标量（scalar），它是一个随机变量，因为a
 
 $\bar{R}_\theta=\sum_\tau R(\tau)p_\theta(\tau)$
 
-![img](.static/4.6.png)
+![img](static/4.6.png)
 
 计算期望奖励 $\bar{R}_{\theta}$ 的梯度时，只有后者 $p_\theta$ 与策略有关。
 $$

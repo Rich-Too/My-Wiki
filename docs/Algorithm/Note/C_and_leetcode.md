@@ -105,7 +105,7 @@ pair 默认的比较方法是先按第一个字段比较，相同再按第二个
 
 \#include <algorithm>
 
-`sort`用于对数组或 vector 等可以随机访问且元素可比较的数据结构进行排序。复杂度是 ![img](.static/391e48baddd4a41ffd6ef700a6507116.svg+xml)。
+`sort`用于对数组或 vector 等可以随机访问且元素可比较的数据结构进行排序。复杂度是 ![img](static/391e48baddd4a41ffd6ef700a6507116.svg+xml)。
 
 例如：
 
@@ -171,7 +171,7 @@ bool cmp(const vector<int>& a, const vector<int>& b) {
 
 这个比较函数可以用于`vector<vector<int>>`类型的排序。
 
-常用的标准库（如 libgc++）中对于`std::sort`的实现保证复杂度是![img](.static/4b4e58b8ab948749ea351313fda66383.svg+xml)，而不会退化成快排的![img](.static/f2d5f588234eb61a559ff90c41511b85.svg+xml)。因为它使用的是一种快排、堆排以及插入排序的结合体。
+常用的标准库（如 libgc++）中对于`std::sort`的实现保证复杂度是![img](static/4b4e58b8ab948749ea351313fda66383.svg+xml)，而不会退化成快排的![img](static/f2d5f588234eb61a559ff90c41511b85.svg+xml)。因为它使用的是一种快排、堆排以及插入排序的结合体。
 
 
 
@@ -195,7 +195,7 @@ auto prc_info = lower_bound(prices.begin(), prices.end(), i,
 
 - `binary_search(v.begin(), v.end(), i)`返回一个 bool，表示`i`是否在`v`中。
 
-注意：这 3 个函数均使用二分查找，因此如果原数组不是有序的，结果就可能是错误的。复杂度均为![img](.static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)。
+注意：这 3 个函数均使用二分查找，因此如果原数组不是有序的，结果就可能是错误的。复杂度均为![img](static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)。
 
 ```cpp
 int p = -1;
@@ -344,13 +344,13 @@ priority_queue<int, vector<int>, decltype(cmp)> q3(cmp);
 - - - `priority_queue<int> q1(v.begin(), v.end());`
     - `priority_queue<int, vector<int>, greater<int>> q2(v.begin(), v.end());`
     - `priority_queue<int, vector<int>, decltype(cmp)> q3(v.begin(), v.end(), cmp);`
-    - 这样初始化的复杂度是![img](.static/8c51f5913186f8ac629f1d5838940f33.svg+xml)的。
+    - 这样初始化的复杂度是![img](static/8c51f5913186f8ac629f1d5838940f33.svg+xml)的。
 
 
 
 - 入队：`q.push(2)`
 - 出队：`q.pop()`
-- 入队和出队的复杂度是 ![img](.static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)的。
+- 入队和出队的复杂度是 ![img](static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)的。
 
 
 
@@ -382,13 +382,13 @@ See Also：
 
 - 构造：`set<int> s;` 或 `multiset<int> s;`
 
-- - 也可以类似 priority_queue 用数组等构造，复杂度是 ![img](.static/391e48baddd4a41ffd6ef700a6507116.svg+xml)的
+- - 也可以类似 priority_queue 用数组等构造，复杂度是 ![img](static/391e48baddd4a41ffd6ef700a6507116.svg+xml)的
   - 也可以自定义比较函数：`auto cmp = [](int a, int b) { return ... };  std::set<int, decltype(cmp)> s(cmp);`
 
 - 插入：`s.insert(3);`，复杂度是的
 - 删除：`s.erase(2)`，返回删除了多少个，复杂度是是找到的个数
 - 计数：`s.count(3)`，返回有多少个对应元素，复杂度是是找到的个数
-- 查找：`s.find(2)`，返回一个值相等的元素的迭代器，如果没找到，返回`s.end()`。复杂度是![img](.static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)的
+- 查找：`s.find(2)`，返回一个值相等的元素的迭代器，如果没找到，返回`s.end()`。复杂度是![img](static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)的
 - 也有 `s.lower_bound(2)`、`s.upper_bound(3)`函数。
 
 - 构造：`set<int> s;` 或 `multiset<int> s;`
@@ -402,7 +402,7 @@ See Also：
 - 查找：`s.find(2)`，返回一个值相等的元素的迭代器，如果没找到，返回`s.end()`。
 - 也有 `s.lower_bound(2)`、`s.upper_bound(3)`函数。
 
-![img](.static/1667808046410-7586dd31-1d8d-4ad6-a8a4-8d588ab48281.png)
+![img](static/1667808046410-7586dd31-1d8d-4ad6-a8a4-8d588ab48281.png)
 
 
 
@@ -418,13 +418,13 @@ See Also：
 
 - - 也就是说，可以直接用 `s[1] = "123"`的方式新建键值对或者覆盖已有的，无论 key `1`之前是否存在。
   - 下面两个并不常用：
-  - 插入：`s.insert({1, "123"});`，如果 key `1`已经存在则不会覆盖。复杂度是![img](.static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)的
-  - 访问：`s.at(1)`，如果 key`1`存在则返回对应 value 的引用，否则抛出异常。复杂度是![img](.static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)的
+  - 插入：`s.insert({1, "123"});`，如果 key `1`已经存在则不会覆盖。复杂度是![img](static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)的
+  - 访问：`s.at(1)`，如果 key`1`存在则返回对应 value 的引用，否则抛出异常。复杂度是![img](static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)的
 
-- 删除：`s.erase(2)`，返回删除了多少个，复杂度是![img](.static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)的
-- 计数：`s.count(3)`，返回有多少个 key 相等的元素，复杂度是![img](.static/ffe609a7d24cc2f7004a3ff72d12dd39.svg+xml)
-- 查找：`s.find(2)`，返回 key 相等的元素的迭代器，如果没找到，返回`s.end()`。复杂度是![img](.static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)的
-- 也有 `s.lower_bound(2)`、`s.upper_bound(3)`函数。复杂度是![img](.static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)的
+- 删除：`s.erase(2)`，返回删除了多少个，复杂度是![img](static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)的
+- 计数：`s.count(3)`，返回有多少个 key 相等的元素，复杂度是![img](static/ffe609a7d24cc2f7004a3ff72d12dd39.svg+xml)
+- 查找：`s.find(2)`，返回 key 相等的元素的迭代器，如果没找到，返回`s.end()`。复杂度是![img](static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)的
+- 也有 `s.lower_bound(2)`、`s.upper_bound(3)`函数。复杂度是![img](static/42433fa38a5bb64ddbf13bc74baefea6.svg+xml)的
 
 
 

@@ -1,13 +1,14 @@
 {
-  "theme": "moonstone",
+  "theme": "obsidian",
   "translucency": false,
   "cssTheme": "Things",
-  "textFontFamily": "PingFang SC",
+  "textFontFamily": "PingFang SC,霞鹜文楷",
   "accentColor": "",
   "interfaceFontFamily": "Noto Sans",
-  "monospaceFontFamily": "Fira Code,DejaVu Sans Mono",
+  "monospaceFontFamily": "JetBrains Mono,Noto Sans CJK SC",
   "baseFontSize": 17,
   "enabledCssSnippets": [
     "adjust"
-  ]
+  ],
+  "nativeMenus": false
 }

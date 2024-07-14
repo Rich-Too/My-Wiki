@@ -2,7 +2,7 @@
 
 ## QAC
 
-![image-20240204182025888](.static/image-20240204182025888.png)
+![image-20240204182025888](static/image-20240204182025888.png)
 
 ## Advantage actor-critic (A2C)
 
@@ -12,7 +12,7 @@
 
 Proof: 
 
-![image-20240204212313547](.static/image-20240204212313547.png)
+![image-20240204212313547](static/image-20240204212313547.png)
 
 The baseline is useful because it can reduce the **approximation variance** when we use samples to approximate the true gradient. We can select the suboptimal baseline: 
 $$
@@ -34,7 +34,7 @@ q_t(s_t,a_t)-v_t(s_t)&\approx r_{t+1}+\gamma v_t(s_{t+1})-v_t(s_t)
 \\
 q_\pi(s_t,a_t)-v_\pi(s_t)&=\mathbb{E}\Big[R_{t+1}+\gamma v_\pi(S_{t+1})-v_\pi(S_t)|S_t=s_t,A_t=a_t\Big]\end{aligned}
 $$
-![image-20240204213351693](.static/image-20240204213351693.png)
+![image-20240204213351693](static/image-20240204213351693.png)
 
 **merit:**
 
@@ -52,7 +52,7 @@ $$
 &\approx\bar{f}=\frac1n\sum_{i=1}^nf(x_i)=\frac1n\sum_{i=1}^n\underbrace{\frac{p_0(x_i)}{p_1(x_i)}}_{\text{importance}}x_i
 \end{aligned}
 $$
-![image-20240205165803508](.static/image-20240205165803508.png)
+![image-20240205165803508](static/image-20240205165803508.png)
 
 
 
@@ -88,6 +88,7 @@ After training:
 
 Training:
 
-![image-20231129135645473](.static/image-20231129135645473.png)
+![image-20231129135645473](static/image-20231129135645473.png)
 
 For last step, $\mathbf{\theta}_{t+1}=\mathbf{\theta}_t+\mathbf{\beta}\cdot\delta_t\cdot\mathbf{d}_{\theta,t}$ in policy gradient with baseline.
+

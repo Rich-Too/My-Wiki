@@ -41,7 +41,7 @@ np.eye(3,3) # eye函数可以创建一个n * n矩阵，对角线为1s，其他�
 
 ### 切片
 
-![numpy数组切片工作原理](numpy_2D_slicing_diagram-1.jpg)
+![numpy数组切片工作原理](static/numpy_2D_slicing_diagram-1.jpg)
 
 ### 属性
 
@@ -162,3 +162,9 @@ plt.imshow(a)
 plt.imsave("./numpy.jpg",a)
 ```
 
+## 统计相关
+`numpy.percentile(a, q, axis)`
+百分位数是统计中使用的度量，表示小于这个值的观察值占总数q的百分比（至少有p%的数据项小于或等于这个值，且至少有(100-p)%的数据项大于或等于这个值）。函数 `numpy.percentile()` 接受以下参数：
+- `a` 输入数组
+-  `q` 要计算的百分位数，在 0 ~ 100 之间
+- `axis` 沿着它计算百分位数的轴，二维取值0，1

@@ -4,22 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "0447d148a91705b0",
+        "id": "0d8a855b12662f18",
         "type": "tabs",
         "children": [
           {
-            "id": "056e75f8a109bca8",
+            "id": "f6c1d301bf384552",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PythonTools/easy_python/01Python.md",
+                "file": "经验/师姐分享.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "225705d938007b15",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ML&DL/比赛/机器翻译.md",
                 "mode": "preview",
-                "source": true
+                "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -43,6 +56,14 @@
             }
           },
           {
+            "id": "3f90ed0d0a0cb750",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
             "id": "215ccecf4156f5ac",
             "type": "leaf",
             "state": {
@@ -56,20 +77,12 @@
                 "sortOrder": "alphabetical"
               }
             }
-          },
-          {
-            "id": "3f90ed0d0a0cb750",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {}
-            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 233.5
   },
   "right": {
     "id": "5412ac7cb94d518f",
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PythonTools/easy_python/01Python.md",
+                "file": "ML&DL/比赛/机器翻译.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -95,74 +108,89 @@
                 "unlinkedCollapsed": true
               }
             }
+          },
+          {
+            "id": "a7d1cbd9171f7162",
+            "type": "leaf",
+            "state": {
+              "type": "zotero-annotation-view",
+              "state": {
+                "file": "ML&DL/比赛/机器翻译.md",
+                "itemId": -1,
+                "attachmentId": -1,
+                "follow": "ob-note"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 242.5,
     "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-excalidraw-plugin:新建 Excalidraw 绘图": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
-      "canvas:新建白板": false,
+      "canvas:新建白板": true,
       "command-palette:打开命令面板": false,
-      "markdown-importer:打开 Markdown 格式转换器": false
+      "markdown-importer:打开 Markdown 格式转换器": true,
+      "obsidian-excalidraw-plugin:新建 Excalidraw 绘图": false
     }
   },
-  "active": "056e75f8a109bca8",
+  "active": "225705d938007b15",
   "lastOpenFiles": [
-    "PythonTools/easy_python/02NumPy.md",
-    "PythonTools/easy_python/01Python.md",
-    "PythonTools/easy_python/03Pandas.md",
-    "PythonTools/easy_python/OS.md",
-    "PythonTools/easy_python/q22.md",
-    "毕设/毕设.md",
-    "Excalidraw/ALL/quicka.md",
-    "Excalidraw/ALL/parse.md",
+    "ML&DL/DL/04 Self-attention.md",
+    "ML&DL/比赛/机器翻译.md",
     "经验/师姐分享.md",
-    "读论文/文献综述.excalidraw.md",
-    "读论文/论文分类.md",
-    "会议记录什么的/会议.md",
-    "经验",
-    "PythonTools/env.md",
-    "PythonTools/Math.md",
-    "LaTex/textstudio.md",
-    "RL/07Policy-Based.md",
-    "PythonTools/easy_python",
-    "RL/06VF-Approximation.md",
-    "PythonTools/about_python/01Python.md",
-    "PythonTools/about_python/03Pandas.md",
-    "PythonTools/about_python/02NumPy.md",
-    "PythonTools/about_python/OS.md",
-    "PythonTools/pytorch/start.md",
-    "PythonTools/static/v2-8be123b0dcf72bc5c03f764328531b91_b.jpg",
-    "PythonTools/static/numpy_2D_slicing_diagram-1.jpg",
-    "PythonTools/static/image-20230308214124864.png",
-    "PythonTools/static/image-20230308210425842.png",
-    "ML&DL/LHY/01 week1.md",
-    "ML&DL/index.md",
-    "ML&DL/LHY/04 week4.md",
-    "RL/00info.md",
-    "CS224w",
-    "Untitled Folder",
-    "KnowledgeGraph/Untitled Folder",
-    "RL/static/image-20231225154639027.png",
-    "RL/static/image-20231221223239674.png",
-    "RL/static/image-20231220152510379.png",
-    "RL/static/image-20231220152500314.png",
-    "RL/static/image-20231220151820988.png",
-    "RL/static/image-20231220151752109.png",
-    "RL/static",
-    "KnowledgeGraph/static",
-    "未命名 1.canvas",
+    "ML&DL/比赛",
+    "LiteratureNotes/vaswaniAttentionAllYou2023.md",
+    "读论文/随手记.md",
+    "读论文/实验室论文分类.md",
+    "读论文/RL-diag文献综述.excalidraw.md",
+    "ML&DL/DL/GNN.md",
+    "ML&DL/DL/Transformer.md",
+    "ML&DL/DL/03 CNN.md",
+    "ML&DL/pytorch/start.md",
+    "ML&DL/pytorch/static/image-20231118170129619.png",
+    "PythonTools/easy_python/normal.md",
+    "读论文/static/image-20240627164907953.png",
+    "读论文/static/image-20240627162755713.png",
+    "读论文/static/image-20240627162723066.png",
+    "读论文/static/image-20240627162033224.png",
+    "读论文/static/image-20240627161840185.png",
+    "读论文/static/image-20240627161626593.png",
+    "读论文/static/image-20240627145354227.png",
+    "读论文/static/image-20240627144839778.png",
+    "读论文/static/image-20240627144811009.png",
+    "读论文/static",
+    "读论文/template/Mdnotes Default Template.md",
+    "ZtTemplates/zt-cite2.eta.md",
+    "ZtTemplates/zt-cite.eta.md",
+    "ZtTemplates/zt-annot.eta.md",
+    "ZtTemplates/zt-colored.eta.md",
+    "ZtTemplates/zt-annots.eta.md",
+    "ZtTemplates/zt-field.eta.md",
+    "ZtTemplates/zt-note.eta.md",
+    "ZtTemplates",
+    "LiteratureNotes/yuanEfficientSymptomInquiring2024.md",
+    "LiteratureNotes",
+    "LiteratureNotes/tiwariKnowledgeInfusedContext2022.md",
+    "PythonTools/easy_python/02NumPy.md",
+    "PythonTools/easy_python/OS.md",
+    "PythonTools/easy_python/03Pandas.md",
+    "Toolkit/shell/未命名.md",
+    "读论文/强化学习自动诊断",
+    "读论文/实验室论文",
+    "Math",
+    "ML&DL/ML/static",
+    "RL/未命名",
+    "ML&DL/DL",
     "未命名.canvas",
-    "PythonTools/static",
-    "PythonTools/pytorch",
-    "PythonTools/about_python",
+    "未命名 2.canvas",
+    "未命名 1.canvas",
     "Untitled.canvas",
     "attachment/未命名.canvas"
   ]

@@ -43,7 +43,7 @@ semantic web
 
 知识表示(KR)就是用易于计算机处理的方式来描述人脑的知识。
 
-![image-20231018200115994](.static/image-20231018200115994.png)
+![image-20231018200115994](static/image-20231018200115994.png)
 
 常见的知识图谱的知识表示框架
 
@@ -65,7 +65,7 @@ semantic web
 
 属性图数据库片段可视化示例（包含演员、导演和电影或电视节目）：
 
-![](.static/Pasted image 20220222191134.png)
+![](static/Pasted image 20220222191134.png)
 
 > 其中蓝色椭圆表示节点；深蓝色框表示节点的标签；黄色框表示属性（键值对）；绿色方框表示边，红色方框表示边的类型，边也可以有属性。需要注意的是节点和边都会有唯一的ID。
 
@@ -86,7 +86,7 @@ RDFS，全称为"RDF Schema"（Resource Description Framework Schema），是一
 
 
 
-![img](.static/Pasted image 20220223113257.png)
+![img](static/Pasted image 20220223113257.png)
 
 > 在RDF中存在一个重要的概念：统一资源标识符（URI ，即Uniform Resource Identifier）
 >
@@ -99,7 +99,7 @@ RDFS，全称为"RDF Schema"（Resource Description Framework Schema），是一
 
 OWL是对RDF的拓展 具有多个表达控件，如：
 
-![image-20231019135331439](.static/image-20231019135331439.png)
+![image-20231019135331439](static/image-20231019135331439.png)
 
 OWL有许多语言家族，具有不同复杂度。
 

@@ -5,7 +5,7 @@
 - https://www.runoob.com/cplusplus/cpp-tutorial.html
 - 《essential C++》
 
-​       ![img](.static/1661074503251-9b9e6f50-080f-4c60-8691-e0e5884438dd.png)
+​       ![img](static/1661074503251-9b9e6f50-080f-4c60-8691-e0e5884438dd.png)
 
 ## 1.1 引用
 
@@ -19,9 +19,9 @@
 
 用 `new` 运算符实现动态内存分配new是一个运算符使用方式 `P = new T`
 
-![img](.static/1661068619171-71ec471f-1c04-442b-918c-c2efb0c51e98.png)`P = new T[N]`
+![img](static/1661068619171-71ec471f-1c04-442b-918c-c2efb0c51e98.png)`P = new T[N]`
 
-![img](.static/1661068629808-2794c99f-14df-4409-842b-b67a839f31cf.png)Test * test3=new Test();在堆中分配了内存，堆上的内存分配，亦称动态内存分配。程序在运行的期间用malloc申请的内存，这部分内存由程序员自己负责管理，其生存期由开发者决定：在何时分配，分配多少，并在何时用free来释放该内存。**栈中内存的分配和管理由操作系统决定，而堆中内存的分配和管理由管理者决定**用delete运算符释放动态分配的内存delete 指针；//该指针必须指向new出来的空间用“delete”释放动态分配的数组，要加“[]”
+![img](static/1661068629808-2794c99f-14df-4409-842b-b67a839f31cf.png)Test * test3=new Test();在堆中分配了内存，堆上的内存分配，亦称动态内存分配。程序在运行的期间用malloc申请的内存，这部分内存由程序员自己负责管理，其生存期由开发者决定：在何时分配，分配多少，并在何时用free来释放该内存。**栈中内存的分配和管理由操作系统决定，而堆中内存的分配和管理由管理者决定**用delete运算符释放动态分配的内存delete 指针；//该指针必须指向new出来的空间用“delete”释放动态分配的数组，要加“[]”
 
 ## 1.4 内联函数和函数重载
 
@@ -29,7 +29,7 @@
 
 ## 1.5函数的缺省参数
 
- C++中，定义函数的时候可以让最右边的连续若干个参数有缺省值，那么调用函数的时候，若相应位置不写参数，参数就是缺省值    ![img](.static/1661069208158-7c37c0d8-c05f-4fdf-9c4a-50b529d67816.png)函数参数可缺省的目的在于提高程序的可扩充性。 即如果某个写好的函数要添加新的参数，而原先那些调用该函数的语句，未必需要使用新增的参数，那么为了避免对原先那些函数调用语句的修改，就可以使用缺省参数。如果两个函数只有返回值类型不同，视为重复定义
+ C++中，定义函数的时候可以让最右边的连续若干个参数有缺省值，那么调用函数的时候，若相应位置不写参数，参数就是缺省值    ![img](static/1661069208158-7c37c0d8-c05f-4fdf-9c4a-50b529d67816.png)函数参数可缺省的目的在于提高程序的可扩充性。 即如果某个写好的函数要添加新的参数，而原先那些调用该函数的语句，未必需要使用新增的参数，那么为了避免对原先那些函数调用语句的修改，就可以使用缺省参数。如果两个函数只有返回值类型不同，视为重复定义
 
 # 2 类和对象
 
@@ -61,11 +61,11 @@ A.valueX(); //错误，编译器无法判断调用哪个valueX
 ### 2.2.1概念
 
 成员函数的一种名字与类名相同，可以有参数，不能有返回值(void也不行)作用是对对象进行初始化，如给成员变量赋初值如果定义类时没写构造函数，则编译器生成一个默认的无参数的构造函数默认构造函数无参数，不做任何操作如果定义了构造函数，则编译器不生成默认的无参数的构造函数对象生成时构造函数自动被调用。对象一旦生成，就再也不能在其上执行构造函数一个类可以有多个构造函数。
-![img](.static/1661072829640-c2f9e7e4-d281-4464-a105-d11438c9a8aa.png)构造函数最好是public的，private构造函数不能直接用来初始化对象![img](.static/1661073196192-d9a82021-78eb-4d6d-9bf2-576fa465813b.png)pArray[2]实际并未生成
+![img](static/1661072829640-c2f9e7e4-d281-4464-a105-d11438c9a8aa.png)构造函数最好是public的，private构造函数不能直接用来初始化对象![img](static/1661073196192-d9a82021-78eb-4d6d-9bf2-576fa465813b.png)pArray[2]实际并未生成
 
 ### 2.2.2 复制构造函数
 
-只有一个参数,即对同类对象的引用。形如 X::X( X& )或X::X(const X &), 二者选一后者能以常量对象作为参数如果没有定义复制构造函数，那么编译器生成默认复制构造函数,该构造函数完成复制功能。`class Complex { public :    double real,imag;    Complex(){ }    Complex( const Complex & c )     {        real = c.real;        imag = c.imag;        cout << "Copy Constructor called";    } }; Complex c1; Complex c2(c1);//调用自己定义的复制构造函数，输出 Copy Constructor called`**起作用的情景：**当用一个对象去初始化同类的另一个对象时。对象间赋值并不导致复制构造函数被调用`Complex c2(c1);``Complex c2 = c1; //初始化语句，非赋值语句`如果某函数有一个参数是类 A 的对象，那么该函数被调用时，类A的复制构造函数将被调用。形参是对实参的复制，复制过程中调用复制构造函数。 如果函数的返回值是类A的对象时，则函数返回时，A的复制构造函数被调用。也就是实际返回的值是return 的复制。**C++中临时变量不能作为非const的引用参数,所以最好加上const****常量引用参数的使用：**![img](.static/1661139728430-0fac4c0c-1c6c-4d8b-a0cb-a3ec32e91cdb.png)
+只有一个参数,即对同类对象的引用。形如 X::X( X& )或X::X(const X &), 二者选一后者能以常量对象作为参数如果没有定义复制构造函数，那么编译器生成默认复制构造函数,该构造函数完成复制功能。`class Complex { public :    double real,imag;    Complex(){ }    Complex( const Complex & c )     {        real = c.real;        imag = c.imag;        cout << "Copy Constructor called";    } }; Complex c1; Complex c2(c1);//调用自己定义的复制构造函数，输出 Copy Constructor called`**起作用的情景：**当用一个对象去初始化同类的另一个对象时。对象间赋值并不导致复制构造函数被调用`Complex c2(c1);``Complex c2 = c1; //初始化语句，非赋值语句`如果某函数有一个参数是类 A 的对象，那么该函数被调用时，类A的复制构造函数将被调用。形参是对实参的复制，复制过程中调用复制构造函数。 如果函数的返回值是类A的对象时，则函数返回时，A的复制构造函数被调用。也就是实际返回的值是return 的复制。**C++中临时变量不能作为非const的引用参数,所以最好加上const****常量引用参数的使用：**![img](static/1661139728430-0fac4c0c-1c6c-4d8b-a0cb-a3ec32e91cdb.png)
 
 ### 2.2.3 类型转换构造函数
 
@@ -79,7 +79,7 @@ A.valueX(); //错误，编译器无法判断调用哪个valueX
 
 ### 2.4.1 this
 
-​         ![img](.static/1661158272640-c18e9d8a-75fe-40f2-ad9d-9c4a088aad4f.png)其作用就是指向成员函数所作用的对象，非静态成员函数中可以直接使用this来代表指向该函数作用的对象的指针，可以认为this是参数之一静态成员函数中不能使用 this 指针，因为静态成员函数并不具体作用与某个对象![img](.static/1661158392656-00834ec8-5751-4b1d-9e03-290318edb5fc.png)
+​         ![img](static/1661158272640-c18e9d8a-75fe-40f2-ad9d-9c4a088aad4f.png)其作用就是指向成员函数所作用的对象，非静态成员函数中可以直接使用this来代表指向该函数作用的对象的指针，可以认为this是参数之一静态成员函数中不能使用 this 指针，因为静态成员函数并不具体作用与某个对象![img](static/1661158392656-00834ec8-5751-4b1d-9e03-290318edb5fc.png)
 
 ### 2.4.2 静态成员
 
@@ -87,11 +87,11 @@ A.valueX(); //错误，编译器无法判断调用哪个valueX
 
 ### 2.4.3 成员对象和封闭类
 
-有成员对象的类叫 封闭（enclosing)类，任何生成封闭类对象的语句，都要让编译器明白，对象中的成员对象，是如何初始化的。`class CTyre //轮胎类 { private:    int radius;    //半径    int width; //宽度 public:    CTyre(int r, int w) : radius(r), width(w) {} }; class CEngine //引擎类 { }; class CCar { //汽车类 private:    int price; //价格    CTyre tyre;    CEngine engine; public:    CCar(int p, int tr, int tw); }; CCar::CCar(int p, int tr, int w) : price(p), tyre(tr, w){}; int main() {    CCar car(20000, 17, 225);    return 0; }`如果CCar类不定义构造函数， 则`CCar car;`会出错。因为编译器不明白 car.tyre该如何初始化，它没有默认构造函数。而car.engine 的初始化用默认构造函数即可。**执行顺序：**封闭类对象生成时，先执行所有对象成员的构造函数，然后才执行封闭类的构造函数。对象成员的构造函数调用次序和对象成员在类中的说明次序一致，与它们在成员初始化列表中出现的次序无关。当封闭类的对象消亡时，先执行封闭类的析构函数，然后再执行成员对象的析构函数。次序和构造函数的调用次序相反，先初始化的后析构封闭类的对象，如果是用默认复制构造函数初始化的，那么它里面包含的成员对象，也会用复制构造函数初始化。![img](.static/1661164604832-03ca898d-8a12-41a9-a75b-0758a430b50a.png)
+有成员对象的类叫 封闭（enclosing)类，任何生成封闭类对象的语句，都要让编译器明白，对象中的成员对象，是如何初始化的。`class CTyre //轮胎类 { private:    int radius;    //半径    int width; //宽度 public:    CTyre(int r, int w) : radius(r), width(w) {} }; class CEngine //引擎类 { }; class CCar { //汽车类 private:    int price; //价格    CTyre tyre;    CEngine engine; public:    CCar(int p, int tr, int tw); }; CCar::CCar(int p, int tr, int w) : price(p), tyre(tr, w){}; int main() {    CCar car(20000, 17, 225);    return 0; }`如果CCar类不定义构造函数， 则`CCar car;`会出错。因为编译器不明白 car.tyre该如何初始化，它没有默认构造函数。而car.engine 的初始化用默认构造函数即可。**执行顺序：**封闭类对象生成时，先执行所有对象成员的构造函数，然后才执行封闭类的构造函数。对象成员的构造函数调用次序和对象成员在类中的说明次序一致，与它们在成员初始化列表中出现的次序无关。当封闭类的对象消亡时，先执行封闭类的析构函数，然后再执行成员对象的析构函数。次序和构造函数的调用次序相反，先初始化的后析构封闭类的对象，如果是用默认复制构造函数初始化的，那么它里面包含的成员对象，也会用复制构造函数初始化。![img](static/1661164604832-03ca898d-8a12-41a9-a75b-0758a430b50a.png)
 
 ### 2.4.4 常量对象和常量成员函数
 
-如果不希望某个对象的值被改变，则定义该对象的时候可以在前面加 const关键字，即常量对象。常量 对象只能使用构造函数、析构函数和有const 说明的函数(常量方法）在类的成员函数说明后面加上const关键字，则该成员函数成为常量成员函数，常量成员函数内部不能改变属性的值，也不能调用非常量成员函数**在定义常量成员函数和声明常量成员函数时都应该使用const 关键字：**`class Sample { private:    int value; public:    void PrintValue() const; }; void Sample::PrintValue() const { //此处不使用const会导致编译出错    cout << value; } void Print(const Sample &o) {    o.PrintValue(); //若 PrintValue非const则编译错 }`**常量成员函数的重载：**名字和参数表都一样，const有或无，视为重载。`class CTest { private:    int n; public:    CTest() { n = 1; }    int GetValue() const { return n; }    int GetValue() { return 2 * n; } }; int main() {    const CTest objTest1;    CTest objTest2;    cout << objTest1.GetValue() << "," << objTest2.GetValue();    return 0; }`**mutable成员变量**可以在const成员函数中修改的成员变量![img](.static/1661179499904-21a0c2ae-88a1-4765-abdb-5efd8654521f.png)
+如果不希望某个对象的值被改变，则定义该对象的时候可以在前面加 const关键字，即常量对象。常量 对象只能使用构造函数、析构函数和有const 说明的函数(常量方法）在类的成员函数说明后面加上const关键字，则该成员函数成为常量成员函数，常量成员函数内部不能改变属性的值，也不能调用非常量成员函数**在定义常量成员函数和声明常量成员函数时都应该使用const 关键字：**`class Sample { private:    int value; public:    void PrintValue() const; }; void Sample::PrintValue() const { //此处不使用const会导致编译出错    cout << value; } void Print(const Sample &o) {    o.PrintValue(); //若 PrintValue非const则编译错 }`**常量成员函数的重载：**名字和参数表都一样，const有或无，视为重载。`class CTest { private:    int n; public:    CTest() { n = 1; }    int GetValue() const { return n; }    int GetValue() { return 2 * n; } }; int main() {    const CTest objTest1;    CTest objTest2;    cout << objTest1.GetValue() << "," << objTest2.GetValue();    return 0; }`**mutable成员变量**可以在const成员函数中修改的成员变量![img](static/1661179499904-21a0c2ae-88a1-4765-abdb-5efd8654521f.png)
 
 ### 2.4.5 友元
 
@@ -129,7 +129,7 @@ class CStudent{ public: int nAge; }; int main(){    CStudent s ;	    s.nAge = 5;
 
 ## 4.1 概念
 
-**继承**：在定义一个新的类B时，如果该类与某个已有的类A相似(指的是B拥有A的全部特点)，那么就可以把A作为一个基类，而把B作为基类的一个派生类(也称子类)。派生类是通过对基类进行修改和扩充得到，在派生类中，可以扩充新的成员变量和成员函数。派生类一经定义后，可以独立使用，不依赖于基类。派生类拥有基类的全部成员函数和成员变量，不论是private、protected、public 。在派生类的各个成员函数中，不能访问基类中的private成员。![img](.static/1662388235217-34480c09-b64c-4b99-9153-c6f0e729d6b6.png)`class CStudent { private: string sName; int nAge; public: bool IsThreeGood() { }; void SetName( const string & name ) { sName = name; } //...... }; class CUndergraduateStudent: public CStudent { private: int nDepartment; public: bool IsThreeGood() { ...... }; //覆盖 bool CanBaoYan() { .... }; }; // 派生类的写法是：类名: public 基类名`**派生类对象的内存空间**派生类对象的体积等于基类对象的体积，再加上派生类对象自己的成员变量的体积。在派生类对象中，包含着基类对象，而且基类对象的存储位置位于派生类对象新增的成员变量之前。
+**继承**：在定义一个新的类B时，如果该类与某个已有的类A相似(指的是B拥有A的全部特点)，那么就可以把A作为一个基类，而把B作为基类的一个派生类(也称子类)。派生类是通过对基类进行修改和扩充得到，在派生类中，可以扩充新的成员变量和成员函数。派生类一经定义后，可以独立使用，不依赖于基类。派生类拥有基类的全部成员函数和成员变量，不论是private、protected、public 。在派生类的各个成员函数中，不能访问基类中的private成员。![img](static/1662388235217-34480c09-b64c-4b99-9153-c6f0e729d6b6.png)`class CStudent { private: string sName; int nAge; public: bool IsThreeGood() { }; void SetName( const string & name ) { sName = name; } //...... }; class CUndergraduateStudent: public CStudent { private: int nDepartment; public: bool IsThreeGood() { ...... }; //覆盖 bool CanBaoYan() { .... }; }; // 派生类的写法是：类名: public 基类名`**派生类对象的内存空间**派生类对象的体积等于基类对象的体积，再加上派生类对象自己的成员变量的体积。在派生类对象中，包含着基类对象，而且基类对象的存储位置位于派生类对象新增的成员变量之前。
 
 ## 4.2 继承关系和复合关系
 
@@ -171,7 +171,7 @@ class CStudent{ public: int nAge; }; int main(){    CStudent s ;	    s.nAge = 5;
 
 ## 4.7 直接基类和间接基类
 
-类A派生类B，类B派生类C，类C派生类D，……类A是类B的直接基类类B是类C的直接基类，类A是类C的间接基类类C是 类D的直接基类，类A、B是类D的间接基类                            在声明派生类时，只需要列出它的直接基类![img](.static/1662556891800-06436e6a-8827-4768-b7a6-41ee06c5f5f8.png)
+类A派生类B，类B派生类C，类C派生类D，……类A是类B的直接基类类B是类C的直接基类，类A是类C的间接基类类C是 类D的直接基类，类A、B是类D的间接基类                            在声明派生类时，只需要列出它的直接基类![img](static/1662556891800-06436e6a-8827-4768-b7a6-41ee06c5f5f8.png)
 
 # 5 多态
 
@@ -217,7 +217,7 @@ int main()
 }
 ```
 
-![img](.static/1662625241035-85c65a01-7158-4bd6-ab22-3ce95cdecb5a.png)
+![img](static/1662625241035-85c65a01-7158-4bd6-ab22-3ce95cdecb5a.png)
 
 ## 5.3 虚函数的访问权限
 
@@ -242,7 +242,7 @@ pBase -> fun2();
 
 “多态”的关键在于通过基类指针或引用调用一个虚函数时，编译时不确定到底调用的是基类还是派生类的函数，运行时才确定 ---- 这叫“动态联编”。
 
-![img](.static/1662644673544-b7d95c75-89db-4353-b278-2e8990818302.png)
+![img](static/1662644673544-b7d95c75-89db-4353-b278-2e8990818302.png)
 
 ```cpp
 class A
@@ -305,7 +305,7 @@ int main() {
 
 ## 6.1 输入输出相关的类
 
-![img](.static/1662775341692-232b685c-bb46-438a-950b-308590afcd76.png)
+![img](static/1662775341692-232b685c-bb46-438a-950b-308590afcd76.png)
 
 istream是用于输入的流类，cin就是该类的对象
 

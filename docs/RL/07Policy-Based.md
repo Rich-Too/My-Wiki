@@ -15,7 +15,7 @@ Approximate state-value function: $V(s;\mathbf{\theta})=\underset{a}{\sum}\pi(a|
 - Learn $θ$ that maximizes $J(\mathbf{\theta})=\mathbb{E}_{S}[V(S;\mathbf{\theta})]$.
 - Using gradient-ascent algorithm maximizing $J(\mathbf{\theta})$: 
   - $\theta_{t+1}=\theta_t+\alpha\nabla_\theta J(\theta_t)  =\theta_t+\alpha\mathbb{E}\left[\nabla_\theta\ln\pi(A|S,\theta_t)q_\pi(S,A)\right]$
-  - proof:![image-20240204174509398](.static/image-20240204174509398.png)
+  - proof:![image-20240204174509398](static/image-20240204174509398.png)
 - Stochastic gradient-ascent algorithm:
   - $\theta_{t+1}=\theta_t+\alpha\nabla_\theta\ln\pi(a_t|s_t,\theta_t)q_\pi(s_t,a_t)$
   - **since $q_\pi$ is unknown, it can be approximated with $q_t$, Monte-Carlo based method, REINFORCE and TD method (AC)**
@@ -29,7 +29,7 @@ Since $\nabla_\theta\ln\pi(a_t|s_t,\theta_t)=\frac{\nabla_\theta\pi(a_t|s_t,\the
 - $\theta_{t+1}=\theta_t+\underbrace{\alpha\left(\frac{q_t(s_t,a_t)}{\pi(a_t|s_t,\theta_t)}\right)}_{\beta_t}\nabla_\theta\pi(a_t|s_t,\theta_t)$
 - $\theta_{t+1}=\theta_t+\alpha\beta_t\nabla_\theta\pi(a_t|s_t,\theta_t)$
 
-![image-20240204172611859](.static/image-20240204172611859.png)
+![image-20240204172611859](static/image-20240204172611859.png)
 
 
 
@@ -49,7 +49,7 @@ $$
 \frac{\partial V(s;\theta)}{\partial\theta}&=\mathbb{E}_{A\sim\pi(\cdot|s;\theta)}\Big[\frac{\partial\log\pi(A|s,\theta)}{\partial\theta}\cdot Q_\pi(s,A)\Big]\end{aligned}
 $$
 
-![image-20231128213014143](.static/image-20231128213014143.png)
+![image-20231128213014143](static/image-20231128213014143.png)
 
 ## Algorithm
 

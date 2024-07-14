@@ -5,11 +5,11 @@
 
 -  When model is unavailable, we can use data(experience).
 
-![image-20231215150812341](.static/image-20231215150812341.png)
+![image-20231215150812341](static/image-20231215150812341.png)
 
 ## Use data more efficiently
 
-![image-20231215164043776](.static/image-20231215164043776.png)
+![image-20231215164043776](static/image-20231215164043776.png)
 
 - Exploring starts means we need to generate sufficiently many episodes starting from every state-action pair.
 - In theory, only if every action value for every state is well explored, can we select the optimal actions correctly.
@@ -28,7 +28,7 @@ exploitation!
 - When ε = 1, it becomes a uniform distribution. More exploration
 but less exploitation.
 
-![image-20231215201857003](.static/image-20231215201857003.png)
+![image-20231215201857003](static/image-20231215201857003.png)
 
 - The advantage of ε-greedy policies is that they have stronger exploration ability so that the exploring starts condition is not required.
 - The disadvantage is that ε-greedy polices are not optimal in general (we can only show that there always exist greedy policies that are optimal).
