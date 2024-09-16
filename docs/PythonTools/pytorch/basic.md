@@ -4,7 +4,16 @@
 转换为一个浮点型张量
 `.long()`
 将张量中的每个元素转换为长整型，在处理分类任务时，标签（通常是类的索引）需要是整数类型。例如，损失函数如 `CrossEntropyLoss` 期望标签是 `LongTensor` 类型
-
+## 计算
+`torch.matmul`
+- 当输入都是二维时，即为普通的矩阵乘法
+- 当输入有多维时，把多出的维度作为 batch 提出来，其他部分做矩阵乘法
+`Tensor.masked_fill(mask, value)`
+- Fills elements of `self` tensor with `value` where `mask` is True
+`view` 
+- 方法用于重塑张量，但它要求张量在内存中是连续的，`.contiguous()` 方法可以用于确保张量在内存中是连续的
+`torch.max(_input_, _dim_, _keepdim=False_, _*_, _out=None_)`
+- 返回一个namedtuple（值、索引），其中值是给定维度dim中输入张量每行的最大值。索引是找到的每个最大值（argmax）的索引位置。
 ## Dataset & Dataloader
 
 ```python

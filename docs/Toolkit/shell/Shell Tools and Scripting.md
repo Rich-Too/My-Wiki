@@ -1,4 +1,24 @@
 # Shell Tools and Scripting
+```shell
+dir="$(dirname "$0")"
+# `dirname` 是一个命令，用于从给定的路径中提取目录部分
+# `"$0"` 是一个特殊变量，表示当前脚本的路径
+# `$(...)` 是命令替换的语法，用于执行括号内的命令，并将其输出作为结果返回
+# `$0` 的值可能会包含空格或者特殊字符，双引号包裹可以确保这些字符被正确处理
+config=$dir/proxychains.conf
+host_ip=$(grep nameserver /etc/resolv.conf | sed 's/nameserver //')
+# 从 `/etc/resolv.conf` 文件中提取包含 `nameserver` 的行，去掉 `nameserver` 关键字
+# s/pattern/replacement/   
+echo "proxying to $host_ip"
+cp $dir/proxychains.template.conf $config
+sed -i "\$s/.*/http $host_ip 7890/" $config
+# `sed -i` 表示对文件进行就地编辑
+# `\$` 表示文件的最后一行，`s/.*/http $host_ip 7890/` 表示将最后一行替换为 `http $host_ip 7890`
+```
+
+
+
+
 
 > terminal 是什么？
 
@@ -18,7 +38,6 @@ Shell 有两种执行命令的方式交互式和批处理，如下：
 - 批处理（Batch）：用户事先写一个Shell脚本(Script)，其中有很多条命令，让Shell一次把这些命令执行完，而不必一条一条地敲命令。 </aside>
 
 ## 参考资料
-!!! abstract "reference"
     [Shell 教程 | 菜鸟教程](https://www.runoob.com/linux/linux-shell.html)
     
     [Shell Tools and Scripting | Missing Semester](https://missing.csail.mit.edu/2020/shell-tools/)
@@ -64,7 +83,7 @@ echo $foo
 - !! - 完整的上一条命令，包括参数。常见应用：当你因为权限不足执行命令失败时，可以使用 sudo !!再尝试一次。
 - $_ - 上一条命令的最后一个参数。如果你正在使用的是交互式 shell，你可以通过按下 Esc 之后键入 . 来获取这个值。
 
-命令通常使用 **STDOUT**来返回输出值，使用**STDERR**来返回错误及错误码，便于脚本以更加友好的方式报告错误。 返回码或退出状态是脚本/命令之间交流执行状态的方式。返回值0表示正常执行，其他所有非0的返回值都表示有错误发生。
+命令通常使用 **STDOUT** 来返回输出值，使用 **STDERR** 来返回错误及错误码，便于脚本以更加友好的方式报告错误。 返回码或退出状态是脚本/命令之间交流执行状态的方式。返回值0表示正常执行，其他所有非0的返回值都表示有错误发生。
 
 退出码可以搭配 &&（与操作符）和 ||（或操作符）使用，用来进行条件判断，决定是否执行其他程序。它们都属于短路[运算符](https://en.wikipedia.org/wiki/Short-circuit_evaluation)（short-circuiting） 同一行的多个命令可以用 ; 分隔。程序 true 的返回码永远是0，false 的返回码永远是1。|| 若前面是false，执行右边命令，前面为true，不执行后边命令。&&若前面是false，不执行后边命令；若前面为true，执行后边命令。
 
@@ -118,7 +137,7 @@ chmod +x ./test.sh  #使脚本具有执行权限
 
 ## shell的通配符
 
-> 通配符 - 想要利用通配符进行匹配时，使用 ? 和 * 来匹配一个或任意个字符。例如，对于文件foo, foo1, foo2, foo10 和 bar ,rm foo?这条命令会删除foo1 和 foo2 ，而rm foo*则会删除除了bar之外的所有文件。花括号{} - 当你有一系列的指令，其中包含一段公共子串时，可以用花括号来自动展开这些命令。这在批量移动或转换文件时非常方便
+> 通配符 - 想要利用通配符进行匹配时，使用 `?` 和 `*` 来匹配一个或任意个字符。例如，对于文件foo, foo1, foo2, foo10 和 bar ,rm foo?这条命令会删除foo1 和 foo2 ，而rm foo*则会删除除了bar之外的所有文件。花括号{} - 当你有一系列的指令，其中包含一段公共子串时，可以用花括号来自动展开这些命令。这在批量移动或转换文件时非常方便
 
 ```bash
 convert image.{png,jpg}

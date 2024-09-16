@@ -42,4 +42,4 @@ All the algorithms can be viewed as stochastic approximation algorithms solving 
 
 
 
-$\text{Softmax}(x_{i}) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}$
+$$\text{Softmax}(x_{i}) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}$$

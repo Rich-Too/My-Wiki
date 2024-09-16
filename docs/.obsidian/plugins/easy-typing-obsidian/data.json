@@ -12,7 +12,7 @@
   "EnglishNumberSpace": true,
   "ChineseNoSpace": true,
   "PunctuationSpace": true,
-  "AutoCapital": true,
+  "AutoCapital": false,
   "AutoCapitalMode": "typing",
   "PunctuationSpaceMode": "typing",
   "InlineCodeSpaceMode": 1,
@@ -48,9 +48,9 @@
       "😀|"
     ]
   ],
-  "userSelRuleSettingsOpen": true,
-  "userDelRuleSettingsOpen": true,
-  "userCvtRuleSettingsOpen": true,
+  "userSelRuleSettingsOpen": false,
+  "userDelRuleSettingsOpen": false,
+  "userCvtRuleSettingsOpen": false,
   "EnterTwice": false,
   "TryFixChineseIM": true,
   "PuncRectify": false,

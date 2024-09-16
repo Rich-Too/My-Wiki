@@ -75,7 +75,7 @@ Linux 下，其值为：
  ('.\\do\\python', [], ['hello_justdopython.txt'])
 ```
 
-![](static/v2-8be123b0dcf72bc5c03f764328531b91_b.jpg)
+![](../static/v2-8be123b0dcf72bc5c03f764328531b91_b.jpg)
 
 ### **2.4 os.listdir()**
 
@@ -276,7 +276,6 @@ Linux 下的输出则是：
 
 ### **3.5 os.path.split()**
 
-哈哈实际上前两个函数都是弟弟，这个函数才是老大。
 
 函数`os.path.split()`的功能就是将传入路径以最后一个分隔符为界，分成两个字符串，并打包成元组的形式返回；前两个函数`os.path.dirname()`和`os.path.basename()`的返回值分别是函数`os.path.split()`返回值的第一个、第二个元素。就连二者的具体实现都十分真实：
 

@@ -1,10 +1,10 @@
 {
   "theme": "obsidian",
   "translucency": false,
-  "cssTheme": "Things",
+  "cssTheme": "Catppuccin",
   "textFontFamily": "PingFang SC,霞鹜文楷",
   "accentColor": "",
-  "interfaceFontFamily": "Noto Sans",
+  "interfaceFontFamily": "Noto Sans CJK SC",
   "monospaceFontFamily": "JetBrains Mono,Noto Sans CJK SC",
   "baseFontSize": 17,
   "enabledCssSnippets": [
