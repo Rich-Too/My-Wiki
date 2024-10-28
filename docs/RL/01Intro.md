@@ -24,7 +24,7 @@
 - Discounted return (at time $t$)
   - Future reward is less valuable than present reward.
   - $R_{t+1}$ should be given less weight than $R_t$.
-  - $U_t=R_t+\gamma\cdot R_{t+1}+\gamma^2\cdot R_{t+2}+\gamma^3\cdot R_{t+3}+\cdots $
+  - $U_t=R_t+\gamma\cdot R_{t+1}+\gamma^2\cdot R_{t+2}+\gamma^3\cdot R_{t+3}+\cdots$
 - Episode
   - An episode is usually assumed to be a finite trajectory. 
 
@@ -61,7 +61,7 @@ $$
 - 	  State-Value Function
 
   - 	  $V_\pi(s)=\mathbb{E}_\pi\big[U_t\mid S_t=s\big]$
-  - 	  Consider $ A\sim\pi(\cdot|s_{t})$.
+  - 	  Consider $A\sim\pi(\cdot|s_{t})$.
   - 	  Relation with Action-Value Function.
 
        - 	  $V_{\pi}(s_{t})=\mathbb{E}_{A}\left[Q_{\pi}(s_{t},A)\right]=\underset{a}{\sum}\pi(a|s_{t})\cdot Q_{\pi}(s_{t},a)$

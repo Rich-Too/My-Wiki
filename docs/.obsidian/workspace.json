@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "3c16d5dbd8e05ee7",
+        "id": "fdaaeb40d6102ea5",
         "type": "tabs",
         "children": [
           {
-            "id": "160d18cfe4a06864",
+            "id": "7fd6d4d19fcae4ff",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PythonTools/python_syntax/normal.md",
-                "mode": "preview",
+                "file": "LiteratureNotes/read oneday.md",
+                "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "read oneday"
             }
           }
         ]
@@ -39,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
             }
           },
           {
@@ -47,7 +51,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
             }
           },
           {
@@ -56,13 +62,15 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "苏",
+                "query": "debug",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
             }
           }
         ]
@@ -93,7 +101,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "normal 的反向链接列表"
             }
           },
           {
@@ -106,7 +116,9 @@
                 "itemId": -1,
                 "attachmentId": -1,
                 "follow": "ob-note"
-              }
+              },
+              "icon": "highlighter",
+              "title": "Zotero Annotations for normal"
             }
           }
         ]
@@ -126,53 +138,53 @@
       "obsidian-excalidraw-plugin:新建 Excalidraw 绘图": false
     }
   },
-  "active": "160d18cfe4a06864",
+  "active": "7fd6d4d19fcae4ff",
   "lastOpenFiles": [
-    "LLM/read oneday.md",
-    "LLM/llm.md",
-    "LLM/static/image-20240627143146735.png",
+    "PythonTools/env.md",
     "PythonTools/python_syntax/normal.md",
-    "PythonTools/python_syntax/03Pandas.md",
-    "PythonTools/python_syntax/cookbook.md",
-    "ML&DL/DL/自编码器.md",
-    "ML&DL/DL/02 优化器.md",
-    "ML&DL/ML/贝叶斯网络.md",
-    "ML&DL/DL/bert.md",
-    "ML&DL/DL/GNN.md",
-    "ML&DL/DL/Transformer.md",
-    "LiteratureNotes/多轮问诊.md",
-    "ML&DL/DL/苏剑林博客汇总.md",
-    "ML&DL/DL/04 Self-attention.md",
-    "LiteratureNotes/sss/heBSODABipartiteScalable2022.md",
-    "LiteratureNotes/sss/devlinBERTPretrainingDeep2019.md",
-    "LiteratureNotes/sss/kimAdaptiveCollaborationStrategy2024.md",
-    "LLM/prompt learning.md",
-    "LLM/Medllm.md",
-    "LiteratureNotes/multi-agent_llm.md",
-    "LiteratureNotes/MARL.md",
-    "LiteratureNotes/随手记.md",
-    "LiteratureNotes/实验室论文分类.md",
     "PythonTools/python_syntax/OS.md",
-    "ML&DL/project/机器翻译.md",
+    "PythonTools/data_analysis/02NumPy.md",
+    "PythonTools/data_analysis/matplotlib.md",
+    "PythonTools/data_analysis/static/image-20241027224343333.png",
+    "PythonTools/data_analysis/static",
+    "PythonTools/pytorch/basic.md",
+    "PythonTools/pytorch/项目结构.md",
+    "PythonTools/data_analysis/mimic.md",
+    "PythonTools/python_syntax/cookbook.md",
+    "LiteratureNotes/read oneday.md",
+    "PythonTools/data_analysis/03Pandas.md",
+    "RL/01Intro.md",
+    "RL/02Bellman.md",
+    "RL/00info.md",
+    "LiteratureNotes/multi-agent_llm.md",
+    "LiteratureNotes/推荐系统.md",
+    "LiteratureNotes/~$推荐系统.xlsx",
+    "LaTex/textstudio.md",
+    "LiteratureNotes/多轮问诊.md",
+    "LaTex/数学符号.md",
+    "LiteratureNotes/MARL.md",
+    "LiteratureNotes/RAG.md",
+    "LiteratureNotes/随手记.md",
+    "Webdev/爬虫.md",
+    "2-4-1.md",
+    "ML&DL/ML/机器学习面试.md",
+    "LiteratureNotes/推荐系统.xlsx",
+    "LiteratureNotes/推荐系统",
+    "LiteratureNotes/新建文件夹",
+    "PythonTools/static/image-20231118170129619.png",
+    "PythonTools/static/v2-8be123b0dcf72bc5c03f764328531b91_b.jpg",
+    "PythonTools/static/numpy_2D_slicing_diagram-1.jpg",
+    "PythonTools/static/image-20230308214124864.png",
+    "PythonTools/static/image-20230308210425842.png",
+    "PythonTools/data_analysis",
+    "ML&DL/DL/static/image-20240919182028081.png",
+    "ML&DL/DL/static/image-20240919165357974.png",
+    "LiteratureNotes/static/image-20240627143146735.png",
     "spaces.ac.cn/archives",
     "spaces.ac.cn",
     "Webdev",
-    "LLM/static/image-20240627143629415.png",
+    "LiteratureNotes/static/image-20240627143629415.png",
     "LiteratureNotes/sss",
-    "LLM/static/image-20240627144019039.png",
-    "LLM/static/image-20240627143843189.png",
-    "LLM/static/image-20240627143349023.png",
-    "LiteratureNotes/未命名",
-    "LiteratureNotes",
-    "LLM",
-    "PythonTools/static/image-20230308210425842.png",
-    "PythonTools/static/image-20230308214124864.png",
-    "PythonTools/static/numpy_2D_slicing_diagram-1.jpg",
-    "PythonTools/static/v2-8be123b0dcf72bc5c03f764328531b91_b.jpg",
-    "LLM",
-    "ML&DL/project",
-    "PythonTools/pytorch/static/image-20231118170129619.png",
-    "LLM/static",
     "未命名.canvas",
     "未命名 2.canvas",
     "未命名 1.canvas",

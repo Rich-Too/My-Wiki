@@ -3,8 +3,7 @@
 >
 > https://www.labri.fr/perso/nrougier/from-python-to-numpy/
 
-NumPy是一个功能强大的Python库，主要用于对多维数组执行计算。NumPy这个词来源于两个单词-- `Numerical`和`Python`
-
+NumPy 词源于-- `Numerical` 和 `Python`
 ## 数组
 
 ```python
@@ -61,18 +60,14 @@ print(a.itemsize) # >>>8
 print(a.ndim) # >>>2
 print(a.nbytes) # >>>200
 ```
-
 `itemsize`属性是每个项占用的字节数。这个数组的数据类型是int 64。`ndim` 属性是数组的维数。
-
 ### 数组计算
-
 ```PYTHON
 print(a.sum()) # >>>45
 print(a.min()) # >>>0
 print(a.max()) # >>>9
 print(a.cumsum()) # >>>[ 0  1  3  6 10 15 21 28 36 45]
 ```
-
 ### 索引
 
 ```PYTHON
@@ -112,6 +107,12 @@ plt.plot(a[mask], b[mask], 'go')
 plt.show()
 ```
 
+#### 向量拼接
+```python
+a = np.array([[1, 2], [3, 4]]) 
+b = np.array([[5, 6]]) 
+c = np.concatenate((a, b), axis=0)
+```
 #### where 索引
 
 ```PYTHON
@@ -169,3 +170,68 @@ plt.imsave("./numpy.jpg",a)
 - `a` 输入数组
 -  `q` 要计算的百分位数，在 0 ~ 100 之间
 - `axis` 沿着它计算百分位数的轴，二维取值0，1
+
+
+`numpy.argmin (a, axis=None, out=None)`
+>a : Input array.
+>axis : 默认将输入数组展平。否则，按照axis方向
+>out : 可选
+
+```python
+>>> a = np.arange(6).reshape(2,3)
+>>> a
+array([[0, 1, 2],
+       [3, 4, 5]])
+>>> np.argmin(a) # flat 数组后寻找最小值索引
+0
+>>> np.argmin(a, axis=0) # 0-3 1-4 2-5
+array([0, 0, 0])
+>>> np.argmin(a, axis=1) # 0-1-2 3-4-5
+array([0, 0])
+```
+
+`np.unravel_index()`
+```python
+A = np.random.randint(1,100,size=(2,3,5))
+# 声明一个size=(3,3,3,2)的数组
+print(A)
+array([[[98, 29, 32, 73, 90],
+        [36, 52, 24,  2, 37],
+        [66, 80, 23, 29, 98]],
+
+       [[17, 32, 58, 99, 74],
+        [53,  3, 20, 48, 28],
+        [53,  7, 74, 34, 68]]])
+
+ind_max = np.argmax(A)
+print(ind_max)  
+18
+# 此时得到的索引是将A数组flattern(展成一维数组)后的索引，如何得到对应的原数组的索引呢？
+
+ind_max_src = np.unravel_index(ind_max, A.shape)
+print(ind_max_src)
+(1, 0, 3)
+```
+
+`np.tile()`
+用于复制拓展数组
+单维度，只拓展 -1 维
+```python
+>>> from numpy import *
+>>> tile([1,2], 1) # (2, 0) -> (2, 0)
+array([1, 2])
+>>> tile([1,2], 2) # (2,0) -> (4, 0)
+array([1, 2, 1, 2])
+```
+多维度，拓展 -2 和-1 维
+```python
+>>> tile([1,2],(1,1)) # (2, 0) -> (1, 2)
+array([[1, 2]])
+>>> tile([1,2],(2,2)) # (2, 0) -> (2, 4)
+array([[1, 2, 1, 2],
+       [1, 2, 1, 2]])
+>>> np.tile([[1,1]], (3,2))
+array([[1, 1, 1, 1],
+       [1, 1, 1, 1],
+       [1, 1, 1, 1]])
+```

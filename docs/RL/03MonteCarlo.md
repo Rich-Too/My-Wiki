@@ -2,7 +2,6 @@
 
 - MC Basic is a variant of the policy iteration algorithm.
 - Policy iteration algorithm: v -> q while MC estimate action values directly.
-
 -  When model is unavailable, we can use data(experience).
 
 ![image-20231215150812341](static/image-20231215150812341.png)

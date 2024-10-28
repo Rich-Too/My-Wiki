@@ -1,4 +1,8 @@
-## **1. 简介**
+运行 `python3 -c "import sys; print(sys.path)"` 可以查看当前的 PYTHONPATH。
+`python3 -m` 可以运行一个模块，就像运行一个脚本一样，如果一个包中包含 `__main__.py` 文件，使用 `-m` 可以执行该文件。
+`python --version` 和 `import sys print(sys.version)` 可以查看当前 python 版本
+
+## 1. 简介
 
 `os`就是“operating system”的缩写，顾名思义，`os`模块提供的就是各种 Python 程序与操作系统进行交互的接口。通过使用`os`模块，一方面可以方便地与操作系统进行交互，另一方面页可以极大增强代码的可移植性。如果该模块中相关功能出错，会抛出`OSError`异常或其子类异常。
 

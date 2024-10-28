@@ -40,10 +40,10 @@ $v_{\pi}=r_\pi+\gamma P_\pi v_\pi$
 
 > Given a policy, finding out the corresponding state values is called **policy evaluation**. It is a fundamental problem in RL.
 
-- closed-form solution: $v_\pi=(I-\gamma P_\pi)^{-1}r_\pi $
+- closed-form solution: $v_\pi=(I-\gamma P_\pi)^{-1}r_\pi$
 - iterative solution: 
-  - $v_{k+1}=(I-\gamma P_\pi)^{-1}v_k $
-  - $v_k \to v_\pi=(I-\gamma P_\pi)^{-1}r_\pi,\quad k\to\infty $
+  - $v_{k+1}=(I-\gamma P_\pi)^{-1}v_k$
+  - $v_k \to v_\pi=(I-\gamma P_\pi)^{-1}r_\pi,\quad k\to\infty$
 
 **Action value**
 

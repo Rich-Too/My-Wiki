@@ -283,8 +283,34 @@ print(f"str: {obj}")
 print(f"repr: {obj!r}")
 ```
 
+`abstractmethod`
+抽象方法表示基类的一个方法，没有实现，所以基类不能实例化，子类实现了该抽象方法才能被实例化。
+
 
 ## 数据结构
+**字典**
+```python
+# 创建新字典
+a = {}
+a = dict()
+# 清楚字典项
+del dict[key]
+dict.clear()      : 清空字典
+dict.items()      : 以列表形式返回可遍历的(key, value)元组类型数组
+dict.keys()       : 以列表形式返回字典中所有的 key
+dict.values()     : 以列表形式返回字典中所有的 value
+dict.has_key(key) : 如果键 key 在字典中则返回 True
+key in dict       : 如果键 key 在字典中则返回 True
+
+```
+**defaultdict**
+ Python 的 `collections` 模块中的一个类，它是 `dict` 的子类，可以为字典中的每个键提供一个默认值，这样在访问不存在的键时不会抛出 `KeyError`。
+ ```python
+ from collections import defaultdict
+ winmap = defaultdict(list)
+
+ ```
+
 **list和tuple**
 - 用`-1`做索引，获取最后一个元素
 - 元素的数据类型也可以不同
@@ -357,24 +383,6 @@ s.remove(4)
 >>> list(enumerate(seasons, start=1))    # 下标从 1 开始
 [(1, 'Spring'), (2, 'Summer'), (3, 'Fall'), (4, 'Winter')]
 ```
-
-
-
-
-
-
-## 文件组织与命令行
-`__all__` 是一个特殊的变量，用于定义当从模块中导入所有内容时应该导入哪些名称。在使用`from module import *` 这种导入语句时，只有在 `__all__` 列表中的名称会被导入。
- `__all__` 通常被写在 `__init__.py` 文件中，因为 `__init__.py` 文件控制着包的导入行为。当你创建了一个包，并将多个模块放在一个文件夹（即包）中时，你可以在 `__init__.py` 文件中使用 `__all__` 来控制当用户执行 `from package import *` 时, 哪些模块应该被导入。
- 包导入示例：
- `sys.path.append(os.getcwd().replace("src/dialogue_system/run",""))`
- - `sys.path`: 这是一个列表，Python 在其中搜索模块。当你尝试导入一个模块时，Python 会查找 `sys.path` 里的每个路径，来尝试定位该模块。
- - `os.getcwd()`返回当前工作目录的字符串。
-
-通过单下划线 `_` 可以实现模块级别的私有化，变量除外。一般约定以单下划线开头的函数为模块私有的，也就是说 `from moduleName import * `将不会引入以单下划线开头的函数
-
-
-
 ## 文件处理
 Path
 ```python
@@ -435,4 +443,79 @@ class Bus:
     def drop(self, name):
         self.passengers.remove(name)
 import copy
+```
+
+## 文件模块组织与命令行与 debug
+`__all__` 是一个特殊的变量，用于定义当从模块中导入所有内容时应该导入哪些名称。在使用 `from module import *` 这种导入语句时，只有在 `__all__` 列表中的名称会被导入。
+ `__all__` 通常被写在 `__init__.py` 文件中，因为 `__init__.py` 文件控制着包的导入行为。当你创建了一个包，并将多个模块放在一个文件夹（即包）中时，你可以在 `__init__.py` 文件中使用 `__all__` 来控制当用户执行 `from package import *` 时, 哪些模块应该被导入。
+ 包导入示例：
+ `sys.path.append(os.getcwd().replace("src/dialogue_system/run",""))`
+ - `sys.path`: 这是一个列表，Python 在其中搜索模块。当你尝试导入一个模块时，Python 会查找 `sys.path` 里的每个路径，来尝试定位该模块。
+ - `os.getcwd()` 返回当前工作目录的字符串。
+
+通过单下划线 `_` 可以实现模块级别的私有化，变量除外。一般约定以单下划线开头的函数为模块私有的，也就是说 `from moduleName import * ` 将不会引入以单下划线开头的函数
+面对如下所示的目录结构：
+```
+$workspaceFolder
+├── libs
+│   └── my_package
+│       ├── __init__.py
+│       └── classes.py
+└── my_code
+    └── main.py
+```
+
+此时， `main.py` 无法直接使用 `import` 语句访问 `MyClass` ，因为 `libs/my_package` 不在 `main.py` 所在的文件夹中。简单的做法是直接改变 `PYTHONPATH`：
+```python
+import sys
+sys.path.append("../libs")
+from my_package.classes import MyClass
+```
+更加推荐做法是使用 `launch.json`：
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Module",
+            "type": "python",
+            "request": "launch",
+            "module": "my_code.main",
+            "env": {"PYTHONPATH": "${workspaceFolder}/libs/"}
+        }
+    ]
+}
+```
+设置 `setting.json` 以帮助 vscode 设置自动补全时的搜索路径：
+```python
+{
+    "python.analysis.extraPaths": ["${workspaceFolder}/libs/"]
+}
+```
+
+debug 文件配置：
+```json
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "${workspace}/main.py",   
+      "type": "python",
+      "request": "launch",
+      "python": "/home/usrname/anaconda3/envs/envs_name/bin/python",
+      "args": [
+        "--input_path",
+        "~/input_path",
+      ],      
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "env": {"PYTHONPATH": "${workspaceFolder}/libs/"},z
+      //工作路径用打开的顶层目录，影响文件读写相对路径
+      "cwd": "${workspaceFolder}",
+    }
+  ]
+}
 ```

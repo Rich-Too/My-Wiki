@@ -1,3 +1,11 @@
+
+ACL 2024 LLM-based Agent 论文总结 https://zhuanlan.zhihu.com/p/722064605
+
+
+
+
+
+---
 对话：
 -  [Enhancing Diagnostic Accuracy through Multi-Agent Conversations: Using Large Language Models to Mitigate Cognitive Bias](https://arxiv.org/abs/2401.14589) 通过多代理对话提高诊断准确性：使用大型语言模型减轻认知偏差
 
@@ -10,15 +18,7 @@
 | ClinicalAgent: Clinical Trial Multi-Agent System with Large Language Model-based Reasoning ClinicalAgent             | 基于大模型推理的临床试验多智能体系统              | [link](https://arxiv.org/abs/2404.14777)                                                          |
 | MEDAGENTS: Large Language Models as Collaborators for Zero-shot Medical Reasoning                                    | 作为零样本医学推理合作者的大型语言模型 （ACL 耶鲁和上交） | [link](https://aclanthology.org/2024.findings-acl.33.pdf)[@tangMedAgentsLargeLanguage2024]<br>ACL |
 | Agent hospital: A simulacrum of hospital with evolvable medical agents                                               | 清华                              |                                                                                                   |
-
-
-
-
-
-
 A multi-agent intelligent environment for medical knowledge AIM 的文章
-
-
 MARL 的医疗应用较少，Basal-bolus advisor for type 1 diabetes (T1D) patients using multi-agent reinforcement learning (RL) methodology 为糖尿病 1 型患者推荐
 不稳定、通用性差、 
 

@@ -76,7 +76,7 @@ Y _{n\times o} = X _{n \times i} W_{i \times o} + b Y_{n \times o}
 $$
 左右等价：
 
-![image-20231118170129619](static/image-20231118170129619.png)
+![image-20231118170129619](../static/image-20231118170129619.png)
 
 ## Save/Load Trained Models 
 

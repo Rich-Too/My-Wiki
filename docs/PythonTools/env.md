@@ -42,3 +42,13 @@ https://blog.csdn.net/gongjianbo1992/article/details/106981599
 ## Docker
 > https://iphysresearch.github.io/blog/post/programing/docker-tutorial/
 
+## jupyter book 
+```python
+%load_ext autoreload 
+%autoreload 2
+--------------------------
+import foo
+
+import importlib
+importlib.reload(foo)
+```
